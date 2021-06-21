@@ -1,0 +1,8 @@
+{
+  "uri": "http://localhost:3000/organizations",
+  "method": "POST",
+  "body": "{\n \"@context\": \"http://localhost:3000/organizations\",\n  \"type\": \"Organization\",\n  \"name\": \"yuillaumye Cousfin\",\n  \"preferredUsername\": \"kjfskj\",\n  \"summary\": \"blabla\"\n  } ",
+  "headers": {
+    "Content-Type": "application/json"
+  }
+}
