@@ -1,0 +1,29 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "SemApps-based semantic application",
+  "keywords": [
+    "semapps",
+    "semantic"
+  ],
+  "scripts": {
+    "dev": "moleculer-runner --env --repl --hot services",
+    "start": "moleculer-runner --env --instances=max services"
+  },
+  "dependencies": {
+    "@semapps/auth": "^0.3.6",
+    "@semapps/fuseki-admin": "0.1.42",
+    "@semapps/ldp": "0.1.42",
+    "@semapps/sparql-endpoint": "0.1.42",
+    "@semapps/triplestore": "0.1.42",
+    "@semapps/webacl": "^0.3.6",
+    "@semapps/webid": "^0.3.6",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^8.2.0",
+    "dotenv-flow": "^3.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "moleculer": "^0.14.4",
+    "moleculer-repl": "^0.6.3",
+    "moleculer-web": "^0.9.1"
+  }
+}

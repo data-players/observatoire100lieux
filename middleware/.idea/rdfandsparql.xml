@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RDFAndSPARQL.SPARQLEndpointManager">
+    <option name="endpoints">
+      <map>
+        <entry key="9d282a2d-bcae-4be4-a441-7345ed14fbd2">
+          <value>
+            <SPARQLEndpointConfig>
+              <option name="id" value="9d282a2d-bcae-4be4-a441-7345ed14fbd2" />
+              <option name="url" value="http://localhost:3030/localData" />
+            </SPARQLEndpointConfig>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
