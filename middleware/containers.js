@@ -1,15 +1,33 @@
 module.exports = [
   {
     path: '/organizations',
-    acceptedTypes: ['pair:Organization']
+    acceptedTypes: ['pair:Organization'],
+    dereference: ['pair:organizationOfMembership'],
+  },
+  {
+    path: '/sectors',
+    acceptedTypes: 'pair:Sector',
+    dereference: ['pair:extendedBy'],
+
+  },
+  {
+    path: '/branchs',
+    acceptedTypes: 'pair:Branch',
+    dereference: ['pair:extends'],
   },
   {
     path: '/persons',
     acceptedTypes: ['pair:Person']
   },
   {
-    path: '/place',
+    path: '/places',
     acceptedTypes: 'pair:place',
+    dereference: ['pair:hasLocation/pair:hasPostalAddress']
+  },
+
+  {
+    path: '/activities',
+    acceptedTypes: 'pair:Activity',
     dereference: ['pair:hasLocation/pair:hasPostalAddress']
   },
   /*{

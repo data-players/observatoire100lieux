@@ -29,21 +29,21 @@ module.exports = {
   dependencies: [
     'ldp',
     'sparqlEndpoint',
-    'auth',
+    //'auth',
   ],
   async started() {
     [
       ...(await this.broker.call('ldp.getApiRoutes')),
       ...(await this.broker.call('sparqlEndpoint.getApiRoutes')),
-      ...(await this.broker.call('auth.getApiRoutes')),
+      //w...(await this.broker.call('auth.getApiRoutes')),
     ].forEach(route => this.addRoute(route));
   },
-  methods: {
+  /*methods: {
     authenticate(ctx, route, req, res) {
       return this.connector.authenticate(ctx, route, req, res);
     },
     authorize(ctx, route, req, res) {
       return this.connector.authorize(ctx, route, req, res);
     }
-  }
+  }*/
 };
