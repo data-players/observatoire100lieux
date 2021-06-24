@@ -110,6 +110,9 @@
     "pair:localizedBy": {
       "@type": "@id"
     },
+    "pair:hasLocation": {
+      "@type": "@id"
+    },
     "pair:localizes": {
       "@type": "@id"
     },
@@ -240,6 +243,7 @@
     "Page": "as:Page",
     "Person": "as:Person",
     "Place": "as:Place",
+    "PhysicalPlace": "as:PhysicalPlace",
     "Profile": "as:Profile",
     "Question": "as:Question",
     "Reject": "as:Reject",
