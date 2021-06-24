@@ -1,8 +1,16 @@
 module.exports = [
+  /**
+   * Notes:
+   *  - consumes -> Ressource
+   *
+   */
   {
     path: '/organizations',
     acceptedTypes: ['pair:Organization'],
-    dereference: ['pair:organizationOfMembership'],
+  },
+  {
+    path: '/physicalPlaces',
+    acceptedTypes: ['pair:PhysicalPlace'],
   },
   {
     path: '/sectors',
