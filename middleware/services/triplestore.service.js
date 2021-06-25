@@ -9,5 +9,4 @@ module.exports = {
     jenaUser: CONFIG.SEMAPPS_JENA_USER,
     jenaPassword: CONFIG.SEMAPPS_JENA_PASSWORD
   },
-  dependencies: ['fuseki-admin']
 };
