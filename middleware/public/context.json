@@ -113,6 +113,9 @@
     "pair:hasLocation": {
       "@type": "@id"
     },
+    "pair:hasDigitalPlace": {
+      "@type": "@id"
+    },
     "pair:localizes": {
       "@type": "@id"
     },
