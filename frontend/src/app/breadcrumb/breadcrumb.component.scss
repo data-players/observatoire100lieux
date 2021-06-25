@@ -1,0 +1,17 @@
+:host {
+  padding-top: 10px;
+  display:flex;
+  border-bottom: 1px solid darkgrey;
+}
+::ng-deep{
+  .xng-breadcrumb-root::ng-deep {
+    padding: 8px 16px;
+    display: inline-block;
+    border-radius: 4px;
+
+  }
+
+  .xng-breadcrumb-separator::ng-deep {
+    padding: 0 4px;
+  }
+}

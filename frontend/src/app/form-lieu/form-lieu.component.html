@@ -1,0 +1,100 @@
+<form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
+  <h3>Information générales:</h3>
+  <mat-form-field class="example-full-width">
+    <mat-label>Nom de l'organisation</mat-label>
+    <input matInput formControlName="pair:label">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>{{'description' |titlecase}} </mat-label>
+    <textarea matInput formControlName="pair:description"></textarea>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>{{'homepage' |titlecase}} </mat-label>
+    <input matInput formControlName="pair:homepage">
+  </mat-form-field>
+  <ng-container formArrayName="pair:comment">
+    <mat-form-field class="example-full-width">
+      <mat-label>{{'horaires' |titlecase}} </mat-label>
+      <input matInput formControlName="0">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>{{'Modalité d\'accueil' |titlecase}} </mat-label>
+      <input matInput formControlName="1">
+    </mat-form-field>
+  </ng-container>
+  <mat-form-field class="example-full-width">
+    <mat-label>{{'Numéro de téléphone' |titlecase}} </mat-label>
+    <input matInput formControlName="pair:phone">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>{{'email' |titlecase}} </mat-label>
+    <input matInput formControlName="pair:email">
+  </mat-form-field>
+
+  <h3>Adresse:</h3>
+  <ng-container formGroupName="pair:hasLocation">
+    <ng-container formGroupName="pair:hasPostalAddress">
+      <mat-form-field class="example-full-width">
+        <mat-label>{{'addressStreet' |titlecase}} </mat-label>
+        <input matInput formControlName="pair:addressStreet">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>{{'addressCountry' |titlecase}} </mat-label>
+        <input matInput formControlName="pair:addressCountry">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>{{'addressZipcode' |titlecase}} </mat-label>
+        <input matInput formControlName="pair:addressZipcode">
+      </mat-form-field>
+    </ng-container>
+    <ng-container formArrayName="pair:hasDigitalPlace">
+      <mat-form-field class="example-full-width" *ngFor="let o of digitalPlaces.controls; let i = index">
+        <ng-container [formGroupName]="i">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{'social network name' |titlecase}} </mat-label>
+            <input matInput formControlName="pair:label">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>{{'URL' |titlecase}} </mat-label>
+            <input matInput formControlName="pair:page">
+          </mat-form-field>
+        </ng-container>
+      </mat-form-field>
+    </ng-container>
+  </ng-container>
+  <button type="submit">OK</button>
+</form>
+
+
+      <!--
+      'pair:id': [],
+'pair:label': [],
+'pair:description': [],
+'pair:homepage': [],
+'pair:comment': this.fb.array([
+this.fb.control({}), // Horaires
+this.fb.control({}), // Modalité d'accueil
+]),
+'pair:phone': [],
+'pair:email': [],
+'pair:hasLocation':
+this.fb.group({
+'pair:hasPostalAddress': //TODO: FormArray
+this.fb.group({
+'pair:label': [],
+'pair:addressCountry': [],
+'pair:addressZipcode': [],
+'pair:addressStreet': [],
+'pair:latitude': [],
+'pair:longitude': [],
+}),
+'pair:hasDigitalPlace':this.fb.array(
+[
+this.fb.group(
+{
+'pair:label': [],
+'pair:page': []
+},
+)
+])
+      -->
