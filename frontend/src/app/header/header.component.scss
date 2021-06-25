@@ -1,0 +1,36 @@
+@import '~@angular/material/theming';
+@import "src/custom-theme";
+
+
+nav {
+  > div {
+    padding: 30px 0;
+    width: 270px;
+    text-align:center;
+    text-transform: uppercase;
+    background-color: map-get($centlieux-primary, 100);
+    border-bottom: 4px solid darkgreen;
+
+    &:hover {
+      cursor:pointer;
+      background-color: map-get($centlieux-primary, 200);
+    }
+
+    img {
+      display: block;
+    }
+
+    &.activeLink{
+      background-color: map-get($centlieux-accent, 200);
+
+    }
+  }
+
+  :first-child {
+    padding-top: 0px;
+    background-image: url('../../assets/logo.png');
+    background-size: cover;
+    background-color: red;
+  }
+}
+
