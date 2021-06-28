@@ -59,6 +59,12 @@
     "pair:hasConceptType": {
       "@type": "@id"
     },
+    "pair:hasBranch": {
+      "@type": "@id"
+    },
+    "pair:hasDomain": {
+      "@type": "@id"
+    },
     "pair:hasInterest": {
       "@type": "@id"
     },
@@ -114,6 +120,9 @@
       "@type": "@id"
     },
     "pair:hasDigitalPlace": {
+      "@type": "@id"
+    },
+    "pair:hasPostalAddress": {
       "@type": "@id"
     },
     "pair:localizes": {

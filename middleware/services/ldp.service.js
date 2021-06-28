@@ -1,8 +1,8 @@
 const { LdpService } = require('@semapps/ldp');
-const ontologies = require('../ontologies');
-const containers = require('../containers');
 const urlJoin = require('url-join');
+const ontologies = require('../ontologies');
 const CONFIG = require('../config');
+const containers = require('../containers');
 
 module.exports = {
   mixins: [LdpService],
@@ -11,7 +11,7 @@ module.exports = {
     ontologies,
     containers,
     defaultContainerOptions: {
-      jsonContext:  'localhost:3000/context.json'
+      jsonContext: urlJoin(CONFIG.SEMAPPS_HOME_URL, 'context.json')
     }
-  },
+  }
 };

@@ -1,6 +1,7 @@
 #centlieuxmap, section {
-   height: calc(100vh - 200px);
-   width: auto;
+  width: auto;
+  min-height: 800px;
+  height: 100%;
 }
 :host {
   flex:74%;

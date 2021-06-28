@@ -2,7 +2,7 @@
   <input type="text" formControlName="pair:firstName">
   <input type="text" formControlName="pair:lastName">
   <select formControlName="pair:affiliatedBy">
-    <option [value]="o.id" *ngFor="let o of organizations">{{o.name}}</option>
+    <option [value]="o.id" *ngFor="let o of organizations">{{o.label}}</option>
   </select>
   <button type="submit">OK</button>
 </form>

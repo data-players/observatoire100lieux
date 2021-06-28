@@ -1,13 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/leaflet/dist/leaflet.css";
 @import "../node_modules/leaflet-geosearch/dist/geosearch.css";
-@import "custom-theme";
+@import "../node_modules/leaflet.markercluster/dist/MarkerCluster.css";
+@import "../node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css";
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.bubble.css';
+@import '~quill/dist/quill.snow.css';
+
 html, body {  }
 html{
-  background-image:url('assets/bgfarm.png');
+  background-image:url('assets/bgfarm3.jpg');
   background-size:contain;
   background-repeat: no-repeat;
   background-color: #e7f3f2;
   background-position: bottom;
   margin-top:25px;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; width:1280px; margin: 0 auto;margin-bottom:150px; background-color: #fff}
+body { margin: 0;  font-family: 'Futura-pt-book';
+  width:1280px; margin: 0 auto;margin-bottom:150px; background-color: #fff}

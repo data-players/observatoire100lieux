@@ -1,23 +1,26 @@
-  <section>
-    <mat-form-field appearance="fill" >
-      <input matInput type="text" MatTextareaAutosize>
+  <section *ngIf="formBranches">
+    <mat-form-field appearance="fill" class="fullsize">
+      <input matInput type="text" >
       <div mat-icon-button matPrefix>
         <mat-icon>search</mat-icon>
       </div>
-      <button mat-icon-button matSuffix (click)="detectMyPosition()" [attr.aria-label]="'Utilisez votre position'">
-        <mat-icon>gps_fixed</mat-icon>
-      </button>
     </mat-form-field>
         <h3><mat-icon color="primary">restaurant</mat-icon>Activités nouricieres</h3>
-        <form [formGroup]="form">
-          <ul *ngFor="let group of this.form.controls |keyvalue" [formGroupName]="group.key" >
-            <li><h4><mat-checkbox #cb (change)="toggleCheckbox(group.value, $event.checked)" [indeterminate]="someComplete(group.value)" [checked]="allComplete(group.value)">{{getTreeValue(group.key| caststring)}}</mat-checkbox></h4>
+        <form [formGroup]="formBranches">
+          <ul *ngFor="let group of this.formBranches.controls |keyvalue" [formGroupName]="group.key" >
+            <li><h4><mat-checkbox #cb (change)="toggleCheckbox(group.value, $event.checked)" [indeterminate]="someComplete(group.value)" [checked]="allComplete(group.value)">{{getSectorTreeValue(group.key| caststring)}}</mat-checkbox></h4>
               <ul>
                 <li *ngFor="let control of getFormControls(group.value) | keyvalue">
-                  <mat-checkbox  (ngModelChange)="updateAllComplete(group.value, cb)" [formControlName]="control.key">{{getTreeValue(group.key| caststring, control.key| caststring)}}</mat-checkbox>
+                  <mat-checkbox  (ngModelChange)="updateAllComplete(group.value, cb)" [formControlName]="control.key">{{getSectorTreeValue(group.key| caststring, control.key| caststring)}}</mat-checkbox>
                 </li>
               </ul>
             </li>
           </ul>
-        </form>
+    </form>
+      <h3><mat-icon color="primary">home</mat-icon>Type de structure</h3>
+      <form [formGroup]="formDomains">
+        <ul *ngFor="let group of this.formDomains.controls |keyvalue" [formGroupName]="group.key" class="domains">
+          <li><mat-checkbox>{{getDomainLabel(group.key| caststring)}}</mat-checkbox></li>
+        </ul>
+      </form>
   </section>

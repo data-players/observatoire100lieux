@@ -14,16 +14,16 @@ export class DataProviderService {
   async findAll<T>(endpoint: string): Promise<T[]> {
     return this.http.get<any>(`http://localhost:3000/${endpoint}`,  {headers: this.headers, responseType: 'json'}).pipe(
       map(v => v['ldp:contains'].map((w: any) => {
-        w.id = w['@id']
+        w = this.removePrefixes(w);
         return Object.assign({id: w['@id']}, w as T)
       }) as T[])
     ).toPromise();
   }
 
-  async create<T>(endpoint: string, body: T, type: { new (): T }) : Promise<T> {
+  async create<T>(endpoint: string, body: T, type: string) : Promise<T> {
     const payload = Object.assign({}, body, {
       '@context': 'http://localhost:3000/context.json',
-      '@type': 'PAIR:'+type.name
+      '@type': 'pair:'+type
     })
     return this.http.post<any>(`http://localhost:3000/${endpoint}`, payload).pipe(
       map(v => v['ldp:contains'].map((w: any) => {
@@ -31,6 +31,22 @@ export class DataProviderService {
         return Object.assign({id: w['@id']}, w as T)
       }) as T)
     ).toPromise();
+  }
+
+  private removePrefixes(obj: any): object{
+    obj = Object.keys(obj).reduce((a, b) => {
+      if(b==='@id') {obj['id'] = obj['@id']};
+        (a as any)[
+            b.substring(
+              b.indexOf(':')+1,
+              b.length
+            )]  = obj[b];
+      if(typeof obj[b] !== 'string') {
+        obj[b] = this.removePrefixes(obj[b])
+      }
+      return obj;
+    }, {});
+    return obj
   }
   /*
 

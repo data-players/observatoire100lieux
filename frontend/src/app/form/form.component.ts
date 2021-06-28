@@ -28,6 +28,6 @@ export class FormComponent implements OnInit {
   }
 
   async submit(): Promise<void> {
-    await this.dataservice.create<Person>('persons', this.form.value, Person);
+    await this.dataservice.create<Person>('persons', this.form.value, 'Person');
   }
 }
