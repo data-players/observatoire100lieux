@@ -31,6 +31,9 @@ import { FormSideBarTiersLieuxComponent } from './cartographie/form-side-bar-tie
 import { LeafletMapComponent } from './cartographie/leaflet-map/leaflet-map.component';
 import {MatInputModule} from '@angular/material/input';
 import { FormLieuComponent } from './form-lieu/form-lieu.component';
+import {QuillModule} from 'ngx-quill';
+import { LeafletPopupComponent } from './cartographie/leaflet-popup/leaflet-popup.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 const routes = [
   //{path: '', pathMatch: 'full', redirectTo: 'welcome'},
@@ -49,6 +52,30 @@ const routes = [
     data: {breadcrumb: 'Accueil'}},
 ]
 
+const modules = {
+  toolbar: [
+   // ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+   // ['blockquote', 'code-block'],
+
+   // [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+   // [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+   // [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+   // [{ 'direction': 'rtl' }],                         // text direction
+
+   // [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+   // [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+   // [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+   // [{ 'font': [] }],
+   // [{ 'align': [] }],
+
+    ['clean'],                                         // remove formatting button
+
+   // ['link', 'image', 'video']                         // link and image, video
+  ]
+};
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,11 +91,17 @@ const routes = [
     CastnumberPipe,
     FormSideBarTiersLieuxComponent,
     LeafletMapComponent,
-    FormLieuComponent
+    FormLieuComponent,
+    LeafletPopupComponent
   ],
   imports: [
     BrowserModule,
     BreadcrumbModule,
+    QuillModule.forRoot({
+      modules: {
+        toolbar: modules.toolbar
+      }
+    }),
     FlexLayoutModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -86,6 +119,7 @@ const routes = [
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    MatChipsModule,
 
   ],
   providers: [],

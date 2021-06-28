@@ -5,18 +5,23 @@ module.exports = [
    *
    */
   {
-    path: '/organizations',
-    acceptedTypes: ['pair:Organization'],
+    path: '/domains',
+    acceptedTypes: ['pair:Domain']
   },
   {
-    path: '/physicalPlaces',
-    acceptedTypes: ['pair:PhysicalPlace'],
+    path: '/organizations',
+    acceptedTypes: ['pair:Organization'],
+    dereference: [
+      'pair:hasLocation/pair:hasPostalAddress',
+      'pair:hasLocation/pair:hasDigitalPlace',
+      'pair:hasBranch',
+      'pair:hasDomain'
+    ],
   },
   {
     path: '/sectors',
     acceptedTypes: 'pair:Sector',
     dereference: ['pair:extendedBy'],
-
   },
   {
     path: '/branchs',

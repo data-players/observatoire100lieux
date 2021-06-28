@@ -3,17 +3,19 @@
 
 
 nav {
+  height:140px;
   > div {
-    padding: 30px 0;
+    padding-top: 110px;
     width: 270px;
     text-align:center;
     text-transform: uppercase;
-    background-color: map-get($centlieux-primary, 100);
-    border-bottom: 4px solid darkgreen;
+    //background-color: map-get($centlieux-primary, 100);
+    border-bottom: 0px solid map-get($centlieux-primary, 200);
+    transition: border .2s;
 
     &:hover {
       cursor:pointer;
-      background-color: map-get($centlieux-primary, 200);
+      border-bottom:4px solid map-get($centlieux-primary, 200);
     }
 
     img {
@@ -21,16 +23,20 @@ nav {
     }
 
     &.activeLink{
-      background-color: map-get($centlieux-accent, 200);
-
+      border-bottom: 4px solid map-get($centlieux-accent, 200);
     }
   }
 
   :first-child {
     padding-top: 0px;
-    background-image: url('../../assets/logo.png');
-    background-size: cover;
-    background-color: red;
+    background-image: url('../../assets/100LN_logo_color_cartouche.png');
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-color: transparent;
+    &:hover{
+      background-color:transparent;
+    }
   }
 }
 

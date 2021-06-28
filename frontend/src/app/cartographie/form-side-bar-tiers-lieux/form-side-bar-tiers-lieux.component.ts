@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup} from '@angular/forms';
-import {MapService} from '../map.service.';
+import {MapAction, MapService} from '../map.service.';
 import {MatCheckbox} from '@angular/material/checkbox';
+import {DataProviderService} from '../../data-provider.service';
+import {Sector} from '../../model/sector.model';
+import {Domain} from '../../model/domain.model';
 
 @Component({
   selector: 'app-form-side-bar-tiers-lieux',
@@ -9,86 +12,54 @@ import {MatCheckbox} from '@angular/material/checkbox';
   styleUrls: ['./form-side-bar-tiers-lieux.component.scss']
 })
 export class FormSideBarTiersLieuxComponent implements OnInit {
-  form: FormGroup = new FormGroup({});
+  formBranches: FormGroup = new FormGroup({});
+  formDomains: FormGroup = new FormGroup({});
+  sectors : Sector[] = []
+  domains : Domain[] = []
 
-  constructor(private fb: FormBuilder, private mapService: MapService) {
+  constructor(private fb: FormBuilder, private mapService: MapService, private dataProvider: DataProviderService) {
   }
 
   async ngOnInit(): Promise<void> {
-    this.buildForm();
-    console.log(this.form.value)
+    this.sectors = await this.dataProvider.findAll('sectors');
+    this.domains = await this.dataProvider.findAll('domains');
+    await this.buildForm();
+    this.mapService.action(MapAction.LOAD);
   }
 
-  private buildForm(): void {
-    for(let elem of this.TREE_DATA) {
+  private buildForm(): Promise<void> {
+  return new Promise((res, rej) => {
+    for(let s of this.sectors) {
       const form = new FormGroup({})
-      for (let f of elem.value){
-        form.addControl(f.id+'', this.fb.control(false));
+      for (let b of s.extendedBy){
+        form.addControl(b.id+'', this.fb.control(false));
       }
-      this.form.addControl(elem.id, form)
+      this.formBranches.addControl(s.id, form)
     }
+    for(let s of this.domains) {
+      this.formDomains.addControl(s.id+'', this.fb.control(false));
+    }
+    res.apply(true);
+  })
+
   }
 
-  log(val:any): void {
-    console.log('-->', val);
-  }
   getFormControls(g: AbstractControl): { [p: string]: AbstractControl } {
     return (g as FormGroup).controls;
   }
 
-  TREE_DATA: {id: string, name: string, value: {id: string, name: string}[] }[]=
-    [
-      {
-        id:'a1',
-        name: 'Production',
-        value:[
-          {id: 'http://wwwmlkmfksdmgkl   ', name: 'Maraîchage'},
-          {id: 'http://dsmflk.com', name: 'Apiculture'},
-          {id: '30', name: 'Agroforesterie'},
-          {id: '40', name: 'Pépinière'},
-          {id: '50', name: 'Hydroponie'},
-          {id: '60', name: 'Aquaponie'},
-          {id: '70', name: 'Elevage'},
-        ]
-      },
-      {
-        id:'a2',
-        name: 'Transformation',
-        value: [
-          {id: '80', name: 'Compostage'},
-          {id: '90', name: 'Transformation alimentaire'},
-          {id: '100', name: 'Ecoconstruction'}
-        ]
-      },
-      {
-        id:'a3',
-        name: 'Distribution',
-        value: [
-          {id: '110', name: 'Restauration'},
-          {id: '120', name: 'Vente'}
-        ]
-      },
-      {
-        id:'a4',
-        name: 'Animation',
-        value: [
-          {id: '130', name: 'Activités pédagogiques'},
-          {id: '140', name: 'Activités cultureles'}
-        ]
-      }
-    ];
-
-  getTreeValue(grpId: string, itemId?: string): string {
-    let result = this.TREE_DATA.find(v => v.id === grpId);
+  getSectorTreeValue(grpId: string, itemId?: string): string {
+    let result = this.sectors.find(v => v.id === grpId);
     if(itemId) {
-      const result2 = result?.value.find( v => v.id === itemId)
-      return result2 ? result2.name : '';
+      const result2 = result?.extendedBy.find( v => v.id === itemId)
+      return result2 ? result2.label : '';
     }
-    return  result ? result.name : ''
+    return  result ? result.label : ''
   }
 
-  detectMyPosition() {
-    this.mapService.asksForUserPosition();
+  getDomainLabel(id: string): string {
+    const find = this.domains.find(d => d.id === id);
+    return find ? find.label : '';
   }
 
   /**
@@ -107,7 +78,6 @@ export class FormSideBarTiersLieuxComponent implements OnInit {
   updateAllComplete(formGroup: AbstractControl, cb: MatCheckbox) {
     if(this.allComplete(formGroup)){
       cb.checked = true;
-      console.log("weee")
     }
   }
   someComplete(formGroup: AbstractControl) {
