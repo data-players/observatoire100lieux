@@ -1,12 +1,15 @@
 <img src="https://fakeimg.pl/100x80/?retina=1&text=Une image là&">
 <h3>{{organization.label}}</h3>
+<p>
+  {{organization.hasLocation.hasPostalAddress.addressStreet}}, {{organization.hasLocation.hasPostalAddress.addressZipcode}}
+</p>
 <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
   <mat-chip *ngFor="let chip of organization.hasBranch" selected color="primary">
     {{chip.label}}
   </mat-chip>
 </mat-chip-list>
 <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
-  <mat-chip *ngFor="let chip of organization.hasDomain" selected color="secondary">
+    <mat-chip *ngFor="let chip of organization.hasDomain" selected color="accent">
     {{chip.label}}
   </mat-chip>
 </mat-chip-list>
