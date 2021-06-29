@@ -28,7 +28,6 @@ export class FormLieuComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.sectors =await this.dataService.findAll<Sector>('sectors');
     this.domains = await this.dataService.findAll<Domain>('domains');
-    console.log('WTF', ([] as FormControl[]).concat(...this.sectors.map(s =>(s.extendedBy.map(b => this.fb.control(b.id))))))
     this.form = this.fb.group({
       'pair:id': [],
       'pair:label': [],
