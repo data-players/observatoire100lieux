@@ -1,0 +1,7 @@
+<h1>Lieu Nourriciers</h1>
+<mat-card *ngFor="let o of organizations">
+  <mat-card-title>{{o.label}}</mat-card-title>
+  <button [routerLink]="['/map/edit',dataProvider.extractUrlHash(o.id)]" mat-flat-button color="primary">Edit</button>&nbsp;
+  <button mat-flat-button color="warn">Delete</button>
+</mat-card>
+

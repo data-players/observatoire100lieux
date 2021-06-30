@@ -2,5 +2,8 @@
   <div routerLink="/"></div>
   <div routerLink="/institutions" routerLinkActive="activeLink">Site institutionnel</div>
   <div routerLink="/map" routerLinkActive="activeLink">Carte des 100 lieux nourriciers</div>
+  <div routerLink="/map/list" routerLinkActive="activeLink">Liste des 100 lieux nourriciers</div>
   <div routerLink="/tools" routerLinkActive="activeLink">Outils pédagogiques</div>
+  <div (click)="redirect('http://localhost:4200/processlogin')" routerLinkActive="activeLink">Login</div>
+  <div (click)="logout()" routerLinkActive="activeLink">logout</div>
 </nav>

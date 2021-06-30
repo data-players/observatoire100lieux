@@ -28,22 +28,29 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {CastnumberPipe} from './castnumber.pipe';
 import {CaststringPipe} from './caststring.pipe';
 import { FormSideBarTiersLieuxComponent } from './cartographie/form-side-bar-tiers-lieux/form-side-bar-tiers-lieux.component';
-import { LeafletMapComponent } from './cartographie/leaflet-map/leaflet-map.component';
+import { LeafletMapComponent } from './cartographie/leaflet/leaflet-map/leaflet-map.component';
 import {MatInputModule} from '@angular/material/input';
-import { FormLieuComponent } from './form-lieu/form-lieu.component';
+import { FormLieuComponent } from './cartographie/form-lieu/form-lieu.component';
 import {QuillModule} from 'ngx-quill';
-import { LeafletPopupComponent } from './cartographie/leaflet-popup/leaflet-popup.component';
+import { LeafletPopupComponent } from './cartographie/leaflet/leaflet-popup/leaflet-popup.component';
 import {MatChipsModule} from '@angular/material/chips';
+import { ProcessloginComponent } from './processlogin/processlogin.component';
+import { ListLieuComponent } from './cartographie/list-lieu/list-lieu.component';
+import { E404Component } from './e404/e404.component';
+import {AuthGuard} from './auth.guard';
 
 const routes = [
   //{path: '', pathMatch: 'full', redirectTo: 'welcome'},
+  {path: 'processlogin', component: ProcessloginComponent},
+  {path: '404', component: E404Component},
   {path: '', component: WelcomeComponent,
     children: [
       {path: 'map', component: CartographieComponent,
         children: [
           {path: '', component: MapTiersLieuxComponent},
-          {path: 'add', component: FormLieuComponent, data: {breadcrumb: 'Ajouter un lieu'}},
-          {path: 'edit/:id', component: DetailLieuComponent, data: {breadcrumb: {alias: 'Lieu XXX'}}},
+          {path: 'add', component: FormLieuComponent, data: {breadcrumb: 'Ajouter un lieu'}, canActivate: [AuthGuard]},
+          {path: 'list', component: ListLieuComponent, data: {breadcrumb: 'Liste'}},
+          {path: 'edit/:id', component: FormLieuComponent, data: {breadcrumb: {alias: 'Lieu XXX'}}},
           {path: ':id', component: DetailLieuComponent, data: {breadcrumb: {alias: 'Lieu XXX'}}}
         ],
         data: {breadcrumb: 'Carte des 100 lieux nourriciers'}
@@ -92,7 +99,10 @@ const modules = {
     FormSideBarTiersLieuxComponent,
     LeafletMapComponent,
     FormLieuComponent,
-    LeafletPopupComponent
+    LeafletPopupComponent,
+    ProcessloginComponent,
+    ListLieuComponent,
+    E404Component
   ],
   imports: [
     BrowserModule,
