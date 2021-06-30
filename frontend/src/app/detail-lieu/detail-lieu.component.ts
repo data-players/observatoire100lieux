@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {BreadcrumbService} from 'xng-breadcrumb';
 import {ActivatedRoute} from '@angular/router';
+import {Organization} from '../model/organization.model';
+import {DataProviderService} from '../data-provider.service';
 
 @Component({
   selector: 'app-detail-lieu',
@@ -9,11 +11,18 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class DetailLieuComponent implements OnInit {
 
-  constructor(private breadcrumbService: BreadcrumbService, private activatedRoute: ActivatedRoute) { }
+  organization!: Organization
+  constructor(private breadcrumbService: BreadcrumbService, private activatedRoute: ActivatedRoute, private dataprovider:DataProviderService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.breadcrumbService.set('/map/:id','Details');
+
     this.activatedRoute.params.subscribe( p => {
-      this.breadcrumbService.set('/map/:name', p['name']);
+      console.log(p)
+      this.dataprovider.findOne<Organization>('organizations', p['id']).then(o => {
+        this.organization = o;
+        this.breadcrumbService.set('/map/:id', this.organization.label);
+      })
     })
   }
 

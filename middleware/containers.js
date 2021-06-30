@@ -9,6 +9,16 @@ module.exports = [
     acceptedTypes: ['pair:Domain']
   },
   {
+    path: '/pending',
+    acceptedTypes: ['pair:Organization'],
+    dereference: [
+      'pair:hasLocation/pair:hasPostalAddress',
+      'pair:hasLocation/pair:hasDigitalPlace',
+      'pair:hasBranch',
+      'pair:hasDomain'
+    ],
+  },
+  {
     path: '/organizations',
     acceptedTypes: ['pair:Organization'],
     dereference: [
@@ -19,6 +29,11 @@ module.exports = [
     ],
   },
   {
+    path: '/users',
+    acceptedTypes: ['pair:Person'],
+    dereference: ['sec:publicKey', 'pair:hasLocation/pair:hasPostalAddress']
+  },
+  {
     path: '/sectors',
     acceptedTypes: 'pair:Sector',
     dereference: ['pair:extendedBy'],
@@ -26,7 +41,6 @@ module.exports = [
   {
     path: '/branchs',
     acceptedTypes: 'pair:Branch',
-    dereference: ['pair:extends'],
   },
   {
     path: '/persons',

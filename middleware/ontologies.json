@@ -15,6 +15,11 @@
     "url": "http://www.w3.org/ns/ldp#"
   },
   {
+    "prefix": "sec",
+    "owl": "",
+    "url": "https://w3id.org/security#"
+  },
+  {
     "prefix": "schema",
     "owl": "",
     "url": "http://schema.org/"

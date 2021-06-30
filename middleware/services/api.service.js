@@ -1,5 +1,6 @@
 const ApiGatewayService = require('moleculer-web');
 const CONFIG = require('../config');
+const {ServiceBroker} = require("moleculer");
 
 module.exports = {
   mixins: [ApiGatewayService],
@@ -13,11 +14,13 @@ module.exports = {
     }
   },
   methods: {
-   /* authenticate(ctx, route, req, res) {
+    authenticate(ctx, route, req, res) {
       return ctx.call('auth.authenticate', { route, req, res });
     },
     authorize(ctx, route, req, res) {
       return ctx.call('auth.authorize', { route, req, res });
-    }*/
+    }
   }
+
 };
+
