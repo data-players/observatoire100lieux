@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  serverport: 4200,
+  production: false,
+  adminmail: ['lhomme.thomas@pm.me', 'Pierre@bouvier-muller.fr', 'pierre@bouvier-muller.fr']
 };
 
 /*

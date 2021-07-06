@@ -1,0 +1,11 @@
+<h1>Lieu Nourriciers</h1>
+<mat-card *ngFor="let o of organizations">
+  <mat-card-title>{{o.label}}</mat-card-title>
+  <mat-card-content>
+    <p [innerHTML]="o.description| slice:0:250"></p>
+  </mat-card-content>
+  <mat-card-actions>
+  </mat-card-actions>
+</mat-card>
+
+

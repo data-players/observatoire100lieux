@@ -1,0 +1,11 @@
+@import 'node_modules/@angular/material/theming';
+@import "src/custom-theme";
+nav{
+  a{
+    display:inline-block;
+    color: map-get($centlieux-accent, 400);
+    text-decoration: none;
+    height: 25px;
+    margin-right: 30px;
+  }
+}

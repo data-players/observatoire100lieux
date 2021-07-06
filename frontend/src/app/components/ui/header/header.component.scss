@@ -1,0 +1,42 @@
+@import 'node_modules/@angular/material/theming';
+@import "src/custom-theme";
+
+
+nav {
+  height:140px;
+  > div {
+    padding-top: 110px;
+    width: 270px;
+    text-align:center;
+    text-transform: uppercase;
+    //background-color: map-get($centlieux-primary, 100);
+    border-bottom: 0px solid map-get($centlieux-primary, 200);
+    transition: border .2s;
+
+    &:hover {
+      cursor:pointer;
+      border-bottom:4px solid map-get($centlieux-primary, 200);
+    }
+
+    img {
+      display: block;
+    }
+
+    &.activeLink{
+      border-bottom: 4px solid map-get($centlieux-accent, 200);
+    }
+  }
+
+  :first-child {
+    padding-top: 0px;
+    background-image: url('/assets/100LN_logo_color_cartouche.png');
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-color: transparent;
+    &:hover{
+      background-color:transparent;
+    }
+  }
+}
+
