@@ -1,6 +1,7 @@
 import {PhysicalPlace} from './physical-place.model';
 import {Branch} from './branch.model';
 import {Domain} from './domain.model';
+import {Document} from './document.model';
 
 export class Organization {
   constructor(
@@ -11,6 +12,7 @@ export class Organization {
      public comment: string[] = [],
      public hasBranch: Branch[] = [],
      public hasDomain: Domain[] = [],
+     public documentedBy: Document= new Document(),
      public phone: string = '',
      public email: string = '',
      public accessRules: string = '',

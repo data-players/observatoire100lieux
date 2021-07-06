@@ -33,5 +33,10 @@
     "prefix": "pair",
     "owl": "http://virtual-assembly.org/ontologies/pair-2020-winter/ontology.ttl",
     "url": "http://virtual-assembly.org/ontologies/pair#"
+  },
+  {
+    "prefix": "semapps",
+    "owl": "",
+    "url": "http://semapps.org/ns/core#"
   }
 ]

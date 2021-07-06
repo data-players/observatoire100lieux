@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {DataProviderService} from './data-provider.service';
+import {DataProviderService} from './services/data-provider.service';
 import {Person} from './model/person.model';
+import {AuthService} from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -15,9 +16,5 @@ export class AppComponent implements OnInit{
 
   async ngOnInit(): Promise<void>  {
     //this.persons = await this.dataservice.findAll<Person>('persons');
-
   }
-
-
-
 }

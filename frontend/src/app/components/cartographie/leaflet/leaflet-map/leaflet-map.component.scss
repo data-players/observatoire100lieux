@@ -1,0 +1,17 @@
+:host {
+  flex:74%;
+}
+#centlieuxmap, section {
+  width: auto;
+  min-height: 800px;
+  height: 100%;
+}
+.button-list{
+  display: flex;
+  justify-content: flex-end;
+  position:relative;
+  top: 20px;
+  z-index:1000;
+  height:0px;
+  margin-right:30px;
+}

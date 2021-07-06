@@ -5,7 +5,7 @@ const CONFIG = require('../config');
 module.exports = {
     mixins: [AuthService],
     settings: {
-        baseUrl: "http://localhost:3000",
+        baseUrl: CONFIG.SEMAPPS_HOME_URL,
         jwtPath: path.resolve(__dirname, '../jwt'),
         // To set if you want to use an OIDC server
         oidc: {

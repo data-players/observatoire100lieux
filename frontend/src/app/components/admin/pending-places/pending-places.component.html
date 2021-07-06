@@ -1,0 +1,57 @@
+<h1>Elements en attente de modération</h1>
+<div *ngIf="!loaded">Merci de patienter</div>
+<h3 *ngIf="loaded && organizations.length === 0">Aucun élément à modérer</h3>
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel [expanded]="step === i" (opened)="setStep(0)" hideToggle *ngFor="let o of organizations; let i = index">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{o.label}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Cliquez pour dérouler
+        <mat-icon [color]="getColor(o)">{{setActionIcon(o)}}</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+      <div class="new">
+        <ul>
+         <li>Label: {{o.label}}</li>
+         <li>Conditions d'accés: {{o.accessRules}}</li>
+         <li>Horaires: {{o.accessRules}}</li>
+         <li>Description: {{o.description}}</li>
+         <li>Email: {{o.email}}</li>
+         <li>Site: {{o.homepage}}</li>
+         <li>Phone: {{o.phone}}</li>
+         <li>Activités :
+           <ul>
+             <li *ngFor="let b of o?.hasBranch">{{b?.label}}</li>
+           </ul>
+         </li>
+          <li>Type de structure :
+            <ul>
+              <li *ngFor="let d of o?.hasDomain">{{d?.label}}</li>
+            </ul>
+          </li>
+          <li> Adresse
+            <ul>
+              <li>{{o.hasLocation.hasPostalAddress.addressStreet}}</li>
+              <li>{{o.hasLocation.hasPostalAddress.locality}}</li>
+              <li>{{o.hasLocation.hasPostalAddress.addressZipcode}}</li>
+              <li>{{o.hasLocation.hasPostalAddress.addressCountry}}</li>
+            </ul>
+          </li>
+          <li *ngIf="o.hasLocation.hasDigitalPlace && o.hasLocation.hasDigitalPlace[0].label"> Reseaux sociaux
+            <ul *ngFor="let d of o.hasLocation.hasDigitalPlace">
+              <li>{{d.label}}</li>
+              <li>{{d.page}}</li>
+            </ul>
+          </li>
+        </ul>
+        </div>
+    <mat-action-row>
+
+      <button mat-flat-button color="primary" (click)="validateElement(o)" *ngIf="getAction(o)==='new'">Ajouter en base</button>
+      <button mat-flat-button color="accent" (click)="validateElement(o)" *ngIf="getAction(o)==='edit'">Modifier en base</button>
+      <button mat-flat-button color="warn" (click)="validateElement(o)" *ngIf="getAction(o)==='delete'">Supprimer</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -5,7 +5,7 @@ const CONFIG = require('../config');
 module.exports = {
   mixins: [JsonLdService],
   settings: {
-    baseUri: CONFIG.SEMAPPS_HOME_URL,
+    baseUri: CONFIG.SEMAPPS_SPARQL_ENDPOINT,
     localContextFiles: [
       {
         path: '/context.json',

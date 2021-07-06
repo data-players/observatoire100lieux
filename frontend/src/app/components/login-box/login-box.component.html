@@ -1,0 +1,13 @@
+<div *ngIf="isLogged(); else notlogged">
+      <button mat-icon-button aria-label="Login" (click)="logout()" color="primary">
+        <mat-icon>lock_open</mat-icon>
+      </button>
+      <button routerLink="/map/pending" mat-icon-button aria-label="edit"  color="primary">
+        <mat-icon>checklist</mat-icon>
+      </button>
+</div>
+<ng-template #notlogged>
+  <button  mat-icon-button  aria-label="Login" (click)="redirect('http://localhost:4200/processlogin')" color="primary">
+    <mat-icon>lock</mat-icon>
+  </button>
+</ng-template>
