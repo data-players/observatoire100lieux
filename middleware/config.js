@@ -1,7 +1,8 @@
 require('dotenv-flow').config();
 
 module.exports = {
-SEMAPPS_HOME_URL: 'http://localhost:3000/',
+//SEMAPPS_HOME_URL: 'http://localhost:3000/',
+SEMAPPS_HOME_URL: 'http://ci.thomaslhomme.com:3000/',
 //SEMAPPS_SPARQL_ENDPOINT: 'http://localhost:3030/',
 SEMAPPS_SPARQL_ENDPOINT: 'http://fuseki:3030/',
 SEMAPPS_MAIN_DATASET: 'localData',
