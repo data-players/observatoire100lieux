@@ -5,7 +5,9 @@
 export const environment = {
   serverport: 4200,
   production: false,
-  adminmail: ['lhomme.thomas@pm.me', 'Pierre@bouvier-muller.fr', 'pierre@bouvier-muller.fr']
+  adminmail: ['lhomme.thomas@pm.me', 'Pierre@bouvier-muller.fr', 'pierre@bouvier-muller.fr'],
+  serverUrl: 'http://localhost:3000/'
+
 };
 
 /*
