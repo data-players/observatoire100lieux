@@ -82,7 +82,6 @@ export class PendingPlacesComponent implements OnInit {
   async validateElement(o: { [p: string]: any }) {
     const action = o['100lieux:flag']
     const id = this.dataProvider.extractUrlHash(o['@id']);
-    console.log('ACTION', action, id)
     if(action === ActionType.NEW || action === ActionType.UPDATE){
       let obj = _.cloneDeep(o);
       obj = this.addPairPrefix(obj);
@@ -110,6 +109,8 @@ export class PendingPlacesComponent implements OnInit {
       await this.dataProvider.delete('organizations', {}, id, 'Organization')
       await this.dataProvider.delete('pendingorganizations', {}, id, 'Organization')
     }
+    this.organizations = await this.dataProvider.findAll<Organization>('pendingorganizations');
+
 
   }
   addPairPrefix(o: { [key: string]: any}): { [key: string]: any}{
@@ -124,4 +125,9 @@ export class PendingPlacesComponent implements OnInit {
       return result
      });
       }
+
+  async cancelElement(o: { [p: string]: any }) {
+    await this.dataProvider.delete('pendingorganizations', o, this.dataProvider.extractUrlHash(o.id), 'Organization')
+    this.organizations = await this.dataProvider.findAll<Organization>('pendingorganizations');
   }
+}

@@ -52,6 +52,7 @@
       <button mat-flat-button color="primary" (click)="validateElement(o)" *ngIf="getAction(o)==='new'">Ajouter en base</button>
       <button mat-flat-button color="accent" (click)="validateElement(o)" *ngIf="getAction(o)==='edit'">Modifier en base</button>
       <button mat-flat-button color="warn" (click)="validateElement(o)" *ngIf="getAction(o)==='delete'">Supprimer</button>
+      <button mat-flat-button color="warn" (click)="cancelElement(o)" >Cancel</button>
     </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
