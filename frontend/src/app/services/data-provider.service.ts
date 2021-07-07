@@ -4,6 +4,7 @@ import {map} from 'rxjs/operators';
 import _ from 'lodash';
 import {AuthService} from './auth.service';
 import {User} from '../model/user.model';
+import { environment } from '../../environments/environment';
 
 export enum ActionType {
   NEW ='NEW',
@@ -24,7 +25,7 @@ export class DataProviderService {
   private asAnArray: string[][] = [['hasDomain'], ['hasBranch'], ['hasLocation', 'hasDigitalPlace']];
 
   async findAll<T>(endpoint: string): Promise<T[]> {
-    return this.http.get<any>(`http://localhost:3000/${endpoint}`, {headers: this.headers, responseType: 'json'}).pipe(
+    return this.http.get<any>(`${environment.serverUrl}${endpoint}`, {headers: this.headers, responseType: 'json'}).pipe(
       map(v => v['ldp:contains'].map((w: any) => {
         console.log('id', w['id'])
         w = this.removePrefixes(w);
@@ -36,7 +37,7 @@ export class DataProviderService {
   }
 
   async findOne<T>(endpoint: string, id: string): Promise<T> {
-    return this.http.get<any>(`http://localhost:3000/${endpoint}/${id}`, {
+    return this.http.get<any>(`${environment.serverUrl}${endpoint}`, {
       headers: this.headers,
       responseType: 'json'
     }).pipe(
@@ -80,7 +81,7 @@ export class DataProviderService {
 
   async createReq<T>(endpoint: string, body: T, type: string, slug?:string): Promise<T> {
     const payload = Object.assign({}, body, {
-      '@context': 'http://localhost:3000/context.json',
+      '@context': `${environment.serverUrl}context.json`,
       '@type': 'pair:' + type
     })
     let httpHeaders: HttpHeaders = new HttpHeaders();
@@ -88,24 +89,24 @@ export class DataProviderService {
     if(slug)
       httpHeaders = httpHeaders.append('Slug', slug)
     console.log('BODY', body)
-    return this.http.post<any>(`http://localhost:3000/${endpoint}`, payload,{headers: httpHeaders}).pipe(
+    return this.http.post<any>(`${environment.serverUrl}${endpoint}`, payload,{headers: httpHeaders}).pipe(
     ).toPromise();
   }
 
   async deleteReq<T>(endpoint: string, id:string): Promise<T> {
-    return this.http.delete<any>(`http://localhost:3000/${endpoint}/${id}`).pipe(
+    return this.http.delete<any>(`${environment.serverUrl}${endpoint}/${id}`).pipe(
     ).toPromise();
   }
   private async updateReq<T>(endpoint: string, body: T, id: string, type: string, slug?:string): Promise<T> {
     const payload = Object.assign({}, body, {
-      '@context': 'http://localhost:3000/context.json',
+      '@context': `${environment.serverUrl}context.json`,
       '@type': 'pair:' + type
     })
     let httpHeaders: HttpHeaders = new HttpHeaders();
     if(slug)
       httpHeaders.set('Slug', slug)
 
-    return this.http.put<any>(`http://localhost:3000/${endpoint}/${id}`, payload, {headers: httpHeaders}).pipe(
+    return this.http.put<any>(`${environment.serverUrl}${endpoint}/${id}`, payload, {headers: httpHeaders}).pipe(
     ).toPromise();
   }
 
@@ -147,7 +148,7 @@ export class DataProviderService {
       return w
   }
   async postFile<T>(endpoint: string, obj: any): Promise<any> {
-    return this.http.post<any>(`http://localhost:3000/${endpoint}`, obj, {observe: 'response'}).pipe(
+    return this.http.post<any>(`${environment.serverUrl}${endpoint}`, obj, {observe: 'response'}).pipe(
     ).toPromise();
   }
 
