@@ -22,9 +22,13 @@
     </mat-form-field>
   </div>
   <h3>Image</h3>
+    <ng-container *ngIf="editedOrga?.documentedBy">
+    <img [src]="editedOrga?.documentedBy" alt="logo">
+    </ng-container>
   <div class="image-upload-container">
-    <input type="file" formControlName="pair:documentedBy" class="file-input"
+    <input type="file" class="file-input"
            (change)="onFileSelected($event)" #fileInput>
+    <input type="hidden" formControlName="pair:documentedBy">
     <div class="file-upload">
       {{fileName || "Aucun fichier selectionné."}}
       <button mat-mini-fab color="primary" type="button" class="upload-btn"
@@ -114,7 +118,7 @@
   </div>
   <div fxFlexFill>
     <h3 class="mat-label">Modalités d'accueil</h3>
-    <quill-editor [styles]="{height: '100px'}" formControlName="100lieux:accessRules"></quill-editor>
+    <quill-editor [styles]="{height: '100px'}" formControlName="100lieux:accessrules"></quill-editor>
   </div>
   <br>
   <div>

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {map} from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
 import _ from 'lodash';
 import {AuthService} from './auth.service';
-import {User} from '../model/user.model';
+import { environment } from '../../environments/environment';
 
 export enum ActionType {
   NEW ='NEW',
@@ -24,7 +24,7 @@ export class DataProviderService {
   private asAnArray: string[][] = [['hasDomain'], ['hasBranch'], ['hasLocation', 'hasDigitalPlace']];
 
   async findAll<T>(endpoint: string): Promise<T[]> {
-    return this.http.get<any>(`http://localhost:3000/${endpoint}`, {headers: this.headers, responseType: 'json'}).pipe(
+    return this.http.get<any>(`${environment.serverUrl}${endpoint}`, {headers: this.headers, responseType: 'json'}).pipe(
       map(v => v['ldp:contains'].map((w: any) => {
         console.log('id', w['id'])
         w = this.removePrefixes(w);
@@ -36,7 +36,7 @@ export class DataProviderService {
   }
 
   async findOne<T>(endpoint: string, id: string): Promise<T> {
-    return this.http.get<any>(`http://localhost:3000/${endpoint}/${id}`, {
+    return this.http.get<any>(`${environment.serverUrl}${endpoint}/${id}`, {
       headers: this.headers,
       responseType: 'json'
     }).pipe(
@@ -60,11 +60,12 @@ export class DataProviderService {
   async update<T extends object>(endpoint: string, body: T, id: string, type: string): Promise<T> {
     let existInPending = false
     if(this.authService.currentUserValue){
-      return this.updateReq(endpoint, body, id, type, id)
+      return this.updateReq(endpoint, body, type, id, id)
     }else{
       this.addFlag(body, ActionType.UPDATE);
-      return this.findOne(`pending${endpoint}`, id).then( res=>{return this.updateReq(`pending${endpoint}`, body, type, id)},
-                                                                  rej=>{return this.createReq(`pending${endpoint}`, body, type, id)});}
+      return this.findOne(`pending${endpoint}`, id).then(
+        fullfill=>{return this.updateReq(`pending${endpoint}`, body, type, id)},
+        reject=>{return this.createReq(`pending${endpoint}`, body, type, id)});}
   }
 
 
@@ -73,39 +74,41 @@ export class DataProviderService {
       return this.deleteReq(endpoint, id)
     }else{
       this.addFlag(body, ActionType.DELETE);
-      return this.createReq(`pending${endpoint}`, body, type, id)
+      return this.findOne(`pending${endpoint}`, id).then(
+        fullfill => this.updateReq(`pending${endpoint}`, body, type, id) ,
+          reject=> this.createReq(`pending${endpoint}`, body, type, id))
     }
   }
 
 
+
   async createReq<T>(endpoint: string, body: T, type: string, slug?:string): Promise<T> {
     const payload = Object.assign({}, body, {
-      '@context': 'http://localhost:3000/context.json',
+      '@context': `${environment.serverUrl}context.json`,
       '@type': 'pair:' + type
     })
     let httpHeaders: HttpHeaders = new HttpHeaders();
-    console.log('SLUG',slug)
     if(slug)
       httpHeaders = httpHeaders.append('Slug', slug)
     console.log('BODY', body)
-    return this.http.post<any>(`http://localhost:3000/${endpoint}`, payload,{headers: httpHeaders}).pipe(
+    return this.http.post<any>(`${environment.serverUrl}${endpoint}`, payload,{headers: httpHeaders}).pipe(
     ).toPromise();
   }
 
   async deleteReq<T>(endpoint: string, id:string): Promise<T> {
-    return this.http.delete<any>(`http://localhost:3000/${endpoint}/${id}`).pipe(
+    return this.http.delete<any>(`${environment.serverUrl}${endpoint}/${id}`).pipe(
     ).toPromise();
   }
-  private async updateReq<T>(endpoint: string, body: T, id: string, type: string, slug?:string): Promise<T> {
+  private async updateReq<T>(endpoint: string, body: T, type: string, id: string, slug?:string): Promise<T> {
     const payload = Object.assign({}, body, {
-      '@context': 'http://localhost:3000/context.json',
+      '@context': `${environment.serverUrl}context.json`,
       '@type': 'pair:' + type
     })
     let httpHeaders: HttpHeaders = new HttpHeaders();
     if(slug)
       httpHeaders.set('Slug', slug)
-
-    return this.http.put<any>(`http://localhost:3000/${endpoint}/${id}`, payload, {headers: httpHeaders}).pipe(
+      console.log(`${environment.serverUrl}${endpoint}/${id}`);
+    return this.http.put<any>(`${environment.serverUrl}${endpoint}/${id}`, payload, {headers: httpHeaders}).pipe(
     ).toPromise();
   }
 
@@ -139,16 +142,19 @@ export class DataProviderService {
   }
 
   private changeAsArray(w: any) {
-      const keys = Object.keys(w)
-      for (let prop of this.asAnArray){
-        const getObj = (_.get(w, prop.reduce((a,b) => a+'.'+b)))
-        _.set(w, prop.reduce((a,b) => a+'.'+b), [].concat(getObj))
-      }
-      return w
-  }
-  async postFile<T>(endpoint: string, obj: any): Promise<any> {
-    return this.http.post<any>(`http://localhost:3000/${endpoint}`, obj, {observe: 'response'}).pipe(
-    ).toPromise();
+    for (let prop of this.asAnArray){
+      const getObj = (_.get(w, prop.reduce((a,b) => a+'.'+b)))
+      _.set(w, prop.reduce((a,b) => a+'.'+b), [].concat(getObj))
+    }
+    return w
   }
 
+  async postFile<T>(endpoint: string, obj: any): Promise<any> {
+    return this.http.post<any>(`${environment.serverUrl}${endpoint}`, obj, {observe: 'response'}).pipe(
+      map( resp => {
+        console.log('location', resp.headers.get('Location'));
+        return resp.headers.get('Location');
+      }
+      )).toPromise();
+  }
 }

@@ -1,3 +1,9 @@
 mat-card{
   margin-bottom: 20px;
 }
+img{
+  max-height:120px;
+}
+:host {
+  flex:74%;
+}

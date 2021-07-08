@@ -15,7 +15,6 @@ module.exports = [
       'pair:hasLocation/pair:hasPostalAddress',
       'pair:hasLocation/pair:hasDigitalPlace',
       'pair:hasBranch',
-      'pair:documentedBy',
       'pair:hasDomain'
     ],
   },
@@ -27,7 +26,6 @@ module.exports = [
       'pair:hasLocation/pair:hasDigitalPlace',
       'pair:hasBranch',
       'pair:hasDomain',
-      'pair:documentedBy'
     ],
   },
   {

@@ -67,7 +67,6 @@ export class LeafletMapComponent implements OnInit{
       orgafiltered = new Set([...orgafiltered].filter( o =>  o.label.toLowerCase().search(filters['filterstr'][0].toLowerCase()) !== -1));
     }
 
-    console.log(orgafiltered)
     this.markers.clearLayers()
     orgafiltered.forEach(o => {
       const component = this.resolver.resolveComponentFactory(LeafletPopupComponent).create(this.injector);
