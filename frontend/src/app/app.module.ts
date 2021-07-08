@@ -42,6 +42,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { LoginBoxComponent } from './components/login-box/login-box.component';
 import { FormToolComponent } from './components/form-tool/form-tool.component';
 import { MainwrapperComponent } from './components/mainwrapper/mainwrapper.component';
+import { ListLieuFilterComponent } from './components/cartographie/list-lieu-filter/list-lieu-filter.component';
+import { ConfirmDialogComponent } from './components/ui/confirm-dialog/confirm-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 const routes = [
   {path: 'processlogin', component: ProcessloginComponent},
@@ -51,8 +54,8 @@ const routes = [
       {path: 'map', component: CartographieComponent,
         children: [
           {path: '', component: MapTiersLieuxComponent},
+          {path: 'list', component: ListLieuFilterComponent, data: {breadcrumb: 'Liste'}},
           {path: 'add', component: FormLieuComponent, data: {breadcrumb: 'Ajouter un lieu'}},
-          {path: 'list', component: ListLieuComponent, data: {breadcrumb: 'Liste'}},
           {path: 'edit/:id', component: FormLieuComponent, data: {breadcrumb: {alias: 'Lieu XXX'}}},
           {path: 'pending', component: PendingPlacesComponent, data: {breadcrumb: 'Valider'}},
           {path: ':id', component: DetailLieuComponent, data: {breadcrumb: {alias: 'Lieu XXX'}}}
@@ -110,7 +113,9 @@ const modules = {
     PendingPlacesComponent,
     LoginBoxComponent,
     FormToolComponent,
-    MainwrapperComponent
+    MainwrapperComponent,
+    ListLieuFilterComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -140,6 +145,7 @@ const modules = {
     MatChipsModule,
     MatExpansionModule,
     FormsModule,
+    MatDialogModule,
 
   ],
   providers: [],

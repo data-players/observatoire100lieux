@@ -17,6 +17,7 @@ import {BreadcrumbService} from 'xng-breadcrumb';
 export class FormLieuComponent implements OnInit {
   @ViewChild("fileInput") fileInput!: ElementRef;
   @ViewChild("formElem") formElem!: ElementRef;
+
   fileName: string=''
   formDataFile = new FormData();
   form!: FormGroup;
@@ -55,10 +56,10 @@ export class FormLieuComponent implements OnInit {
       'pair:description': [this.editedOrga.description, Validators.required],
       'pair:homepage': [this.editedOrga.homepage],
       '100lieux:timetable': [this.editedOrga.timetable],
-      '100lieux:accessRules':[this.editedOrga.accessRules],
+      '100lieux:accessrules':[this.editedOrga.accessrules],
       'pair:phone': [this.editedOrga.phone, Validators.required],
       'pair:email': [this.editedOrga.email, Validators.required],
-      'pair:documentedBy':this.fb.control([this.editedOrga?.documentedBy?.id], Validators.required),
+      'pair:documentedBy': [this.editedOrga?.documentedBy],
       'pair:hasBranch': this.fb.array(([] as FormControl[]).concat(...this.sectors.map(s =>(s.extendedBy.map(b => this.fb.control(this.hasBranchValueInOrga(b.id))))))),
       'pair:hasDomain': this.fb.array(([] as FormControl[]).concat(...this.domains.map(d => this.fb.control(this.hasDomainValueInOrga(d.id))))),
       'pair:hasLocation':
@@ -149,14 +150,10 @@ export class FormLieuComponent implements OnInit {
     if(this.domainsSelected.length === 0) this.form.get('pair:hasDomain')?.setErrors({required: true});
 
     if(this.form.valid){
-     /*if(this.fileName){
-        const response: {[key: string]: string} = await this.postPicture();
-        console.log(this.form.get('pair:documentedBy'))
-       console.log('BEFORE HERE', response.url);
-
-       (this.form.get('pair:documentedBy') as FormControl).setValue(response.url);
-        console.log('AFTER HERE')
-     }*/
+     if(this.fileName){
+       let response: { [p: string]: string } = await this.postPicture();
+       values['pair:documentedBy'] = response;
+     }
      if(this.editedOrga.id) {
        await this.dataService.update<Organization>('organizations', values, this.dataService.extractUrlHash(this.editedOrga.id), 'Organization')
      }else{
@@ -212,10 +209,12 @@ export class FormLieuComponent implements OnInit {
   }
   private async postPicture(): Promise<{[key: string]: string}> {
     const formData = new FormData();
-    formData.append("file", this.fileInput.nativeElement.files[0]);
-    console.log(this.fileInput.nativeElement.files[0])
+    const file:File =  this.fileInput.nativeElement.files[0];
+    formData.append("file", file);
+    console.log(file);
 
-    return await this.dataService.postFile('files', formData)
+
+    return this.dataService.postFile('files', formData)
   }
 }
 

@@ -13,7 +13,6 @@ export class ProcessloginComponent implements OnInit {
 
   ngOnInit(): void {
     const url = new URL(window.location.toString());
-    console.log(url)
     if (url.searchParams.has('token')) {
       const token = url.searchParams.get('token');
       if(token)

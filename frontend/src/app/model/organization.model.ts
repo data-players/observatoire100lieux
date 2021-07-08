@@ -12,10 +12,10 @@ export class Organization {
      public comment: string[] = [],
      public hasBranch: Branch[] = [],
      public hasDomain: Domain[] = [],
-     public documentedBy: Document= new Document(),
+     public documentedBy: string = '',
      public phone: string = '',
      public email: string = '',
-     public accessRules: string = '',
+     public accessrules: string = '',
      public timetable: string = '',
      public hasLocation: PhysicalPlace = new PhysicalPlace()
     ){}

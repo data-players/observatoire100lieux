@@ -15,8 +15,8 @@
       <div class="new">
         <ul>
          <li>Label: {{o.label}}</li>
-         <li>Conditions d'accés: {{o.accessRules}}</li>
-         <li>Horaires: {{o.accessRules}}</li>
+         <li>Conditions d'accés: {{o.accessrules}}</li>
+         <li>Horaires: {{o.timetable}}</li>
          <li>Description: {{o.description}}</li>
          <li>Email: {{o.email}}</li>
          <li>Site: {{o.homepage}}</li>
@@ -48,11 +48,10 @@
         </ul>
         </div>
     <mat-action-row>
-
       <button mat-flat-button color="primary" (click)="validateElement(o)" *ngIf="getAction(o)==='new'">Ajouter en base</button>
       <button mat-flat-button color="accent" (click)="validateElement(o)" *ngIf="getAction(o)==='edit'">Modifier en base</button>
       <button mat-flat-button color="warn" (click)="validateElement(o)" *ngIf="getAction(o)==='delete'">Supprimer</button>
-      <button mat-flat-button color="warn" (click)="cancelElement(o)" >Cancel</button>
+      <button mat-flat-button color="warn" (click)="cancelElement(o)" >Annuler la demande</button>
     </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>

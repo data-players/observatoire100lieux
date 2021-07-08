@@ -14,9 +14,6 @@ export class MapService {
   private $mapFilter: EventEmitter<{[key:string]: string[]}> = new EventEmitter<{[key:string]: string[]}>()
 
   constructor() {
-    const subscription = this.$mapAction.subscribe(v => {
-      console.log('SUBSCRIPTION', v)
-    });
   }
 
   action(action: MapAction): void {

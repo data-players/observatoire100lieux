@@ -1,11 +1,26 @@
 <h1>Lieu Nourriciers</h1>
-<mat-card *ngFor="let o of organizations">
-  <mat-card-title>{{o.label}}</mat-card-title>
-  <mat-card-content>
-    <p [innerHTML]="o.description| slice:0:250"></p>
-  </mat-card-content>
-  <mat-card-actions>
-  </mat-card-actions>
-</mat-card>
+<div *ngIf="orgafiltered.size === 0">Il n'y a aucun résultat</div>
+<div *ngFor="let o of orgafiltered">
+  <div fxLayout="row" fxLayoutGap="20px">
+    <img [src]="o?.documentedBy ? o?.documentedBy : 'assets/100lieux_tiny_square_logo.png'" alt="logo">
+    <div>
+    <div>
+      <div>{{o.label}}</div>
+    </div>
+    <mat-chip-list aria-label="Color selection">
+      <mat-chip *ngFor="let chip of o.hasBranch" selected color="primary">
+        {{chip.label}}
+      </mat-chip>
+      <mat-chip *ngFor="let chip of o.hasDomain" selected color="accent">
+        {{chip.label}}
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+  </div>
+  <div>
+    <button mat-raised-button color="link" [routerLink]="['/map',this.dataProvider.extractUrlHash(o.id)]">Détail</button>
+  </div>
+</div>
+
 
 
