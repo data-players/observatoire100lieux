@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
+import { environment } from '../../../environments/environment';
+
 
 @Component({
   selector: 'app-login-box',
@@ -20,9 +22,9 @@ export class LoginBoxComponent implements OnInit {
     return !!this.authService.currentUserValue
   }
 
-  redirect(url: string) {
+  redirectLogin() {
     this.currentUrl = this.router.url
-    window.location.href = `http://localhost:3000/auth/?redirectUrl=${encodeURIComponent(url+'?route='+this.currentUrl)}`;
+    window.location.href = `${environment.serverUrl}auth/?redirectUrl=${encodeURIComponent(environment.serverUrl + '?route='+ this.currentUrl)}`;
   }
 
   logout() {
