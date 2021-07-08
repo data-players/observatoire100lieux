@@ -56,7 +56,7 @@ services:
        - "traefik.enable=true"
        - "traefik.http.routers.middleware.rule=Host(`data.100lieuxnourriciers.fr`)"
        - "traefik.http.routers.middleware.entrypoints=websecure"
-      -  "traefik.http.routers.middleware.tls.certresolver=myresolver"
+       - "traefik.http.routers.middleware.tls.certresolver=myresolver"
 
   frontend:
     build: frontend
