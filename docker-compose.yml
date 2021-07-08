@@ -65,9 +65,10 @@ services:
     depends_on:
       - middleware
     ports:
-      - 80:80
-  # expose:
-      # - 80
+      - 4200:80
+    expose:
+      - 4200
+>>>>>>> 3ecc043cc8f5e3593c04c00b22323f131c69c38f
     volumes:
             - ./frontend:/usr/src/app/frontend
             - /usr/src/app/frontend/node_modules
