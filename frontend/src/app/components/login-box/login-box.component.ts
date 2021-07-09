@@ -24,7 +24,8 @@ export class LoginBoxComponent implements OnInit {
 
   redirectLogin() {
     this.currentUrl = this.router.url
-    window.location.href = `${environment.serverUrl}auth/?redirectUrl=${encodeURIComponent(environment.serverUrl.substring(0,environment.serverUrl.length-1) + '?route='+ this.currentUrl)}`;
+    console.log('URL', `${environment.serverUrl}auth/?redirectUrl=${encodeURIComponent(environment.serverUrl.substring(0,environment.serverUrl.length-1) + '&route='+ this.currentUrl)}`);
+    window.location.href = `${environment.serverUrl}auth/?redirectUrl=${encodeURIComponent(environment.serverUrl.substring(0,environment.serverUrl.length-1) + '&route='+ this.currentUrl)}`;
   }
 
   logout() {
