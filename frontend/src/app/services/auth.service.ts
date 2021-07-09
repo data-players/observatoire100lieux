@@ -32,14 +32,12 @@ export class AuthService {
       u.assignData(jsonPayload as User);
       if(environment.adminmail.includes(u.email)){
         localStorage.setItem('currentUser', JSON.stringify(u));
-        console.log('USER->', u)
         this.currentUserSubject.next(u);
       }else{
         this.logout()
       }
   }
   logout() {
-    console.log('LOGOUT')
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
   }
