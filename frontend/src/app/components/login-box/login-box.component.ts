@@ -15,8 +15,7 @@ export class LoginBoxComponent implements OnInit {
 
   constructor(private router: Router, private authService: AuthService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public isLogged(): boolean{
     return !!this.authService.currentUserValue
@@ -25,8 +24,8 @@ export class LoginBoxComponent implements OnInit {
   redirectLogin() {
     this.currentUrl = this.router.url
 
-      console.log(`${environment.serverUrl}auth/?redirectUrl=${encodeURIComponent(environment.frontUrl + 'processLogin?route='+ this.currentUrl)}`);
-      window.location.href = `${environment.serverUrl}auth/?redirectUrl=${encodeURIComponent(environment.frontUrl + 'processLogin?route='+ this.currentUrl)}`;
+      console.log(`${environment.serverUrl}auth/?redirectUrl=${encodeURIComponent(environment.frontUrl + 'processlogin?route='+ this.currentUrl)}`);
+      window.location.href = `${environment.serverUrl}auth/?redirectUrl=${encodeURIComponent(environment.frontUrl + 'processlogin?route='+ this.currentUrl)}`;
   }
 
   logout() {
