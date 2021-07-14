@@ -19,10 +19,20 @@ module.exports = {
         },
         templateFolder: path.join(__dirname, "../templates"),
     },
-    dependencies: ['ldp'],
+    dependencies: ['ldp', 'api'],
+    async started() {
+        await this.broker.call('api.addRoute', {
+            route: {
+                bodyParsers: { json: true },
+                aliases: {
+                    [`POST _mailer/contact-user`]: 'mailer.contactUser'
+                }
+            }
+        });
+    },
     actions: {
         async contactUser(ctx) {
-            const { name, email, title, content } = ctx.params;
+            const { userUri, name, email, title, content, emailPredicate } = ctx.params;
 
             await ctx.call('mailer.send', {
                 to: CONFIG.SEMAPPS_FROM_EMAIL,
@@ -38,15 +48,5 @@ module.exports = {
                 }
             });
         },
-        getApiRoutes() {
-            return [
-                {
-                    bodyParsers: { json: true },
-                    aliases: {
-                        [`POST _mailer/contact-user`]: 'mailer.contactUser',
-                    }
-                }
-            ];
-        }
     }
 };
