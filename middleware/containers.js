@@ -15,7 +15,8 @@ module.exports = [
       'pair:hasLocation/pair:hasPostalAddress',
       'pair:hasLocation/pair:hasDigitalPlace',
       'pair:hasBranch',
-      'pair:hasDomain'
+      'pair:hasDomain',
+      'pair:hasTopic'
     ],
   },
   {
@@ -27,6 +28,46 @@ module.exports = [
       'pair:hasBranch',
       'pair:hasDomain',
     ],
+  },
+  {
+    path: '/tools',
+    acceptedTypes: ['pair:Resource'],
+    dereference: [
+      'pair:hasType',
+      'pair:hasBranch',
+      'pair:hasDomain',
+      'pair:hasTopic',
+      'pair:offeredBy',
+      'pair:producedBy'
+    ],
+  },
+  {
+    path: '/pendingtools',
+    acceptedTypes: ['pair:Resource'],
+    dereference: [
+      'pair:hasType',
+      'pair:hasBranch',
+      'pair:hasDomain',
+      'pair:hasTopic',
+      'pair:offeredBy'
+    ],
+  },
+  {
+    path: '/themes',
+    acceptedTypes: ['pair:Theme'],
+    dereference: [
+      'pair:hasType',
+      'pair:hasBranch',
+      'pair:hasDomain',
+      'pair:topicOf',
+    ],
+  },
+  {
+    path: '/posters',
+    acceptedTypes: ['pair:Resources'],
+    dereference: [
+        'pair:hasTopic'
+    ]
   },
   {
     path: '/files'

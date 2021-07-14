@@ -67,6 +67,12 @@
     "pair:hasDomain": {
       "@type": "@id"
     },
+    "pair:hasTopic": {
+      "@type": "@id"
+    },
+    "pair:topicOf": {
+      "@type": "@id"
+    },
     "pair:hasInterest": {
       "@type": "@id"
     },

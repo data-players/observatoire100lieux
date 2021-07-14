@@ -39612,3 +39612,11 @@ ServiceNotFoundError: Service 'sentry.sendError' is not found.
   data: { action: 'sentry.sendError' },
   retryable: true
 }
+[2021-07-09T05:02:05.526Z] WARN  af0fb97f5223-19/CACHER: The 'redlock' package is missing. If you want to enable cache lock, please install it with 'npm install redlock --save' command.
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+Fri, 09 Jul 2021 05:02:11 GMT express-session deprecated undefined resave option; provide resave option at node_modules/@semapps/auth/Connector.js:134:7
+Fri, 09 Jul 2021 05:02:11 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at node_modules/@semapps/auth/Connector.js:134:7
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGINT listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGTERM listeners added to [process]. Use emitter.setMaxListeners() to increase limit
