@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@semapps/auth": "0.3.9",
-    "@semapps/backup": "0.3.9",
+    "@semapps/backup": "^0.3.10",
     "@semapps/fuseki-admin": "0.3.9",
     "@semapps/inference": "0.3.9",
     "@semapps/jsonld": "0.3.9",
