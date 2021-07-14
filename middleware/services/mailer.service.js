@@ -22,19 +22,10 @@ module.exports = {
     dependencies: ['ldp'],
     actions: {
         async contactUser(ctx) {
-            const { userUri, name, email, title, content, emailPredicate } = ctx.params;
-
-            if( !userUri || !emailPredicate ) {
-                throw new Error('One or more parameters are missing');
-            }
-
-            const user = await ctx.call('ldp.resource.get', {
-                resourceUri: userUri,
-                accept: MIME_TYPES.JSON
-            });
+            const { name, email, title, content } = ctx.params;
 
             await ctx.call('mailer.send', {
-                to: user[emailPredicate],
+                to: CONFIG.SEMAPPS_FROM_EMAIL,
                 replyTo: `${name} <${email}>`,
                 subject: title,
                 template: 'contact-user',

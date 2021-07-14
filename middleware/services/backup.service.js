@@ -1,4 +1,4 @@
-const { BackupService } = require('@semapps/backup');
+const BackupService = require('@semapps/backup');
 const path = require('path');
 const CONFIG = require('../config');
 
