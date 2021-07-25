@@ -1,0 +1,15 @@
+@import 'node_modules/@angular/material/theming';
+@import "src/custom-theme";
+img{
+  height:auto;width:170px;
+  margin-right:40px;
+}
+
+:host > div {
+  border-bottom: 3px solid  map-get($centlieux-primary, 500);
+  margin-bottom: 9px;
+  cursor:pointer;
+}
+:host > h2{
+  margin-left: 210px;
+}

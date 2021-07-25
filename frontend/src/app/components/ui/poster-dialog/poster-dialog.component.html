@@ -1,0 +1,33 @@
+<div>
+
+</div>
+<div mat-dialog-content fxLayout="row" fxLayoutGap="20px">
+ <div>
+  <img [src]="data.poster['pair:documentedBy']" alt="">
+ </div>
+ <div fxFlex="40%" >
+  <h4>Titre de l'affiche</h4>
+  <p>{{data.poster['pair:label']}}</p>
+  <small>{{data.poster['pair:hasDomain']['pair:label']}}</small>
+
+  <div *ngIf="data.poster['pair:hasTopic']">
+    <mat-chip-list aria-label="tags">
+      <mat-chip class="small-chip" *ngFor="let chip of data.poster['pair:hasTopic']">
+        {{chip['pair:label']}}
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+  <mat-chip-list aria-label="Catégories">
+    <mat-chip selected color="primary">Type d'outil: {{data.poster['100lieux:aspect']}}</mat-chip>
+    <mat-chip selected color="primary">Public visé: {{data.poster['100lieux:audience']}}</mat-chip>
+    <mat-chip selected color="primary">Format: {{data.poster['100lieux:format']}}</mat-chip>
+    <mat-chip selected color="primary">Coût: {{data.poster['100lieux:cost']}}</mat-chip>
+  </mat-chip-list>
+   <br>
+   <mat-divider></mat-divider>
+  <div mat-dialog-actions>
+    <button mat-flat-button color="accent" (click)="download()">Télécharger le poster avec son guide</button>
+    <button mat-flat-button [mat-dialog-close]>Fermer cette fenêtre</button>
+  </div>
+ </div>
+</div>

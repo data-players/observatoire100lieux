@@ -1,0 +1,17 @@
+<h2>Gestion des tags</h2>
+<mat-chip-list>
+  <mat-chip *ngFor="let tag of tags " (click)="edit(tag)">{{tag['label']}}</mat-chip>
+</mat-chip-list>
+
+<div *ngIf="form" >
+  <div *ngIf="form.controls['@id'].value">Vous êtes en train de modifier un tag vous pouvez <a (click)="delete()">supprimer</a> ou <a (click)="form.reset()">annuler</a></div>
+  <form [formGroup]="form">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>{{'Label' |titlecase}} </mat-label>
+      <input matInput formControlName="pair:label" #labelInput>
+    </mat-form-field>
+    <input formControlName="@id" type="hidden">
+    <br>
+    <button mat-flat-button color="primary" (click)="submit()">Envoyer</button>
+  </form>
+</div>

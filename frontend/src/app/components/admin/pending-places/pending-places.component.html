@@ -1,6 +1,8 @@
 <h1>Elements en attente de modération</h1>
 <div *ngIf="!loaded">Merci de patienter</div>
-<h3 *ngIf="loaded && organizations.length === 0">Aucun élément à modérer</h3>
+
+<h2>Lieu en attente de validation:</h2>
+<h3 *ngIf="loaded && organizations.length === 0">Aucun lieu à modérer</h3>
 <mat-accordion class="example-headers-align">
   <mat-expansion-panel [expanded]="step === i" (opened)="setStep(0)" hideToggle *ngFor="let o of organizations; let i = index">
     <mat-expansion-panel-header>
@@ -33,25 +35,78 @@
           </li>
           <li> Adresse
             <ul>
-              <li>{{o.hasLocation.hasPostalAddress.addressStreet}}</li>
-              <li>{{o.hasLocation.hasPostalAddress.locality}}</li>
-              <li>{{o.hasLocation.hasPostalAddress.addressZipcode}}</li>
-              <li>{{o.hasLocation.hasPostalAddress.addressCountry}}</li>
+              <li>{{o.hasLocation?.hasPostalAddress?.addressStreet}}</li>
+              <li>{{o.hasLocation?.hasPostalAddress?.locality}}</li>
+              <li>{{o.hasLocation?.hasPostalAddress?.addressZipcode}}</li>
+              <li>{{o.hasLocation?.hasPostalAddress?.addressCountry}}</li>
             </ul>
           </li>
-          <li *ngIf="o.hasLocation.hasDigitalPlace && o.hasLocation.hasDigitalPlace[0].label"> Reseaux sociaux
-            <ul *ngFor="let d of o.hasLocation.hasDigitalPlace">
-              <li>{{d.label}}</li>
-              <li>{{d.page}}</li>
+          <li *ngIf="o.socialLink"> Reseaux sociaux
+            <ul *ngFor="let rs of o.socialLink">
+              <li *ngIf="rs">{{rs}}</li>
             </ul>
           </li>
         </ul>
         </div>
     <mat-action-row>
-      <button mat-flat-button color="primary" (click)="validateElement(o)" *ngIf="getAction(o)==='new'">Ajouter en base</button>
-      <button mat-flat-button color="accent" (click)="validateElement(o)" *ngIf="getAction(o)==='edit'">Modifier en base</button>
-      <button mat-flat-button color="warn" (click)="validateElement(o)" *ngIf="getAction(o)==='delete'">Supprimer</button>
-      <button mat-flat-button color="warn" (click)="cancelElement(o)" >Annuler la demande</button>
+      <button mat-flat-button (click)="cancelOrganisation(o)" >Annuler la demande</button>
+      <button mat-flat-button color="primary" (click)="validateOrganization(o)" *ngIf="getAction(o)==='new'">Ajouter en base</button>
+      <button mat-flat-button color="accent" (click)="validateOrganization(o)" *ngIf="getAction(o)==='edit'">Modifier en base</button>
+      <button mat-flat-button color="warn" (click)="validateOrganization(o)" *ngIf="getAction(o)==='delete'">Supprimer</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+
+
+
+
+<h2>Outils en attente de validation:</h2>
+<h3 *ngIf="loaded && tools.length === 0">Aucun outil à modérer</h3>
+
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel [expanded]="step === i" (opened)="setStep(0)" hideToggle *ngFor="let t of tools; let i = index">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{t['pair:label']}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Cliquez pour dérouler
+        <mat-icon [color]="getColor(t)">{{setActionIcon(t)}}</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div>
+      <div>
+        <div fxLayout="row">
+          <h3>{{t['pair:label']}}</h3>
+          <p>[{{t['pair:hasDomain']['pair:label']}}]</p>
+        </div>
+        <div *ngIf="t['pair:hasTopic']">
+          <mat-chip-list aria-label="tags">
+            <span>Tags</span>
+
+            <mat-chip class="small-chip" *ngFor="let chip of t['pair:topicOf']">
+              {{chip.label}}
+            </mat-chip>
+          </mat-chip-list>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="desc" [innerHTML]="t['pair:description'] | nocarriage | slice:0:300">...</div>
+      <div>
+        <mat-chip-list aria-label="Catégories">
+          <mat-chip selected color="primary">Type d'outil: {{t['100lieux:aspect']}}</mat-chip>
+          <mat-chip selected color="primary">Public visé: {{t['100lieux:audience']}}</mat-chip>
+          <mat-chip selected color="primary">Format: {{t['100lieux:format']}}</mat-chip>
+          <mat-chip selected color="primary">Coût: {{t['100lieux:cost']}}</mat-chip>
+        </mat-chip-list>
+      </div>
+    </div>
+    <mat-action-row>
+      <button mat-flat-button (click)="cancelTool(t)" >Annuler la demande</button>
+      <button mat-flat-button color="primary" (click)="validateTool(t)" *ngIf="getAction(t)==='new'">Ajouter en base</button>
+      <button mat-flat-button color="primary" (click)="validateTool(t)" *ngIf="getAction(t)==='edit'">Modifier en base</button>
+      <button mat-flat-button color="warn" (click)="validateTool(t)" *ngIf="getAction(t)==='delete'">Supprimer</button>
     </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>

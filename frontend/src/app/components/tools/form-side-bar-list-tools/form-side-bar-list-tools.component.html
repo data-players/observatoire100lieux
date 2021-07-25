@@ -1,0 +1,50 @@
+<div>
+  <mat-form-field appearance="fill" class="fullsize">
+    <input matInput type="text" [formControl]="filterForm">
+    <div mat-icon-button matPrefix>
+      <mat-icon>search</mat-icon>
+    </div>
+  </mat-form-field>
+  <ng-container >
+    <mat-form-field appearance="outline">
+      <mat-label>Thèmatique</mat-label>
+      <mat-select (selectionChange)="setFilter($event.value, FilterType.THEME)"  [(ngModel)]="selectinput">
+        <mat-option *ngFor="let theme of themeGroup" [value]="theme">
+          {{theme}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </ng-container>
+  <mat-form-field appearance="outline" >
+    <mat-label>Forme ou type d'outil</mat-label>
+    <mat-select (selectionChange)="setFilter($event.value, FilterType.TOOL)"   [(ngModel)]="selectinput">>
+      <mat-option *ngFor="let tt of toolType" [value]="tt">
+        {{tt}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Audience</mat-label>
+    <mat-select (selectionChange)="setFilter($event.value, FilterType.POPULATION)"  [(ngModel)]="selectinput">
+      <mat-option *ngFor="let audience of populationTarget" [value]="audience" >
+        {{audience}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Format</mat-label>
+    <mat-select (selectionChange)="setFilter($event.value, FilterType.FORMAT)"  [(ngModel)]="selectinput">
+      <mat-option *ngFor="let forma of format" [value]="forma">
+        {{forma}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Payant ou gratuit</mat-label>
+    <mat-select (selectionChange)="setFilter($event.value, FilterType.COST)"  [(ngModel)]="selectinput">
+      <mat-option *ngFor="let c of cost" [value]="c">
+        {{c}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

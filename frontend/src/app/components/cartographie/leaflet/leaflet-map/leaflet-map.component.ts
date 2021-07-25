@@ -7,7 +7,7 @@ import {
   OnInit
 } from '@angular/core';
 //import * as L from 'leaflet';
-import {MapAction, MapService} from '../../map.service.';
+import {MapAction, MapService} from '../../../../services/map.service.';
 declare const L: any;
 import 'leaflet.locatecontrol/src/L.Control.Locate';
 import "leaflet.markercluster";
@@ -18,6 +18,7 @@ import {Organization} from '../../../../model/organization.model';
 import {LeafletPopupComponent} from '../leaflet-popup/leaflet-popup.component';
 import {debounce} from 'rxjs/operators';
 import {timer} from 'rxjs';
+import {UiService} from '../../../ui/ui.service';
 
 @Component({
   selector: 'app-leaflet-map',
@@ -31,9 +32,10 @@ export class LeafletMapComponent implements OnInit{
   centlieux = '';
   private centlieuxmap: any;
 
-  constructor(private mapService: MapService, private dataProvider: DataProviderService, private injector: Injector, private resolver: ComponentFactoryResolver) { }
+  constructor(private mapService: MapService, private dataProvider: DataProviderService, private injector: Injector, private resolver: ComponentFactoryResolver, private uiService: UiService) { }
 
   async ngOnInit(): Promise<void> {
+    this.uiService.showSpinner()
     this.mapService.mapAction.subscribe(p => {
       if (p == MapAction.LOAD) {
         this.dataProvider.findAll<Organization>('organizations').then(o => {
@@ -42,6 +44,7 @@ export class LeafletMapComponent implements OnInit{
             this.createMap();
           }
           this.displayMarkers();
+          this.uiService.stopSpinner()
         })
       }
     });
@@ -68,7 +71,7 @@ export class LeafletMapComponent implements OnInit{
     }
 
     this.markers.clearLayers()
-    orgafiltered.forEach(o => {
+      orgafiltered.forEach(o => {
       const component = this.resolver.resolveComponentFactory(LeafletPopupComponent).create(this.injector);
       component.instance.organization = o;
       component.changeDetectorRef.detectChanges();

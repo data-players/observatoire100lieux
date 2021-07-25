@@ -1,23 +1,23 @@
 <mat-card *ngIf="form">
-  <mat-card-title>Ajouter un lieu</mat-card-title>
+  <mat-card-title>{{editedOrga.id ? 'Editer' : 'Ajouter'}} un lieu</mat-card-title>
 
-<form class="example-form" [formGroup]="form" (ngSubmit)="submit()" *ngIf="form" #formElem>
-  <h3>Information générales:</h3>
+<form class="example-form" [formGroup]="form" (ngSubmit)="confirmSuppr()" *ngIf="form" #formElem>
+  <h3>Informations générales:</h3>
   <div fxLayout="row" fxLayoutAlign="space-between">
     <mat-form-field appearance="outline">
-      <mat-label>Nom de l'organisation</mat-label>
+      <mat-label>Nom de l'organisation *</mat-label>
       <input matInput formControlName="pair:label">
     </mat-form-field>
     <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>{{'homepage' |titlecase}} </mat-label>
+      <mat-label>{{'Site internet' |titlecase}} </mat-label>
       <input matInput formControlName="pair:homepage">
     </mat-form-field>
     <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>{{'Numéro de téléphone' |titlecase}} </mat-label>
+      <mat-label>{{'Numéro de téléphone *' |titlecase}} </mat-label>
       <input matInput formControlName="pair:phone">
     </mat-form-field>
     <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>{{'email' |titlecase}} </mat-label>
+      <mat-label>{{'Adresse Email *' |titlecase}} </mat-label>
       <input matInput formControlName="pair:email">
     </mat-form-field>
   </div>
@@ -41,50 +41,47 @@
   <ng-container formGroupName="pair:hasLocation">
     <ng-container formGroupName="pair:hasPostalAddress">
       <div>
-        <mat-form-field class="full-width" appearance="outline">
-          <mat-label>{{'Numéro et nom de rue' |titlecase}} </mat-label>
+        <mat-form-field class="input-full-width" appearance="outline">
+          <mat-label>{{'Numéro et nom de rue *' |titlecase}} </mat-label>
           <input matInput formControlName="pair:addressStreet">
           <mat-error *ngIf="invalidAddress && submitted"></mat-error>
         </mat-form-field>
       </div>
       <input type="hidden" formControlName="pair:addressCountry">
       <mat-form-field class="" appearance="outline">
-        <mat-label>{{'Code Postal' |titlecase}} </mat-label>
+        <mat-label>{{'Code Postal *' |titlecase}} </mat-label>
         <input matInput formControlName="pair:addressZipcode">
         <mat-error *ngIf="invalidAddress && submitted">Il semblerait qu'il y ait un probleme avec votre adresse.</mat-error>
       </mat-form-field>
       <mat-form-field class="" appearance="outline">
-        <mat-label>{{'Ville' |titlecase}} </mat-label>
+        <mat-label>{{'Ville *' |titlecase}} </mat-label>
         <input matInput formControlName="pair:locality">
         <mat-error *ngIf="invalidAddress && submitted"></mat-error>
       </mat-form-field>
+    </ng-container>
     </ng-container>
     <h3>Social Networks:
       <button mat-icon-button type="button">
         <mat-icon color="primary" (click)="addSocialNetwork()">add_circle_outline</mat-icon>
       </button>
     </h3>
-    <div *ngIf="displayFirstSocialMedia && digitalPlaces">
-    <ng-container formArrayName="pair:hasDigitalPlace">
-      <ng-container class="example-full-width" *ngFor="let o of digitalPlaces.controls; let i = index" [formGroupName]="i">
+    <div *ngIf="socialLink">
+    <ng-container formArrayName="100lieux:socialLink">
+      <ng-container class="example-full-width" *ngFor="let o of socialLink.controls; let i = index">
         <div>
         <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>{{'social network name' |titlecase}} </mat-label>
-          <input matInput formControlName="pair:label">
+          <mat-label>{{'URL reseau social' |titlecase}} </mat-label>
+          <input matInput [formControlName]="i">
         </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>{{'URL' |titlecase}} </mat-label>
-          <input matInput formControlName="pair:page">
-        </mat-form-field>
+        <mat-icon class="cursor" (click)="removeSocialFormItem(i)">clear</mat-icon>
         </div>
       </ng-container>
     </ng-container>
     </div>
-  </ng-container>
   <ng-container formArrayName="pair:hasBranch">
     <mat-card>
         <mat-card-title>
-          <mat-icon>restaurant</mat-icon>Activités Nouricières:
+          <mat-icon>restaurant</mat-icon>Activités Nouricières *:
           <mat-error *ngIf="branchesSelected.length === 0 && submitted">Veuillez selectioner au moins une activité</mat-error>
         </mat-card-title>
         <mat-card-content>
@@ -100,7 +97,7 @@
   <ng-container formArrayName="pair:hasDomain">
     <mat-card>
         <mat-card-title>
-          <mat-icon>home</mat-icon>Type de structure:
+          <mat-icon>home</mat-icon>Type de structure *:
           <mat-error *ngIf="domainsSelected.length === 0 && submitted">Veuillez selectioner au moins un domaine</mat-error>
         </mat-card-title>
       <mat-card-content>
@@ -122,7 +119,7 @@
   </div>
   <br>
   <div>
-    <button type="submit" mat-flat-button color="primary">Ajouter un lieu</button>
+    <button type="submit" mat-flat-button color="primary">{{editedOrga.id ? 'Editer' : 'Ajouter'}} un lieu</button>
   </div>
 </form>
 </mat-card>
