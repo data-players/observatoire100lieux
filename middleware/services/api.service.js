@@ -6,7 +6,7 @@ module.exports = {
   mixins: [ApiGatewayService],
   settings: {
     server: true,
-    port: CONFIG.PORT,
+    port: 3000,
     cors: {
       origin: '*',
       methods: ['GET', 'PUT', 'PATCH', 'POST', 'DELETE', 'HEAD', 'OPTIONS'],
