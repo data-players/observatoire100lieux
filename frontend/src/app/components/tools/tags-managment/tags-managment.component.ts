@@ -41,11 +41,12 @@ export class TagsManagmentComponent implements OnInit {
   async delete(): Promise<void> {
     const dialogRef= this.dialog.open(ConfirmDialogComponent, {
       data: {
-        title:  `Vous êtes sur le point de supprimer le tag ${this.editedTag['label']}`,
+        type: 'warn',
+        title: `Vous êtes sur le point de supprimer le tag ${this.editedTag['label']}`,
       }
     })
     dialogRef.afterClosed().subscribe(result => {
-      if(result === 'delete'){
+      if(result === 'validate'){
         dialogRef.close();
         this.dataService.deleteReq('themes', this.dataService.extractUrlHash(this.editedTag['@id'])).then( v =>
            this.dataService.findAll<any>('themes').then( tags => this.tags = tags)
