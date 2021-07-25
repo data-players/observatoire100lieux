@@ -39,6 +39,7 @@ export class DetailToolComponent implements OnInit {
 
   async deleteTool() {
     if(this.authService.currentUserValue){
+      this.uiService.showSpinner()
       const dialogRef= this.dialog.open(ConfirmDialogComponent, {
         data: {
           title:  `Vous êtes sur le point de supprimer défnivement ${this.tool["pair:label"]}`,
@@ -47,8 +48,10 @@ export class DetailToolComponent implements OnInit {
       dialogRef.afterClosed().subscribe(result => {
         if(result === 'delete'){
           dialogRef.close();
-          this.dataprovider.delete('tools', this.tool, this.dataprovider.extractUrlHash(this.tool["@id"]), 'Resource').then( v =>
-            this.router.navigateByUrl('/tools')
+          this.dataprovider.delete('tools', this.tool, this.dataprovider.extractUrlHash(this.tool["@id"]), 'Resource').then( v => {
+            this.uiService.stopSpinner();
+            this.router.navigateByUrl('/tools');
+          }
           );
         }
       });
