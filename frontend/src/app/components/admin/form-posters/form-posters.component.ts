@@ -70,7 +70,7 @@ export class FormPostersComponent implements OnInit {
       this.allTagsSelect = this._filterTag(value);
     })
 
-    if (this?.editedPoster) {
+    if (this?.editedPoster && Array.isArray(this.editedPoster['pair:hasTopic'])) {
       this.allTags = allTags.filter(n => !this.editedPoster['pair:hasTopic'].includes(n));
       this.selectedTags = this.editedPoster['pair:hasTopic'];
     }else{
