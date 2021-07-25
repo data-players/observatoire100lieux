@@ -10,7 +10,8 @@ module.exports = {
     cors: {
       origin: '*',
       methods: ['GET', 'PUT', 'PATCH', 'POST', 'DELETE', 'HEAD', 'OPTIONS'],
-      exposedHeaders: '*'
+      exposedHeaders: '*',
+      allowedHeaders: "*"
     }
   },
   methods: {
