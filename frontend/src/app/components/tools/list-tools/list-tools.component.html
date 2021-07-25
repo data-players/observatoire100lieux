@@ -1,8 +1,9 @@
-<div *ngIf="tools.length !== 0">
+<div>
   <div fxLayout="row">
     <h1>Liste des outils pédagogiques</h1>
     <button mat-flat-button [routerLink]="['/tools/add']">Ajouter un outil</button>
   </div>
+  <ng-container *ngIf="tools.length !== 0">
   <mat-chip-list *ngIf="filters && filters[1]">
     <mat-chip *ngFor="let c of filters[FilterType.COST]" (click)="removeFilter(c, FilterType.COST)">{{c}} <mat-icon matChipRemove (click)="removeFilter(c, FilterType.COST)">cancel</mat-icon></mat-chip>
     <mat-chip *ngFor="let c of filters[FilterType.THEME]" (click)="removeFilter(c, FilterType.THEME)">{{c}}<mat-icon matChipRemove (click)="removeFilter(c, FilterType.COST)">cancel</mat-icon></mat-chip>
@@ -64,4 +65,5 @@
     [pageSizeOptions]="[pageSize]"
     [pageIndex]="pageIndex">
   </mat-paginator>
+  </ng-container>
 </div>
