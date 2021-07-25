@@ -1,6 +1,6 @@
 import {Component, OnInit, Output, ViewChild} from '@angular/core';
 import {AbstractControl, FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
-import {MapAction, MapService} from '../map.service.';
+import {MapAction, MapService} from '../../../services/map.service.';
 import {MatCheckbox} from '@angular/material/checkbox';
 import {DataProviderService} from '../../../services/data-provider.service';
 import {Sector} from '../../../model/sector.model';

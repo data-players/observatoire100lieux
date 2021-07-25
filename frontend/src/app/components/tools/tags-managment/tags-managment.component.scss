@@ -1,0 +1,18 @@
+@import 'node_modules/@angular/material/theming';
+@import "src/custom-theme";
+:host {
+  display: block;
+  padding-bottom:40px;
+  height:400px;
+  > div {
+    margin-top: 20px;
+  }
+  mat-chip{
+    cursor: pointer;
+  }
+  a {
+    color: map-get($centlieux-primary, 400);
+    text-decoration:underline;
+    cursor: pointer;
+  }
+}

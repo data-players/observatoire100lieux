@@ -17,6 +17,7 @@ export class Organization {
      public email: string = '',
      public accessrules: string = '',
      public timetable: string = '',
+     public socialLink: [] = [],
      public hasLocation: PhysicalPlace = new PhysicalPlace()
     ){}
 }

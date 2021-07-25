@@ -16,3 +16,17 @@ html{
   margin-top:25px;}
 body { margin: 0;  font-family: 'Futura-pt-book';
   width:1280px; margin: 0 auto;margin-bottom:150px; background-color: #fff}
+img.small {
+  height:160px;
+}
+.cursor{
+  cursor:pointer;
+}
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing.dark-backdrop {
+  background: rgb(0, 0, 0);
+  opacity: 0.75 !important;
+}
+.input-full-width{
+  width:100%;
+  min-width: 98.5%;
+}

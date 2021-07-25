@@ -8,6 +8,10 @@ import {MatCheckboxChange} from '@angular/material/checkbox';
 import {OpenStreetMapProvider} from 'leaflet-geosearch';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BreadcrumbService} from 'xng-breadcrumb';
+import {ConfirmDialogComponent} from '../../ui/confirm-dialog/confirm-dialog.component';
+import {AuthService} from '../../../services/auth.service';
+import {MatDialog} from '@angular/material/dialog';
+import {UiService} from '../../ui/ui.service';
 
 @Component({
   selector: 'app-form-lieu',
@@ -31,16 +35,17 @@ export class FormLieuComponent implements OnInit {
   branchesSelected: string[] = [];
   domainsSelected: string[] = [];
 
-  displayFirstSocialMedia = false;
-
   constructor(private fb: FormBuilder,
               private router: Router,
               private dataService: DataProviderService,
               private activatedRoute: ActivatedRoute,
-              private bcService: BreadcrumbService) { }
+              private bcService: BreadcrumbService,
+              private authService: AuthService,
+              public dialog: MatDialog,
+              private uiService: UiService) { }
 
   async ngOnInit(): Promise<void> {
-
+    this.uiService.showSpinner()
     this.bcService.set('/map/edit/:id', 'loading')
     const param = this.activatedRoute.snapshot.paramMap.get('id')
 
@@ -62,6 +67,7 @@ export class FormLieuComponent implements OnInit {
       'pair:documentedBy': [this.editedOrga?.documentedBy],
       'pair:hasBranch': this.fb.array(([] as FormControl[]).concat(...this.sectors.map(s =>(s.extendedBy.map(b => this.fb.control(this.hasBranchValueInOrga(b.id))))))),
       'pair:hasDomain': this.fb.array(([] as FormControl[]).concat(...this.domains.map(d => this.fb.control(this.hasDomainValueInOrga(d.id))))),
+      '100lieux:socialLink': this.fb.array(([]as FormControl[]).concat(...this.editedOrga.socialLink.map( p => this.fb.control([p])))),
       'pair:hasLocation':
       this.fb.group({
         '@type':['pair:Place'],
@@ -75,50 +81,30 @@ export class FormLieuComponent implements OnInit {
             'pair:latitude': [this.editedOrga.hasLocation.hasPostalAddress.latitude],
             'pair:longitude': [this.editedOrga.hasLocation.hasPostalAddress.longitude],
           }),
-        'pair:hasDigitalPlace': this.fb.array([
-          this.fb.group(
-            {
-              '@type':['pair:DigitalPlace'],
-              'pair:label': [''],
-              'pair:page': ['']
-            })
-          ])
         }),
     })
     if(this.editedOrga.id) {
       this.populateForm(this.form, this.editedOrga);
     }
+    this.uiService.stopSpinner()
+
   }
   populateForm(form: FormGroup, obj:Organization) {
     this.domainsSelected.push(...obj.hasDomain.map(d => d.id))
     this.branchesSelected.push(...obj.hasBranch.map(d => d.id))
-    if(obj.hasLocation.hasDigitalPlace.length >= 1 && obj.hasLocation.hasDigitalPlace[0].page)
-      this.displayFirstSocialMedia = true;
-    this.digitalPlaces?.clear()
-    obj.hasLocation.hasDigitalPlace.forEach(o => this.pushToSocialNetworkArray(o.label, o.page));
   }
-  addSocialNetwork(name?: string, url?: string) {
-    if (!this.displayFirstSocialMedia) {
-      this.displayFirstSocialMedia = true
-    } else {
-      this.pushToSocialNetworkArray(name, url)
-    }
+  addSocialNetwork(url?: string) {
+      this.socialLink.push(this.fb.control([url]))
   }
 
-  pushToSocialNetworkArray(name?: string, url?: string) {
-      this.digitalPlaces!.push( this.fb.group(
-        {
-          '@type':['pair:DigitalPlace'],
-          'pair:label': [name],
-          'pair:page': [url]
-        }));
-    }
   get comments(){
     return this.form.controls['pair:comment']
   }
-  get digitalPlaces(): FormArray{
-    return (this.form.controls['pair:hasLocation'] as FormGroup).controls['pair:hasDigitalPlace'] as FormArray
+  get socialLink(): FormArray{
+    return (this.form.controls['100lieux:socialLink'] as FormArray);
   }
+
+
 
  async submit(){
     this.submitted = true;
@@ -150,7 +136,8 @@ export class FormLieuComponent implements OnInit {
     if(this.domainsSelected.length === 0) this.form.get('pair:hasDomain')?.setErrors({required: true});
 
     if(this.form.valid){
-     if(this.fileName){
+      this.uiService.showSpinner()
+      if(this.fileName){
        let response: { [p: string]: string } = await this.postPicture();
        values['pair:documentedBy'] = response;
      }
@@ -159,8 +146,10 @@ export class FormLieuComponent implements OnInit {
      }else{
        await this.dataService.add<Organization>('organizations', values, 'Organization');
      }
+      this.uiService.stopSpinner()
       await this.router.navigateByUrl('/map');
     }else{
+      this.uiService.stopSpinner()
       this.formElem.nativeElement.scrollIntoView({behavior: 'smooth'});
     }
   }
@@ -215,6 +204,34 @@ export class FormLieuComponent implements OnInit {
 
 
     return this.dataService.postFile('files', formData)
+  }
+
+  async confirmSuppr() {
+    if(this.form.valid) {
+      const task = (this.editedOrga?.id) ? 'd\'éditer' : 'd\'ajouter'
+      if(!this.authService.currentUserValue){
+        const dialogRef= this.dialog.open(ConfirmDialogComponent, {
+          data: {
+            title: `Vous êtes sur le point ${task} un lieu. Celui ci devra être validé par un administrateur avant de pouvoir être ajouter dans notre base la carte. Cliquez sur valider pou confirmer`,
+            type: 'primary'
+          }
+        })
+        dialogRef.afterClosed().subscribe(result => {
+          console.log('result', result)
+          if(result === 'validate'){
+            dialogRef.close();
+            this.submit();
+          }
+        });
+      }else{
+        this.submit()
+      }
+    }
+  }
+
+  removeSocialFormItem(i: number) {
+    this.socialLink.removeAt(i);
+
   }
 }
 

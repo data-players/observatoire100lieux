@@ -1,6 +1,5 @@
 <div class="new" *ngIf="organization">
   <mat-card>
-
     <mat-card-header fxLayout="row" fxLayoutAlign="space-between">
         <mat-card-title>
           <h1>{{organization.label}}</h1>
@@ -45,8 +44,8 @@
             <li>Email: {{organization.email}}</li>
             <li>Site: {{organization.homepage}}</li>
             <li>Tel: {{organization.phone}}</li>
-            <ng-container *ngFor="let dp of organization.hasLocation.hasDigitalPlace" >
-              <li *ngIf="dp?.label">{{dp.label}}: {{dp.page}}</li>
+            <ng-container *ngFor="let dp of organization.socialLink" >
+              <li *ngIf="dp">{{dp}}</li>
             </ng-container>
           </ul>
         </div>

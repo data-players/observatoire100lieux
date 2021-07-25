@@ -2,7 +2,7 @@
 <div mat-dialog-content>
   <p>{{data.title}}</p>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="close()" cdkFocusInitial>cancel</button>
-  <button mat-button [mat-dialog-close]="'delete'">Ok</button>
+<div mat-dialog-actions fxLayout="flex" fxLayoutAlign="flex-end">
+  <button mat-button (click)="close()">cancel</button>
+  <button mat-button cdkFocusInitial [color]="data.type" [mat-dialog-close]="'validate'">Valider</button>
 </div>

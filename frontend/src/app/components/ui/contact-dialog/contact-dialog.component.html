@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Confirmation</h1>
+<div mat-dialog-content>
+  <!--<p>{{data.title}}</p>-->
+
+</div>
+<div mat-dialog-actions fxLayout="flex" fxLayoutAlign="space-between">
+  <button mat-button color="warn" [mat-dialog-close]="'delete'">Ok</button>
+  <button mat-button (click)="close()">cancel</button>
+</div>

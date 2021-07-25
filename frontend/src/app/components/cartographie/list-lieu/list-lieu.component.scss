@@ -1,3 +1,5 @@
+@import 'node_modules/@angular/material/theming';
+@import "src/custom-theme";
 mat-card{
   margin-bottom: 20px;
 }
@@ -6,4 +8,11 @@ img{
 }
 :host {
   flex:74%;
+}
+.content {
+  cursor:pointer;
+  margin-bottom:15px;
+  &:hover{
+    border-right: 6px solid map-get($centlieux-primary, 300);
+  }
 }

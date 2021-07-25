@@ -1,0 +1,160 @@
+<mat-card *ngIf="form">
+  <mat-card-title>Ajouter un lieu</mat-card-title>
+
+  <form class="example-form" [formGroup]="form" (ngSubmit)="confirmSuppr()" *ngIf="form" #formElem>
+    <h3>Informations générales:</h3>
+    <div>
+      <div fxLayout="row">
+        <mat-form-field appearance="outline" fxFlex="63%">
+          <mat-label>Nom de l'outil *</mat-label>
+          <input matInput formControlName="pair:label">
+        </mat-form-field>
+        <ng-container formGroupName="pair:producedBy">
+          <mat-form-field fxFlex="35%" appearance="outline">
+            <mat-label>Auteur *</mat-label>
+            <input matInput formControlName="pair:label">
+          </mat-form-field>
+        </ng-container>
+        <mat-form-field appearance="outline" fxFlex="15%">
+          <mat-label>Année de création *</mat-label>
+          <input matInput formControlName="100lieux:year">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="input-full-width" fxFlex="24%">
+          <mat-label>Lien où trouver l'outil</mat-label>
+          <input matInput formControlName="pair:homePage">
+        </mat-form-field>
+      </div>
+      <div>
+        <h4 class="mat-label">Description *</h4>
+        <quill-editor [styles]="{height: '200px'}" formControlName="pair:description"></quill-editor>
+      </div>
+      <br>
+      <div fxLayout="row" fxLayoutAlign="space-between" >
+        <ng-container formGroupName="pair:hasDomain">
+          <mat-form-field appearance="outline" fxFlex="24%">
+            <mat-label>Theme</mat-label>
+            <mat-select formControlName="pair:label">
+              <mat-option *ngFor="let theme of themeGroup" [value]="theme">
+                {{theme}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </ng-container>
+        <mat-form-field appearance="outline" fxFlex="24%">
+          <mat-label>Forme ou type d'outil</mat-label>
+          <mat-select formControlName="100lieux:aspect">
+            <mat-option *ngFor="let tt of toolType" [value]="tt">
+              {{tt}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="24%">
+          <mat-label>Audience</mat-label>
+          <mat-select formControlName="100lieux:audience">
+            <mat-option *ngFor="let audience of populationTarget" [value]="audience">
+              {{audience}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex="24%">
+          <mat-label>Format</mat-label>
+          <mat-select formControlName="100lieux:format">
+            <mat-option *ngFor="let forma of format" [value]="forma">
+              {{forma}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="24%">
+          <mat-label>Payant ou gratuit</mat-label>
+          <mat-select formControlName="100lieux:cost">
+            <mat-option *ngFor="let c of cost" [value]="c">
+              {{c}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between" >
+      </div>
+      <div fxLayout="flex">
+      <mat-form-field class="example-chip-list full-width" appearance="outline" fxFlex="100%">
+        <mat-label>Môts clés</mat-label>
+        <mat-chip-list #keyList aria-label="Môt clés">
+          <mat-chip
+            *ngFor="let tag of selectedTags"
+            selectable="true"
+            removable="true"
+            (removed)="removeTag(tag)">
+            {{tag['pair:label']}}
+            <mat-icon matChipRemove >cancel</mat-icon>
+          </mat-chip>
+          <input
+            placeholder="Ajouter un tag..."
+            #tagsInput
+            [formControl]="tagCtrl"
+            [matAutocomplete]="autoTag"
+            [matChipInputFor]="keyList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            (matChipInputTokenEnd)="addTag($event)">
+        </mat-chip-list>
+        <mat-autocomplete #autoTag="matAutocomplete" (optionSelected)="selectedTag($event)">
+          <mat-option  *ngFor="let tag of allTagsSelect" [value]="tag">
+            {{tag['pair:label']}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      </div>
+      <div fxLayout="flex">
+        <mat-form-field class="example-chip-list full-width" appearance="outline" fxFlex="100%">
+          <mat-label>Organisations proposant l'outil.</mat-label>
+          <mat-chip-list #orgList aria-label="Organizations">
+            <mat-chip
+              *ngFor="let org of selectedOrganizations"
+              selectable="true"
+              removable="true"
+              (removed)="removeOrganization(org)">
+              {{org['pair:label']}}
+              <mat-icon matChipRemove >cancel</mat-icon>
+            </mat-chip>
+            <input
+              placeholder="Ajouter une organisation..."
+              #orgsInput
+              [formControl]="organizationCtrl"
+              [matAutocomplete]="autoOrg"
+              [matChipInputFor]="orgList"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              (matChipInputTokenEnd)="addOrganization($event)">
+          </mat-chip-list>
+          <mat-autocomplete #autoOrg="matAutocomplete" (optionSelected)="selectedOrganization($event)">
+            <mat-option  *ngFor="let org of allOrganizationsSelect" [value]="org">
+              {{org['pair:label']}},
+              <small>{{getCity(org['pair:hasLocation'])}}</small>
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+    </div>
+    <h3>Image</h3>
+    <ng-container *ngIf="editedTool && editedTool['pair:documentedBy']">
+      <img [src]="editedTool['pair:documentedBy']" alt="logo">
+    </ng-container>
+    <div class="image-upload-container">
+      <input type="file" class="file-input"
+             (change)="onFileSelected($event)" #fileInput>
+      <input type="hidden" formControlName="pair:documentedBy">
+      <div class="file-upload">
+        {{fileName || "Aucun fichier selectionné."}}
+        <button mat-mini-fab color="primary" type="button" class="upload-btn"
+                (click)="fileInput.click()">
+          <mat-icon>attach_file</mat-icon>
+        </button>
+      </div>
+    </div>
+    <br>
+    <div>
+      <button type="submit" mat-flat-button color="primary">{{editedTool ? 'Editer' : 'Ajouter'}} l'outil</button>
+    </div>
+  </form>
+</mat-card>
+

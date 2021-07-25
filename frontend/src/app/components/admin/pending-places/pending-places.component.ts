@@ -5,6 +5,7 @@ import {Branch} from '../../../model/branch.model';
 import {Domain} from '../../../model/domain.model';
 import _ from 'lodash';
 import {Action} from 'rxjs/internal/scheduler/Action';
+import {UiService} from '../../ui/ui.service';
 
 @Component({
   selector: 'app-pending-places',
@@ -13,16 +14,21 @@ import {Action} from 'rxjs/internal/scheduler/Action';
 })
 export class PendingPlacesComponent implements OnInit {
 
-  step = 0;
+  step = -1;
   organizations: { [index: string]:any }[] = [];
+  tools: { [index: string]:any }[] = [];
   loaded = false;
 
-  constructor(private dataProvider: DataProviderService) { }
+  constructor(private dataProvider: DataProviderService, private uiService: UiService) { }
 
   async ngOnInit(): Promise<void> {
+    console.log('Hello')
+    this.uiService.showSpinner()
     this.organizations = await this.dataProvider.findAll('pendingorganizations')
+    this.tools = await this.dataProvider.findAll('pendingtools')
     this.loaded = true;
-    this.organizations.sort( (oa, ob)=> oa.label < ob.label ? 1 : -1);
+    console.log('World')
+    this.uiService.stopSpinner()
   }
 
   setStep(index: number) {
@@ -50,6 +56,7 @@ export class PendingPlacesComponent implements OnInit {
     return ;
   }
   getAction(o: {[key: string]: any}) {
+    console.log(o['100lieux:flag'])
     switch (o['100lieux:flag']) {
       case ActionType.NEW :
         return 'new'
@@ -57,7 +64,6 @@ export class PendingPlacesComponent implements OnInit {
         return 'edit'
       case ActionType.DELETE:
         return 'delete'
-
     }
     return ;
   }
@@ -79,9 +85,10 @@ export class PendingPlacesComponent implements OnInit {
     return o[key];
   }
 
-  async validateElement(o: { [p: string]: any }) {
+  async validateOrganization(o: { [p: string]: any }) {
     const action = o['100lieux:flag']
     const id = this.dataProvider.extractUrlHash(o['@id']);
+    this.uiService.showSpinner()
     if(action === ActionType.NEW || action === ActionType.UPDATE){
       let obj = _.cloneDeep(o);
       obj = this.addPairPrefix(obj);
@@ -109,10 +116,40 @@ export class PendingPlacesComponent implements OnInit {
       await this.dataProvider.delete('organizations', {}, id, 'Organization')
       await this.dataProvider.delete('pendingorganizations', {}, id, 'Organization')
     }
+    this.uiService.stopSpinner()
     this.organizations = await this.dataProvider.findAll<Organization>('pendingorganizations');
+  }
 
+  async validateTool(o: { [p: string]: any }) {
+    const action = o['100lieux:flag']
+    const id = this.dataProvider.extractUrlHash(o['@id']);
+    this.uiService.showSpinner()
+    if(action === ActionType.NEW || action === ActionType.UPDATE){
+      let obj = _.cloneDeep(o);
+      obj = this.addPairPrefix(obj);
+      if(!Array.isArray(o['pair:hasTopic'])){
+        obj['pair:hasTopic'] = [].concat(o['pair:hasTopic'])
+      }
+      _.unset(obj,'100lieux:flag');
+      _.unset(obj,'@id');
+      _.unset(obj,'pair:id');
+      _.unset(obj,'@type');
+      if(action === ActionType.NEW){
+        await this.dataProvider.add('tools', obj, 'Resource')
+        await this.dataProvider.delete('pendingtools', obj, id, 'Resource')
+      }else{
+        await this.dataProvider.update('tools', obj, id, 'Resource')
+        await this.dataProvider.delete('pendingtools', obj, id, 'Resource')
+      }
+    }else {
+      await this.dataProvider.delete('tools', {}, id, 'Resource')
+      await this.dataProvider.delete('pendingtools', {}, id, 'Organization')
+    }
+    this.uiService.stopSpinner()
+    this.tools = await this.dataProvider.findAll('pendingtools');
 
   }
+
   addPairPrefix(o: { [key: string]: any}): { [key: string]: any}{
     return _.transform(o, (result: { [key: string]: any }, value: string | number | [] | {}, key: string) => {
       if(typeof key === 'string' && (key.startsWith('pair:') || key.startsWith('100lieux:') || key.startsWith('@id') || key.startsWith('@type'))) {
@@ -124,10 +161,20 @@ export class PendingPlacesComponent implements OnInit {
      }
       return result
      });
-      }
+  }
 
-  async cancelElement(o: { [p: string]: any }) {
+  async cancelOrganisation(o: { [p: string]: any }) {
+    this.uiService.showSpinner()
     await this.dataProvider.delete('pendingorganizations', o, this.dataProvider.extractUrlHash(o.id), 'Organization')
     this.organizations = await this.dataProvider.findAll<Organization>('pendingorganizations');
+    this.uiService.stopSpinner()
+
+  }
+  async cancelTool(o: { [p: string]: any }) {
+    this.uiService.showSpinner()
+    await this.dataProvider.delete('pendingtools', o, this.dataProvider.extractUrlHash(o.id), 'Ressource')
+    this.tools = await this.dataProvider.findAll<Organization>('pendingtools');
+    this.uiService.stopSpinner()
+
   }
 }

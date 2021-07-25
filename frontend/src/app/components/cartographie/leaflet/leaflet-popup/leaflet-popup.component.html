@@ -3,7 +3,7 @@
 </div>
 <h3>{{organization.label}}</h3>
 <p>
-  {{organization.hasLocation.hasPostalAddress.fullAddress}}
+  {{organization?.hasLocation?.hasPostalAddress?.fullAddress}}
 </p>
 <mat-chip-list aria-label="Color selection">
   <mat-chip *ngFor="let chip of organization.hasBranch" selected color="primary">

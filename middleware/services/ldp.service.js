@@ -1,6 +1,6 @@
 const { LdpService } = require('@semapps/ldp');
 const urlJoin = require('url-join');
-const ontologies = require('../ontologies');
+const ontologies = require('../ontologies.json');
 const CONFIG = require('../config');
 const containers = require('../containers');
 

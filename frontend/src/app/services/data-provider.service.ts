@@ -21,12 +21,12 @@ export class DataProviderService {
   constructor(private http: HttpClient, private authService: AuthService) {
   }
 
-  private asAnArray: string[][] = [['hasDomain'], ['hasBranch'], ['hasLocation', 'hasDigitalPlace']];
+  // Transform a single item as an array (to ba able to iterate)
+  private asAnArray: string[][] = [['hasDomain'], ['hasBranch'],['hasTopic'],['topicOf'],['socialLink']];
 
   async findAll<T>(endpoint: string): Promise<T[]> {
     return this.http.get<any>(`${environment.serverUrl}${endpoint}`, {headers: this.headers, responseType: 'json'}).pipe(
       map(v => v['ldp:contains'].map((w: any) => {
-        console.log('id', w['id'])
         w = this.removePrefixes(w);
         w = this.changeAsArray(w);
         w['id'] = w['@id'];
@@ -99,7 +99,7 @@ export class DataProviderService {
     return this.http.delete<any>(`${environment.serverUrl}${endpoint}/${id}`).pipe(
     ).toPromise();
   }
-  private async updateReq<T>(endpoint: string, body: T, type: string, id: string, slug?:string): Promise<T> {
+  async updateReq<T>(endpoint: string, body: T, type: string, id: string, slug?:string): Promise<T> {
     const payload = Object.assign({}, body, {
       '@context': `${environment.serverUrl}context.json`,
       '@type': 'pair:' + type

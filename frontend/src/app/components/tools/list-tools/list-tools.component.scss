@@ -1,0 +1,42 @@
+@import 'node_modules/@angular/material/theming';
+@import "src/custom-theme";
+
+h3, p{
+  padding-top:0; margin-top:0;
+}
+h3{
+  display:inline-block;
+  margin-right:10px;
+  font-size: 1.5em;
+  margin-bottom:8px;
+}
+.desc{
+  margin: 9px 0;
+}
+p{
+  margin-top:5px;
+  color: map-get($centlieux-primary, 500);
+}
+.bloc-tool {
+  cursor: pointer;
+  margin-top:10px;
+  &:hover{
+    border-right: 6px solid map-get($centlieux-primary, 300);
+  }
+}
+mat-card{
+  margin-bottom: 20px;
+}
+img{
+  max-height:140px;
+}
+:host {
+  flex:74%;
+}
+.mat-standard-chip {
+  height: auto !important;
+  min-height: 22px
+}
+.small-chip {
+  height: 10px !important;
+}

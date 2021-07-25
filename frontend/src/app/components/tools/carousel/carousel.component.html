@@ -1,0 +1,11 @@
+<div fxFlex="row">
+  <div fxFlex="20%">
+    <h5>Exposition</h5>
+    <p>Fait social, culturel, environnemental et économique, l’alimentation est au cœur des enjeux et défis que toutes les sociétés doivent affronter. Cette exposition en 11 affiches vise éclairer, de façon humoristique et documentée, les grandes questions liées à l’alimentation responsable et durable!</p>
+  </div>
+  <carousel [autoplay]="true" >
+    <div class="carousel-cell" *ngFor="let p of posters" [style.cursor]="displayLightBox ? 'pointer' : 'hand'">
+      <img [src]="p['pair:documentedBy']" alt="Affiche les petits débrouilards" (click)="sendPosterInfo(p)"/>
+    </div>
+  </carousel>
+</div>

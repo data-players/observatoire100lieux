@@ -1,0 +1,12 @@
+@import 'node_modules/@angular/material/theming';
+@import "src/custom-theme";
+
+
+img, carousel{
+  position:relative;
+  z-index:1;
+}
+:host{
+  padding:10px 30px;
+  background-color: map-get($centlieux-primary, 100);
+}

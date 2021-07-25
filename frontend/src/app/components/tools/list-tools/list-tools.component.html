@@ -1,0 +1,67 @@
+<div *ngIf="tools.length !== 0">
+  <div fxLayout="row">
+    <h1>Liste des outils pédagogiques</h1>
+    <button mat-flat-button [routerLink]="['/tools/add']">Ajouter un outil</button>
+  </div>
+  <mat-chip-list *ngIf="filters && filters[1]">
+    <mat-chip *ngFor="let c of filters[FilterType.COST]" (click)="removeFilter(c, FilterType.COST)">{{c}} <mat-icon matChipRemove (click)="removeFilter(c, FilterType.COST)">cancel</mat-icon></mat-chip>
+    <mat-chip *ngFor="let c of filters[FilterType.THEME]" (click)="removeFilter(c, FilterType.THEME)">{{c}}<mat-icon matChipRemove (click)="removeFilter(c, FilterType.COST)">cancel</mat-icon></mat-chip>
+    <mat-chip *ngFor="let c of filters[FilterType.TOOL]" (click)="removeFilter(c, FilterType.TOOL)">{{c}}<mat-icon matChipRemove (click)="removeFilter(c, FilterType.COST)">cancel</mat-icon></mat-chip>
+    <mat-chip *ngFor="let c of filters[FilterType.POPULATION]" (click)="removeFilter(c, FilterType.POPULATION)">{{c}}<mat-icon matChipRemove (click)="removeFilter(c, FilterType.COST)">cancel</mat-icon></mat-chip>
+    <mat-chip *ngFor="let c of filters[FilterType.FORMAT]" (click)="removeFilter(c, FilterType.FORMAT)">{{c}}<mat-icon matChipRemove (click)="removeFilter(c, FilterType.COST)">cancel</mat-icon></mat-chip>
+    <mat-chip *ngFor="let c of filters[FilterType.TEXT]" (click)="removeFilter(c, FilterType.TEXT)">Contient: "{{c}}"<mat-icon matChipRemove (click)="removeFilter(c, FilterType.COST)">cancel</mat-icon></mat-chip>
+  </mat-chip-list>
+  <mat-paginator *ngIf="toolsFiltered?.size !== 0"
+    (page)="handlePageEvent($event)"
+    [length]="length"
+    [pageSize]="pageSize"
+    [showFirstLastButtons]="showFirstLastButtons"
+    [pageSizeOptions]="[pageSize]"
+    [pageIndex]="pageIndex">
+  </mat-paginator>
+  <div *ngIf="toolsFiltered.size === 0">Il n'y a aucun résultat</div>
+  <div class="bloc-tool" *ngFor="let o of toolsFiltered" [routerLink]="['/tools',this.dataService.extractUrlHash(o.id)]">
+    <div fxLayout="row" fxLayoutGap="20px">
+      <img [src]="o['pair:documentedBy'] ? o['pair:documentedBy'] : 'assets/100lieux_tiny_square_logo.png'" alt="logo">
+      <div>
+        <div>
+          <div>
+            <div fxLayout="row">
+              <h3>{{o['pair:label']}}</h3>
+              <p>[{{o['pair:hasDomain']['pair:label']}}]</p>
+              <p>{{o['']}}</p>
+            </div>
+
+            <div *ngIf="o['pair:hasTopic'] && o['pair:hasTopic']?.length > 0">
+              <mat-chip-list aria-label="tags">
+                <mat-chip class="small-chip" *ngFor="let chip of o['pair:hasTopic']">
+                  {{chip.label}}
+                </mat-chip>
+              </mat-chip-list>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="desc" [innerHTML]="o['pair:description'] | nocarriage | slice:0:390"></div>
+          <div>
+            <mat-chip-list aria-label="Catégories">
+              <mat-chip selected color="primary">Type d'outil: {{o['100lieux:aspect']}}</mat-chip>
+              <mat-chip selected color="primary">Public visé: {{o['100lieux:audience']}}</mat-chip>
+              <mat-chip selected color="primary">Format: {{o['100lieux:format']}}</mat-chip>
+              <mat-chip selected color="primary">Coût: {{o['100lieux:cost']}}</mat-chip>
+            </mat-chip-list>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+  <mat-paginator *ngIf="toolsFiltered.size !== 0"
+    (page)="handlePageEvent($event)"
+    [length]="length"
+    [pageSize]="pageSize"
+    [showFirstLastButtons]="showFirstLastButtons"
+    [pageSizeOptions]="[pageSize]"
+    [pageIndex]="pageIndex">
+  </mat-paginator>
+</div>

@@ -16,8 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { CartographieComponent } from './components/cartographie/cartographie.component';
-import {BreadcrumbModule} from 'xng-breadcrumb';
-import { DetailLieuComponent } from './components/detail-lieu/detail-lieu.component';
+import { DetailLieuComponent } from './components/cartographie/detail-lieu/detail-lieu.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { BreadcrumbComponent } from './components/ui/breadcrumb/breadcrumb.component';
 import {MatCardModule} from '@angular/material/card';
@@ -40,53 +39,37 @@ import {AuthGuard} from './auth.guard';
 import { PendingPlacesComponent } from './components/admin/pending-places/pending-places.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { LoginBoxComponent } from './components/login-box/login-box.component';
-import { FormToolComponent } from './components/form-tool/form-tool.component';
 import { MainwrapperComponent } from './components/mainwrapper/mainwrapper.component';
 import { ListLieuFilterComponent } from './components/cartographie/list-lieu-filter/list-lieu-filter.component';
 import { ConfirmDialogComponent } from './components/ui/confirm-dialog/confirm-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {FormToolComponent} from './components/tools/form-tool/form-tool.component';
+import { TagsManagmentComponent } from './components/tools/tags-managment/tags-managment.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatOptionModule} from '@angular/material/core';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { ListToolsFilterComponent } from './components/tools/list-tools-filter/list-tools-filter.component';
+import { ListToolsComponent } from './components/tools/list-tools/list-tools.component';
+import { FormSideBarListToolsComponent } from './components/tools/form-side-bar-list-tools/form-side-bar-list-tools.component';
+import { NocarriagePipe } from './nocarriage.pipe';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { CarouselComponent } from './components/tools/carousel/carousel.component';
+import { FormPostersComponent } from './components/admin/form-posters/form-posters.component';
+import { PosterDialogComponent } from './components/ui/poster-dialog/poster-dialog.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { DetailToolComponent } from './components/tools/detail-tool/detail-tool.component';
+import {RoutingModule} from './routing.module';
+import { PartenairesComponent } from './components/partenaires/partenaires.component';
+import { ContactDialogComponent } from './components/ui/contact-dialog/contact-dialog.component';
+import { AccueilComponent } from './components/admin/accueil/accueil.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {OverlayModule} from '@angular/cdk/overlay';
 
-const routes = [
-  {path: 'processlogin', component: ProcessloginComponent},
-  {path: '404', component: E404Component},
-  {path: '', component: MainwrapperComponent,
-    children: [
-      {path: 'map', component: CartographieComponent,
-        children: [
-          {path: '', component: MapTiersLieuxComponent},
-          {path: 'list', component: ListLieuFilterComponent, data: {breadcrumb: 'Liste'}},
-          {path: 'add', component: FormLieuComponent, data: {breadcrumb: 'Ajouter un lieu'}},
-          {path: 'edit/:id', component: FormLieuComponent, data: {breadcrumb: {alias: 'Lieu XXX'}}},
-          {path: 'pending', component: PendingPlacesComponent, data: {breadcrumb: 'Valider'}},
-          {path: ':id', component: DetailLieuComponent, data: {breadcrumb: {alias: 'Lieu XXX'}}}
-        ],
-        data: {breadcrumb: 'Carte des 100 lieux nourriciers'}
-        },
-      {path: '', component: WelcomeComponent }
-    ],
-    data: {breadcrumb: 'Accueil'}},
-]
 
 const modules = {
   toolbar: [
-   // ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-   // ['blockquote', 'code-block'],
-
-   // [{ 'header': 1 }, { 'header': 2 }],               // custom button values
     [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-   // [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-   // [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-   // [{ 'direction': 'rtl' }],                         // text direction
-
-   // [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-   // [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-   // [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-   // [{ 'font': [] }],
-   // [{ 'align': [] }],
-
-    ['clean'],                                         // remove formatting button
-
-   // ['link', 'image', 'video']                         // link and image, video
+    ['clean'],
   ]
 };
 
@@ -110,16 +93,31 @@ const modules = {
     ProcessloginComponent,
     ListLieuComponent,
     E404Component,
+    FormToolComponent,
     PendingPlacesComponent,
     LoginBoxComponent,
-    FormToolComponent,
     MainwrapperComponent,
     ListLieuFilterComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    TagsManagmentComponent,
+    ListToolsFilterComponent,
+    ListToolsComponent,
+    FormSideBarListToolsComponent,
+    NocarriagePipe,
+    CarouselComponent,
+    FormPostersComponent,
+    PosterDialogComponent,
+    DetailToolComponent,
+    PartenairesComponent,
+    ContactDialogComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,
-    BreadcrumbModule,
+    RoutingModule,
+    MatProgressSpinnerModule,
+    OverlayModule,
+    MatSelectModule,
     QuillModule.forRoot({
       modules: {
         toolbar: modules.toolbar
@@ -128,7 +126,6 @@ const modules = {
     FlexLayoutModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
@@ -138,6 +135,7 @@ const modules = {
     MatListModule,
     MatCardModule,
     MatCheckboxModule,
+    IvyCarouselModule,
     MatTreeModule,
     MatFormFieldModule,
     MatInputModule,
@@ -146,7 +144,8 @@ const modules = {
     MatExpansionModule,
     FormsModule,
     MatDialogModule,
-
+    MatAutocompleteModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
