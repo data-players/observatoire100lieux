@@ -19,8 +19,10 @@ module.exports = {
         },
         templateFolder: path.join(__dirname, "../templates"),
     },
-    dependencies: ['ldp', 'api'],
+    dependencies: ['api'],
     async started() {
+      /*  const delay = t => new Promise(resolve => setTimeout(resolve, t));
+        await delay(5000);*/
         await this.broker.call('api.addRoute', {
             route: {
                 bodyParsers: { json: true },
@@ -32,7 +34,7 @@ module.exports = {
     },
     actions: {
         async contactUser(ctx) {
-            const { userUri, name, email, title, content, emailPredicate } = ctx.params;
+            const { name, email, title, content } = ctx.params;
 
             await ctx.call('mailer.send', {
                 to: CONFIG.SEMAPPS_FROM_EMAIL,
