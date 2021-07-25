@@ -13,7 +13,6 @@ module.exports = [
     acceptedTypes: ['pair:Organization'],
     dereference: [
       'pair:hasLocation/pair:hasPostalAddress',
-      'pair:hasLocation/pair:hasDigitalPlace',
       'pair:hasBranch',
       'pair:hasDomain',
       'pair:hasTopic'
@@ -24,9 +23,9 @@ module.exports = [
     acceptedTypes: ['pair:Organization'],
     dereference: [
       'pair:hasLocation/pair:hasPostalAddress',
-      'pair:hasLocation/pair:hasDigitalPlace',
       'pair:hasBranch',
       'pair:hasDomain',
+      'pair:hasTopic'
     ],
   },
   {
