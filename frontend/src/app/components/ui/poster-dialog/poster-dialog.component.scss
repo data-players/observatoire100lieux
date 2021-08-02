@@ -4,3 +4,20 @@
 img{
   max-height:550px;
 }
+:host{
+  ::ng-deep .mat-dialog-container{
+    background-color: #282828 !important;
+  }
+  ::ng-deep  .mat-dialog-container{
+    background-color: #282828 !important;
+  }
+  .mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
+    background-color: #ffc200;
+    color: black;
+  }
+}
+.small-chip {
+  height: 22px !important;
+  min-height:22px !important;
+}
+

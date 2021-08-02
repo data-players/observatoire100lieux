@@ -1,4 +1,4 @@
-<h1>Lieu Nourriciers</h1>
+<h1>Lieux Nourriciers</h1>
 <div *ngIf="orgafiltered.size === 0">Il n'y a aucun résultat</div>
 <mat-paginator *ngIf="orgafiltered.size !== 0"
                (page)="handlePageEvent($event)"
@@ -9,21 +9,23 @@
                [pageIndex]="pageIndex">
 </mat-paginator>
 <div *ngFor="let o of orgafiltered" class="content" [routerLink]="['/map',this.dataProvider.extractUrlHash(o.id)]">
-  <div fxLayout="row" fxLayoutGap="20px">
-    <img [src]="o?.documentedBy ? o?.documentedBy : 'assets/100lieux_tiny_square_logo.png'" alt="logo">
+  <div fxLayout="row" fxLayoutGap="20px" >
+    <div fxFlex="20%" class="center">
+      <img [src]="o?.documentedBy ? o?.documentedBy : 'assets/100lieux_tiny_square_logo.png'" alt="logo">
+    </div>
     <div>
     <div>
-      <h4>{{o.label}}</h4>
+      <h2>{{o.label}}</h2>
     </div>
     <mat-chip-list aria-label="Color selection">
-      <mat-chip *ngFor="let chip of o.hasBranch" selected color="primary">
+      <mat-chip disableRipple *ngFor="let chip of o.hasBranch" selected color="primary">
         {{chip.label}}
       </mat-chip>
-      <mat-chip *ngFor="let chip of o.hasDomain" selected color="accent">
+      <mat-chip disableRipple *ngFor="let chip of o.hasDomain" selected color="accent">
         {{chip.label}}
       </mat-chip>
     </mat-chip-list>
-      <div [innerHTML]="o.description | nocarriage | slice:0:390"></div>
+      <div class="desc" [innerHTML]="o.description | nocarriage | slice:0:390"></div>
   </div>
   </div>
 </div>

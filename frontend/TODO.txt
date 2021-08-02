@@ -1,0 +1,25 @@
+error sur domaine et theme
+
+
+leaflet popup
+leaflet
+
+
+
+Jaune - #ffc200
+
+
+regex sur url reseau social + icon
+
+taille image fixe list lieu
+
+
+
+
+
+
+
+
+optionnel mais quand meme a faire
+  disable ripple sur mat-chip
+  trim description

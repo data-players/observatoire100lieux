@@ -12,6 +12,7 @@ html{
   background-size:contain;
   background-repeat: no-repeat;
   background-color: #e7f3f2;
+  font-size: 16px;
   background-position: bottom;
   margin-top:25px;}
 body { margin: 0;  font-family: 'Futura-pt-book';
@@ -29,4 +30,10 @@ img.small {
 .input-full-width{
   width:100%;
   min-width: 98.5%;
+}
+.underline{
+  text-decoration: underline;
+}
+.small-chip {
+  height: 10px !important;
 }

@@ -5,22 +5,22 @@
         <mat-icon>search</mat-icon>
       </div>
     </mat-form-field>
-        <h3><mat-icon color="primary">restaurant</mat-icon>Activités nouricieres</h3>
+        <h3><mat-icon color="primary">restaurant</mat-icon>Activités nourricières</h3>
         <form [formGroup]="formBranches">
           <ul *ngFor="let group of this.formBranches.controls |keyvalue" [formGroupName]="group.key" >
-            <li><h4><mat-checkbox #cb (change)="toggleCheckbox(group.value, $event.checked)" [indeterminate]="someComplete(group.value)" [checked]="allComplete(group.value)">{{getSectorTreeValue(group.key| caststring)}}</mat-checkbox></h4>
+            <li><h4><mat-checkbox #cb color="primary" (change)="toggleCheckbox(group.value, $event.checked)" [indeterminate]="someComplete(group.value)" [checked]="allComplete(group.value)">{{getSectorTreeValue(group.key| caststring)}}</mat-checkbox></h4>
               <ul>
                 <li *ngFor="let control of getFormControls(group.value) | keyvalue">
-                  <mat-checkbox  (ngModelChange)="updateAllComplete(group.value, cb)" [formControlName]="control.key">{{getSectorTreeValue(group.key| caststring, control.key| caststring)}}</mat-checkbox>
+                  <mat-checkbox color="primary" (ngModelChange)="updateAllComplete(group.value, cb)" [formControlName]="control.key">{{getSectorTreeValue(group.key| caststring, control.key| caststring)}}</mat-checkbox>
                 </li>
               </ul>
             </li>
           </ul>
     </form>
-      <h3><mat-icon color="primary">home</mat-icon>Type de structure</h3>
+      <h3 class="second"><mat-icon color="primary">home</mat-icon>Type de structure</h3>
       <form [formGroup]="formDomains">
         <ul *ngFor="let control of this.formDomains.controls |keyvalue" class="domains">
-          <li><mat-checkbox (ngModelChange)="sendValues()" [formControlName]="control.key">{{getDomainLabel(control.key| caststring)}}</mat-checkbox></li>
+          <li><mat-checkbox color="accent" (ngModelChange)="sendValues()" [formControlName]="control.key">{{getDomainLabel(control.key| caststring)}}</mat-checkbox></li>
         </ul>
       </form>
   </section>

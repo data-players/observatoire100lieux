@@ -2,6 +2,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '~@angular/material' as mat;
+@import '~@angular/material/theming';
 
 
 // Plus imports for other components in your app.
@@ -23,7 +24,8 @@ $green-centslieux: (
   200: #bae3a9,
   300: #9ed886,
   400: #88cf6b,
-  500: #73c651,
+  //500: #73c651,
+  500: #186b23,
   600: #65b649,
   700: #52a23f,
   800: #3f8d35,
@@ -38,7 +40,7 @@ $green-centslieux: (
     200: $dark-primary-text,
     300: $dark-primary-text,
     400: $dark-primary-text,
-    500: $dark-primary-text,
+    500: $light-primary-text,
     600: $dark-primary-text,
     700: $light-primary-text,
     800: $light-primary-text,
@@ -94,6 +96,9 @@ $centlieux-warn: mat.define-palette(mat.$red-palette);
 $centlieux-typography: mat.define-typography-config(
   // Specify "Comic Sans" as the default font family for all levels.
   $font-family: 'Futura-pt-book',
+  $headline: mat.define-typography-level(32px, 48px, 700),
+  $body-1: mat.define-typography-level(16px, 24px, 500)
+
 );
 $centlieux-theme: mat.define-light-theme((
   color: (
