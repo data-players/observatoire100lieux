@@ -9,6 +9,9 @@ h3{
   margin-right:10px;
   font-size: 1.5em;
   margin-bottom:8px;
+  &:hover{
+    text-decoration: underline;
+  }
 }
 .desc{
   margin: 9px 0;
@@ -20,9 +23,8 @@ p{
 .bloc-tool {
   cursor: pointer;
   margin-top:10px;
-  &:hover{
-    border-right: 6px solid map-get($centlieux-primary, 300);
-  }
+  margin-bottom:40px;
+
 }
 mat-card{
   margin-bottom: 20px;
@@ -39,4 +41,8 @@ img{
 }
 .small-chip {
   height: 10px !important;
+}
+:host ::ng-deep .mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
+  background-color: #ffc200;
+  color: black;
 }

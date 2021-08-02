@@ -6,7 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class NocarriagePipe implements PipeTransform {
 
   transform(value: string): string {
-    return value.replace( /(<([^>]+)>)/ig, ' ').replace('\\n', ' ');
+
+    return value.replace( /(<([^>]+)>)/ig, ' ').replace(/\n/g, ' ');
   }
 
 }

@@ -6,7 +6,7 @@
   <img [src]="data.poster['pair:documentedBy']" alt="">
  </div>
  <div fxFlex="40%" >
-  <h4>Titre de l'affiche</h4>
+  <h2>Titre de l'affiche</h2>
   <p>{{data.poster['pair:label']}}</p>
   <small>{{data.poster['pair:hasDomain']['pair:label']}}</small>
 
@@ -17,6 +17,7 @@
       </mat-chip>
     </mat-chip-list>
   </div>
+   <br>
   <mat-chip-list aria-label="Catégories">
     <mat-chip selected color="primary">Type d'outil: {{data.poster['100lieux:aspect']}}</mat-chip>
     <mat-chip selected color="primary">Public visé: {{data.poster['100lieux:audience']}}</mat-chip>
@@ -25,9 +26,11 @@
   </mat-chip-list>
    <br>
    <mat-divider></mat-divider>
-  <div mat-dialog-actions>
-    <button mat-flat-button color="accent" (click)="download()">Télécharger le poster avec son guide</button>
-    <button mat-flat-button [mat-dialog-close]>Fermer cette fenêtre</button>
+  <div>
+    <button mat-flat-button color="primary" class="dlButton" (click)="download()">Télécharger le poster avec son guide</button>
+    <br>
+    <br>
+    <a [mat-dialog-close] class="underline cursor">Fermer cette fenêtre</a>
   </div>
  </div>
 </div>

@@ -41,12 +41,12 @@ export class FormSideBarTiersLieuxComponent implements OnInit {
       for(let s of this.sectors) {
         const form = new FormGroup({})
         for (let b of s.extendedBy){
-          form.addControl(b.id+'', this.fb.control(false));
+          form.addControl(b.id+'', this.fb.control(true));
         }
         this.formBranches.addControl(s.id, form)
       }
       for(let s of this.domains) {
-        this.formDomains.addControl(s.id+'', this.fb.control(false));
+        this.formDomains.addControl(s.id+'', this.fb.control(true));
       }
       res.apply(true);
     })
@@ -80,6 +80,7 @@ export class FormSideBarTiersLieuxComponent implements OnInit {
   }
   updateAllComplete(formGroup: AbstractControl, cb: MatCheckbox) {
     if(this.allComplete(formGroup)){
+    console.log(formGroup)
       cb.checked = true;
     }
   }

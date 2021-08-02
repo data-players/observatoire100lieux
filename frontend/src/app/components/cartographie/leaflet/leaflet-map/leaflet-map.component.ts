@@ -55,13 +55,16 @@ export class LeafletMapComponent implements OnInit{
 
    private async displayMarkers(filters?: {[key:string]: string[]}) {
     let orgafiltered: Set<Organization> = new Set()
+     console.log(orgafiltered, filters)
 
     if(filters && (filters["branches"].length !== 0 || (filters["domains"].length !== 0))){
-      this.organizations.filter( o => {return o.hasBranch.some(
-        b =>  filters['branches'].includes(b.id)
-      ) ||  o.hasDomain.some(
-        d => filters['domains'].includes(d.id))
-      }).forEach( o=> orgafiltered.add(o));
+      console.log(filters)
+      this.organizations.filter( o => {
+        return o.hasBranch.some(
+          b =>  filters['branches'].includes(b.id)
+         ) ||  o.hasDomain.some(
+          d => filters['domains'].includes(d.id))
+        }).forEach( o=> orgafiltered.add(o));
     }else{
       orgafiltered = new Set(this.organizations)
     }

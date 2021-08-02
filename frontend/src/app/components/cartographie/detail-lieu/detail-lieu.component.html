@@ -1,10 +1,9 @@
 <div class="new" *ngIf="organization">
-  <mat-card>
-    <mat-card-header fxLayout="row" fxLayoutAlign="space-between">
-        <mat-card-title>
+  <div fxLayout="row" fxLayoutAlign="space-between" >
+        <div>
           <h1>{{organization.label}}</h1>
-        </mat-card-title>
-        <mat-card-actions fxLayout="row" fxLayoutAlign="end center">
+        </div>
+        <div fxLayout="row" fxLayoutAlign="end center">
           <ng-container *ngIf="callForRemove">
             Votre demande à été prise en compte, elle doit être validé par un modérateur.
           </ng-container>
@@ -12,12 +11,10 @@
             <button mat-flat-button (click)="deleteOrga()">Remove</button>
           </ng-container>
           <button mat-flat-button [routerLink]="['/map/edit', dataprovider.extractUrlHash(organization.id)]" >Edit</button>
-        </mat-card-actions>
-      <mat-card-subtitle>
-      </mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content fxLayout="row">
-      <mat-card fxFlex="70%">
+        </div>
+  </div>
+    <mat-card-content fxLayout="row" fxLayoutGap="40px">
+      <div fxFlex="70%">
         <mat-chip-list fxLayout="row">
           <mat-chip *ngFor="let chip of organization.hasBranch" selected color="primary">
            {{chip.label}}
@@ -28,8 +25,8 @@
         <div *ngIf="organization?.documentedBy"><img class="orga-pic" [src]="organization.documentedBy" [alt]="'image '+organization.label"></div>
         <h3>Description</h3>
           <div [innerHTML]="organization.description"></div>
-      </mat-card>
-      <mat-card fxFlex="30%">
+      </div>
+      <div fxFlex="30%" class="access">
         <div>
           <h3>Conditions d'accés</h3>
           <div [innerHTML]="organization.accessrules"></div>
@@ -53,7 +50,6 @@
           <h3>Adresse</h3>
           <div>{{organization?.hasLocation?.hasPostalAddress?.addressStreet}},{{organization?.hasLocation?.hasPostalAddress?.addressZipcode}}, {{organization?.hasLocation?.hasPostalAddress?.locality}}</div>
         </div>
-      </mat-card>
+      </div>
     </mat-card-content>
-  </mat-card>
 </div>

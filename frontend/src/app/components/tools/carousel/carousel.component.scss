@@ -5,8 +5,18 @@
 img, carousel{
   position:relative;
   z-index:1;
+  padding-top:20px;
 }
 :host{
   padding:10px 30px;
-  background-color: map-get($centlieux-primary, 100);
+  background-color: #282828;
+  color: white;
+}
+::ng-deep .mat-dialog-container{
+  background-color: #282828 !important;
+  color: white;
+}
+:host ::ng-deep .mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
+  background-color: #ffc200;
+  color: black;
 }

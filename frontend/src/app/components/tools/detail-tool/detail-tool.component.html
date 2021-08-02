@@ -1,9 +1,9 @@
-<mat-card>
-  <mat-card-header fxLayout="row" fxLayoutAlign="space-between">
-    <mat-card-title>
+
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <div>
       <h1>{{tool['pair:label']}}</h1>
-    </mat-card-title>
-    <mat-card-actions fxLayout="row" fxLayoutAlign="end center">
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center">
       <ng-container *ngIf="callForRemove">
         Votre demande à été prise en compte, elle doit être validé par un modérateur.
       </ng-container>
@@ -11,41 +11,48 @@
         <button mat-flat-button (click)="deleteTool()">Remove</button>
       </ng-container>
       <button mat-flat-button [routerLink]="['/tools/edit', dataprovider.extractUrlHash(tool['@id'])]" >Edit</button>
-    </mat-card-actions>
-    <mat-card-subtitle>
-    </mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content fxLayout="row">
-    <mat-card fxFlex="70%" fxLayout="row" fxLayoutGap="20px">
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutGap="20px">
+    <div fxFlex="70%" fxLayout="row" fxLayoutGap="20px">
       <div>
         <img class="orga-pic" [src]="tool['pair:documentedBy'] ? tool['pair:documentedBy'] : 'assets/100lieux_tiny_square_logo.png'" alt="logo">
       </div>
       <div>
+        <div>
+       <p>[{{tool['pair:hasDomain']['pair:label']}}]</p>
+
+        </div>
+        <div *ngIf="tool['pair:hasTopic']">
+          <mat-chip-list aria-label="tags">
+            <mat-chip class="small-chip" *ngFor="let chip of tool['pair:hasTopic']">
+              {{chip.label}}
+            </mat-chip>
+          </mat-chip-list>
+        </div>
         <h4>Description</h4>
         <div class="desc" [innerHTML]="tool['pair:description'] | nocarriage | slice:0:390">...</div>
         <h4>Année de création</h4>
         <div>{{tool['100lieux:year']}}</div>
       </div>
-    </mat-card>
-    <mat-card  fxFlex="30%">
-      <div *ngIf="tool['pair:hasTopic']">
-          <h4>Tags</h4>
-        <mat-chip-list aria-label="tags">
-          <mat-chip class="small-chip" *ngFor="let chip of tool['pair:hasTopic']">
-            {{chip.label}}
-          </mat-chip>
-        </mat-chip-list>
-      </div>
+    </div>
+    <div fxFlex="30%">
       <div>
         <h4>Catégories</h4>
-        <mat-chip-list aria-label="Catégories">
-          <mat-chip selected color="primary">{{tool['pair:hasDomain']['pair:label']}}</mat-chip>
-          <mat-chip selected color="primary">Type d'outil: {{tool['100lieux:aspect']}}</mat-chip>
-          <mat-chip selected color="primary">Public visé: {{tool['100lieux:audience']}}</mat-chip>
-          <mat-chip selected color="primary">Format: {{tool['100lieux:format']}}</mat-chip>
-          <mat-chip selected color="primary">Coût: {{tool['100lieux:cost']}}</mat-chip>
-        </mat-chip-list>
+        <div aria-label="Catégories" class="chip">
+          <div>
+            <mat-chip selected color="primary">Type d'outil: {{tool['100lieux:aspect']}}</mat-chip>
+          </div>
+          <div>
+            <mat-chip selected color="primary">Public visé: {{tool['100lieux:audience']}}</mat-chip>
+          </div>
+          <div>
+            <mat-chip selected color="primary">Format: {{tool['100lieux:format']}}</mat-chip>
+          </div>
+          <div>
+            <mat-chip selected color="primary">Coût: {{tool['100lieux:cost']}}</mat-chip>
+          </div>
       </div>
-    </mat-card>
-  </mat-card-content>
-</mat-card>
+    </div>
+  </div>
+  </div>

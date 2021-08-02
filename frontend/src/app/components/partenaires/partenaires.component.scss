@@ -6,10 +6,13 @@ img{
 }
 
 :host > div {
-  border-bottom: 3px solid  map-get($centlieux-primary, 500);
-  margin-bottom: 9px;
   cursor:pointer;
+  margin: 0 40px;
+  border-bottom: 1px solid  map-get($centlieux-primary, 500);
+  margin-bottom: 15px;
 }
 :host > h2{
   margin-left: 210px;
+}
+:host{
 }

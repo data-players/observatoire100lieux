@@ -1,7 +1,18 @@
+@import 'node_modules/@angular/material/theming';
+@import "src/custom-theme";
 .orga-pic{
   max-height: 300px;
   text-align:center;
 }
 mat-card-actions {
   padding-bottom:0; margin-bottom: 0;
+}
+
+.chip div{
+  margin-bottom:5px;
+}
+
+p{
+  font-size: 1.4em;
+  color: map-get($centlieux-primary, 500);
 }
