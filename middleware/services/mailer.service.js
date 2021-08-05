@@ -25,9 +25,10 @@ module.exports = {
         await delay(5000);*/
         await this.broker.call('api.addRoute', {
             route: {
+                path: '/_mailer',
                 bodyParsers: { json: true },
                 aliases: {
-                    [`POST _mailer/contact-user`]: 'mailer.contactUser'
+                    [`POST contact-user`]: 'mailer.contactUser'
                 }
             }
         });
