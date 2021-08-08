@@ -198,7 +198,7 @@ export class FormLieuComponent implements OnInit {
   }
   private async postPicture(): Promise<{[key: string]: string}> {
     const formData = new FormData();
-    const file:File =  this.fileInput.nativeElement.files[0];
+    const file:any =  this.fileInput.nativeElement.files[0];
     formData.append("file", file);
     console.log(file);
 

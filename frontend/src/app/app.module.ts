@@ -44,7 +44,7 @@ import { ListLieuFilterComponent } from './components/cartographie/list-lieu-fil
 import { ConfirmDialogComponent } from './components/ui/confirm-dialog/confirm-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {FormToolComponent} from './components/tools/form-tool/form-tool.component';
-import { TagsManagmentComponent } from './components/tools/tags-managment/tags-managment.component';
+import { TagsManagmentComponent } from './components/admin/tags-managment/tags-managment.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatOptionModule} from '@angular/material/core';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -64,6 +64,8 @@ import { ContactDialogComponent } from './components/ui/contact-dialog/contact-d
 import { AccueilComponent } from './components/admin/accueil/accueil.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {OverlayModule} from '@angular/cdk/overlay';
+import { MentionsComponent } from './components/ui/mentions/mentions.component';
+import { ListByTagComponent } from './components/tools/list-by-tag/list-by-tag.component';
 
 
 const modules = {
@@ -110,7 +112,9 @@ const modules = {
     DetailToolComponent,
     PartenairesComponent,
     ContactDialogComponent,
-    AccueilComponent
+    AccueilComponent,
+    MentionsComponent,
+    ListByTagComponent
   ],
   imports: [
     BrowserModule,

@@ -91,11 +91,16 @@ export class FormSideBarTiersLieuxComponent implements OnInit {
   }
 
   sendValues(){
-    const formBranchctrl = (Object.values(this.formBranches.value)[0] as {[key: string]: boolean});
+    let formBranchctrl: {[key: string]: boolean} = {};
+    (Object.values(this.formBranches.value) as {[key: string]: boolean}[]).forEach(
+      obj  => {
+        Object.assign(formBranchctrl, obj)
+      }
+    );
     const formDomainctrl = this.formDomains.value;
     this.mapService.mapFilter.emit({
       filterstr: [this.filterForm.value],
-      branches: Object.keys(formBranchctrl).filter(k => formBranchctrl[k]),
+      branches: Object.keys(formBranchctrl).filter(k => formBranchctrl[k as any]),
       domains: Object.keys(formDomainctrl).filter(k => formDomainctrl[k])
     });
   }

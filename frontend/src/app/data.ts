@@ -22,12 +22,8 @@ export const data =  {
     'Adultes',
     'Jeunes',
     'Tous publics',
-    '3 - 6 ans',
-    '6 - 10 ans',
-    '10 - 14 ans',
-    '14 - 18 ans',
-    '18 - 25 ans',
-    'Porteurs de projet'
+    'Porteurs de projet',
+    'Information non disponible',
     ],
   format: [
     'Information non disponible',

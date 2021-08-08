@@ -135,26 +135,28 @@
         </mat-form-field>
       </div>
     </div>
-    <h3>Image</h3>
-    <ng-container *ngIf="editedTool && editedTool['pair:documentedBy']">
-      <img [src]="editedTool['pair:documentedBy']" alt="logo">
-    </ng-container>
-    <div class="image-upload-container">
-      <input type="file" class="file-input"
-             (change)="onFileSelected($event)" #fileInput>
-      <input type="hidden" formControlName="pair:documentedBy">
-      <div class="file-upload">
-        {{fileName || "Aucun fichier selectionné."}}
-        <button mat-mini-fab color="primary" type="button" class="upload-btn"
-                (click)="fileInput.click()">
-          <mat-icon>attach_file</mat-icon>
-        </button>
-      </div>
+    <!--
+  <h3>Image</h3>
+  <ng-container *ngIf="editedTool && editedTool['pair:documentedBy']">
+    <img [src]="editedTool['pair:documentedBy']" alt="logo">
+  </ng-container>
+  <div class="image-upload-container">
+    <input type="file" class="file-input"
+           (change)="onFileSelected($event)" #fileInput>
+    <input type="hidden" formControlName="pair:documentedBy">
+    <div class="file-upload">
+      {{fileName || "Aucun fichier selectionné."}}
+      <button mat-mini-fab color="primary" type="button" class="upload-btn"
+              (click)="fileInput.click()">
+        <mat-icon>attach_file</mat-icon>
+      </button>
     </div>
-    <br>
-    <div>
-      <button type="submit" mat-flat-button color="primary">{{editedTool ? 'Editer' : 'Ajouter'}} l'outil</button>
-    </div>
-  </form>
+  </div>
+  -->
+  <br>
+  <div>
+    <button type="submit" mat-flat-button color="primary">{{editedTool ? 'Editer' : 'Ajouter'}} l'outil</button>
+  </div>
+</form>
 </mat-card>
 
