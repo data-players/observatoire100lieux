@@ -76,46 +76,49 @@
           </mat-autocomplete>
         </mat-form-field>
       </div>
-      <div>
-    <h3>Image de l'affiche</h3>
-    <ng-container *ngIf="editedPoster && editedPoster['pair:documentedBy']">
-      <img class="small" [src]="editedPoster['pair:documentedBy']" alt="logo">
+
+        <!--
+              <div>
+<h3>Image de l'affiche</h3>
+<ng-container *ngIf="editedPoster && editedPoster['pair:documentedBy']">
+  <img class="small" [src]="editedPoster['pair:documentedBy']" alt="logo">
+</ng-container>
+<div class="image-upload-container">
+  <input type="file" class="file-input"
+         (change)="onFileSelected($event, 'Image')" #fileInputPoster>
+  <input type="hidden" formControlName="pair:documentedBy">
+  <div class="file-upload">
+    {{fileNamePoster || "Aucun fichier selectionné."}}
+    <button mat-mini-fab color="primary" type="button" class="upload-btn"
+            (click)="fileInputPoster.click()">
+      <mat-icon>attach_file</mat-icon>
+    </button>
+  </div>
+</div>
+  </div>
+  <div>
+    <h3>Archive au format zip ou rar (affiche + guide)</h3>
+    <ng-container *ngIf="editedPoster && editedPoster['100lieux:zipfile']">
+      {{u.extractUrlHash(editedPoster['100lieux:zipfile'])}}
     </ng-container>
     <div class="image-upload-container">
       <input type="file" class="file-input"
-             (change)="onFileSelected($event, 'Image')" #fileInputPoster>
-      <input type="hidden" formControlName="pair:documentedBy">
+             (change)="onFileSelected($event, 'Zip')" #fileInputZipfile>
+      <input type="hidden" formControlName="100lieux:zipfile">
       <div class="file-upload">
-        {{fileNamePoster || "Aucun fichier selectionné."}}
+        {{fileNameZipfile || "Aucun fichier selectionné."}}
         <button mat-mini-fab color="primary" type="button" class="upload-btn"
-                (click)="fileInputPoster.click()">
+                (click)="fileInputZipfile.click()">
           <mat-icon>attach_file</mat-icon>
         </button>
       </div>
     </div>
-      </div>
-      <div>
-        <h3>Archive au format zip ou rar (affiche + guide)</h3>
-        <ng-container *ngIf="editedPoster && editedPoster['100lieux:zipfile']">
-          {{u.extractUrlHash(editedPoster['100lieux:zipfile'])}}
-        </ng-container>
-        <div class="image-upload-container">
-          <input type="file" class="file-input"
-                 (change)="onFileSelected($event, 'Zip')" #fileInputZipfile>
-          <input type="hidden" formControlName="100lieux:zipfile">
-          <div class="file-upload">
-            {{fileNameZipfile || "Aucun fichier selectionné."}}
-            <button mat-mini-fab color="primary" type="button" class="upload-btn"
-                    (click)="fileInputZipfile.click()">
-              <mat-icon>attach_file</mat-icon>
-            </button>
-          </div>
-        </div>
-      </div>
-    <br>
-    <div>
-      <button type="submit" mat-flat-button color="primary">Ajouter un outil</button>
-    </div>
-    </div>
-  </form>
+  </div>
+  -->
+<br>
+<div>
+  <button type="submit" mat-flat-button color="primary">Ajouter un outil</button>
+</div>
+</div>
+</form>
 </mat-card>

@@ -12,7 +12,7 @@ import {DetailLieuComponent} from './components/cartographie/detail-lieu/detail-
 import {ListToolsFilterComponent} from './components/tools/list-tools-filter/list-tools-filter.component';
 import {FormToolComponent} from './components/tools/form-tool/form-tool.component';
 import {DetailToolComponent} from './components/tools/detail-tool/detail-tool.component';
-import {TagsManagmentComponent} from './components/tools/tags-managment/tags-managment.component';
+import {TagsManagmentComponent} from './components/admin/tags-managment/tags-managment.component';
 import {FormPostersComponent} from './components/admin/form-posters/form-posters.component';
 import {WelcomeComponent} from './components/welcome/welcome.component';
 import {RouterModule} from '@angular/router';
@@ -20,13 +20,15 @@ import {BreadcrumbModule} from 'xng-breadcrumb';
 import {PartenairesComponent} from './components/partenaires/partenaires.component';
 import {AccueilComponent} from './components/admin/accueil/accueil.component';
 import {AuthGuard} from './auth.guard';
+import {MentionsComponent} from './components/ui/mentions/mentions.component';
 
 
 const routes = [
   {path: 'processlogin', component: ProcessloginComponent},
-  {path: 'partners', component: PartenairesComponent  },
   {path: '', component: MainwrapperComponent,
     children: [
+      {path: 'partners', component: PartenairesComponent,data: {breadcrumb: 'Partenaires'  }},
+      {path: 'mentions', component: MentionsComponent ,data: {breadcrumb: 'Mentions légales'  }},
       {path: 'map', component: CartographieComponent,
         children: [
           {path: '', component: MapTiersLieuxComponent},

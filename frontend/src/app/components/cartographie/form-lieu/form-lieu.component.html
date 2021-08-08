@@ -21,22 +21,25 @@
       <input matInput formControlName="pair:email">
     </mat-form-field>
   </div>
-  <h3>Image</h3>
-    <ng-container *ngIf="editedOrga?.documentedBy">
-    <img [src]="editedOrga?.documentedBy" alt="logo">
-    </ng-container>
-  <div class="image-upload-container">
-    <input type="file" class="file-input"
-           (change)="onFileSelected($event)" #fileInput>
-    <input type="hidden" formControlName="pair:documentedBy">
-    <div class="file-upload">
-      {{fileName || "Aucun fichier selectionné."}}
-      <button mat-mini-fab color="primary" type="button" class="upload-btn"
-              (click)="fileInput.click()">
-        <mat-icon>attach_file</mat-icon>
-      </button>
-    </div>
+  <!--Ò
+<h3>Image</h3>
+  <ng-container *ngIf="editedOrga?.documentedBy">
+  <img [src]="editedOrga?.documentedBy" alt="logo">
+  </ng-container>
+
+<div class="image-upload-container">
+  <input type="file" class="file-input"
+         (change)="onFileSelected($event)" #fileInput>
+  <input type="hidden" formControlName="pair:documentedBy">
+  <div class="file-upload">
+    {{fileName || "Aucun fichier selectionné."}}
+    <button mat-mini-fab color="primary" type="button" class="upload-btn"
+            (click)="fileInput.click()">
+      <mat-icon>attach_file</mat-icon>
+    </button>
   </div>
+</div>
+-->
   <h3>Adresse:</h3>
   <ng-container formGroupName="pair:hasLocation">
     <ng-container formGroupName="pair:hasPostalAddress">
