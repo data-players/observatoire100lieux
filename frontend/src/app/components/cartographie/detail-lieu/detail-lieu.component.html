@@ -39,10 +39,10 @@
           <h3>Contact</h3>
           <ul>
             <li>Email: {{organization.email}}</li>
-            <li>Site: {{organization.homepage}}</li>
+            <li>Site: <a [href]="organization.homepage" target="_blank">{{organization.homepage}}</a></li>
             <li>Tel: {{organization.phone}}</li>
             <ng-container *ngFor="let dp of organization.socialLink" >
-              <li *ngIf="dp">{{dp}}</li>
+              <li *ngIf="dp"><a [href]="dp" target="_blank">{{dp}}</a></li>
             </ng-container>
           </ul>
         </div>

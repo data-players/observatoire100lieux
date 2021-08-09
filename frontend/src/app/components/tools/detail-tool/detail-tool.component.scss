@@ -16,3 +16,6 @@ p{
   font-size: 1.4em;
   color: map-get($centlieux-primary, 500);
 }
+:host{
+  padding-bottom: 30px; margin-bottom:40px;
+}

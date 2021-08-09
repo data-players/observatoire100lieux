@@ -23,7 +23,6 @@ export class ListToolsComponent implements OnInit {
 
   filters: { [p: string]: string[] } = {};
 
-
   constructor(public dataService: DataProviderService, private uiService: UiService, public toolService: ToolsService) { }
 
   async ngOnInit(): Promise<void> {
@@ -74,7 +73,7 @@ export class ListToolsComponent implements OnInit {
       const tools = Array.from(this.toolsFiltered)
       const result = tools.filter(t => {
        return [FilterType.TEXT][0] ?
-          (t as { [key: string]: any })['pair:label'].search(this.filters[FilterType.TEXT][0]) !== -1 :
+          (t as { [key: string]: any })['pair:label'].toLowerCase().search(this.filters[FilterType.TEXT][0].toLowerCase()) !== -1 :
           true
       })
       this.toolsFiltered = new Set(result);
