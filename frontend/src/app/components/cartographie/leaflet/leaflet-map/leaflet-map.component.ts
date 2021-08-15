@@ -104,7 +104,7 @@ export class LeafletMapComponent implements OnInit{
   private createMap(): void{
     this.centlieuxmap = L.map('centlieuxmap').setView([46.6311634, 4.0599573], 6);
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-      attribution: 'La bouffe miamiam'
+      attribution: 'openstreetmap.org'
     }).addTo(this.centlieuxmap);
   }
 

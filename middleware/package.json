@@ -1,5 +1,5 @@
 {
-  "name": "100 lieux back",
+  "name": "100lieuxback",
   "version": "1.0.0",
   "description": "100 lieux nourriciers",
   "keywords": [
@@ -34,6 +34,7 @@
     "moleculer-mail": "^1.2.5",
     "moleculer-repl": "^0.6.5",
     "moleculer-web": "^0.10.0",
-    "url-join": "^4.0.1"
+    "url-join": "^4.0.1",
+    "dicer": "RolandHeinze/dicer#header-parser-bug"
   }
 }
