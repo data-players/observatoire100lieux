@@ -1,9 +1,24 @@
-<h1 mat-dialog-title>Confirmation</h1>
+<h1 mat-dialog-title>Envoyer un mail a {{data.name}}</h1>
 <div mat-dialog-content>
-  <!--<p>{{data.title}}</p>-->
-
+  <form [formGroup]="contactForm">
+    <mat-form-field class="input-full-width" appearance="outline">
+      <mat-label>Votre Nom </mat-label>
+      <input matInput formControlName="name">
+      <mat-error *ngIf="this.contactForm.controls['name'].hasError('required') && submitted">Nom obligatoire</mat-error>
+    </mat-form-field>
+    <mat-form-field class="input-full-width" appearance="outline">
+      <mat-label>Votre Email </mat-label>
+      <input matInput formControlName="email">
+      <mat-error *ngIf="this.contactForm.controls['email'].hasError('required') && submitted">Email obligatoire</mat-error>
+    </mat-form-field>
+    <mat-form-field class="input-full-width" appearance="outline">
+      <mat-label>Votre Message</mat-label>
+      <textarea matInput  formControlName="content"></textarea>
+      <mat-error *ngIf="this.contactForm.controls['content'].hasError('required') && submitted">Message obligatoire</mat-error>
+    </mat-form-field>
+  </form>
 </div>
 <div mat-dialog-actions fxLayout="flex" fxLayoutAlign="space-between">
-  <button mat-button color="warn" [mat-dialog-close]="'delete'">Ok</button>
+  <button mat-button color="primary" (click)="sendEmail()">Ok</button>
   <button mat-button (click)="close()">cancel</button>
 </div>

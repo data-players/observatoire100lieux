@@ -7,6 +7,8 @@ import {AuthService} from '../../../services/auth.service';
 import {MatDialog} from '@angular/material/dialog';
 import {ConfirmDialogComponent} from '../../ui/confirm-dialog/confirm-dialog.component';
 import {UiService} from '../../ui/ui.service';
+import {ContactDialogComponent} from '../../ui/contact-dialog/contact-dialog.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-detail-lieu',
@@ -20,7 +22,7 @@ export class DetailLieuComponent implements OnInit {
   constructor(public router: Router, public dialog: MatDialog,private authService:
     AuthService,private breadcrumbService: BreadcrumbService,
               private activatedRoute: ActivatedRoute, public dataprovider:DataProviderService,
-              private uiService: UiService) { }
+              private uiService: UiService, private snackBar: MatSnackBar) { }
 
   async ngOnInit(): Promise<void> {
     this.uiService.showSpinner()
@@ -34,7 +36,23 @@ export class DetailLieuComponent implements OnInit {
       })
     })
   }
+  async openMailDialog() {
+    const dialogRef= this.dialog.open(ContactDialogComponent,{
+      data:{
+        name: this.organization.label
+      }
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      if(result === 'send') {
+        this.snackBar.open('Email envoyé!', 'ok',{
+          horizontalPosition: 'end',
+          verticalPosition: 'top',
+          duration: 3500
+        })
+      }
+    });
+  }
   async deleteOrga() {
     if(this.authService.currentUserValue){
       const dialogRef= this.dialog.open(ConfirmDialogComponent, {

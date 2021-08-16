@@ -66,6 +66,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { MentionsComponent } from './components/ui/mentions/mentions.component';
 import { ListByTagComponent } from './components/tools/list-by-tag/list-by-tag.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 const modules = {
@@ -141,6 +142,7 @@ const modules = {
     MatCheckboxModule,
     IvyCarouselModule,
     MatTreeModule,
+    MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,

@@ -15,6 +15,6 @@
     <a [routerLink]="['/tools']">Galerie pédagogique</a>
     <a [routerLink]="['/partners']">Partenaires</a>
     <a [routerLink]="['/mentions']">Mentions légales</a>
-    <a href="">Nous contacter</a>
+    <a (click)="openMailDialog()" class="cursor">Nous contacter</a>
   </nav>
 </footer>

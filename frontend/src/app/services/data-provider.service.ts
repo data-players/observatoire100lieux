@@ -90,11 +90,13 @@ export class DataProviderService {
     let httpHeaders: HttpHeaders = new HttpHeaders();
     if(slug)
       httpHeaders = httpHeaders.append('Slug', slug)
-    console.log('BODY', body)
     return this.http.post<any>(`${environment.serverUrl}${endpoint}`, payload,{headers: httpHeaders}).pipe(
     ).toPromise();
   }
-
+  async sendEmail(endpoint: string, body: any): Promise<void> {
+    return this.http.post<any>(`${environment.serverUrl}${endpoint}`, body).pipe(
+    ).toPromise();
+  }
   async deleteReq<T>(endpoint: string, id:string): Promise<T> {
     return this.http.delete<any>(`${environment.serverUrl}${endpoint}/${id}`).pipe(
     ).toPromise();

@@ -9,12 +9,12 @@ module.exports = {
     settings: {
         from: `${CONFIG.FROM_NAME} <${CONFIG.FROM_EMAIL}>`,
         transport: {
-            host: CONFIG.SEMAPPS_SMTP_HOST,
-            port: CONFIG.SEMAPPS_SMTP_PORT,
-            secure: CONFIG.SEMAPPS_SMTP_SECURE,
+            host: CONFIG.SMTP_HOST,
+            port: CONFIG.SMTP_PORT,
+            secure: CONFIG.SMTP_SECURE,
             auth: {
-                user: CONFIG.SEMAPPS_SMTP_USER,
-                pass: CONFIG.SEMAPPS_SMTP_PASS,
+                user: CONFIG.SMTP_USER,
+                pass: CONFIG.SMTP_PASS,
             },
         },
         templateFolder: path.join(__dirname, "../templates"),
@@ -38,7 +38,7 @@ module.exports = {
             const { name, email, title, content } = ctx.params;
 
             await ctx.call('mailer.send', {
-                to: CONFIG.SEMAPPS_FROM_EMAIL,
+                to: CONFIG.FROM_EMAIL,
                 replyTo: `${name} <${email}>`,
                 subject: title,
                 template: 'contact-user',

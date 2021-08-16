@@ -12,11 +12,11 @@ module.exports = {
     SEMAPPS_QUEUE_SERVICE_URL:  process.env.SEMAPPS_QUEUE_SERVICE_URL,
     SEMAPPS_REDIS_CACHE_URL: process.env.SEMAPPS_REDIS_CACHE_URL,
     SEMAPPS_BACKUP_FUSEKI_DATASETS_PATH: process.env.SEMAPPS_BACKUP_FUSEKI_DATASETS_PATH,
-    SMTP_HOST: process.env.SEMAPPS_SMTP_HOST,
-    SMTP_PORT: parseInt(process.env.SEMAPPS_SMTP_PORT, 10),
-    SMTP_SECURE: process.env.SEMAPPS_SMTP_SECURE === 'true',
-    SMTP_USER: process.env.SEMAPPS_SMTP_USER,
-    SMTP_PASS: process.env.SEMAPPS_SMTP_PASS,
-    FROM_EMAIL: process.env.SEMAPPS_FROM_EMAIL,
-    FROM_NAME: process.env.SEMAPPS_FROM_NAME
+    SMTP_HOST: process.env.SMTP_HOST,
+    SMTP_PORT: parseInt(process.env.SMTP_PORT, 10),
+    SMTP_SECURE: process.env.SMTP_SECURE === 'true',
+    SMTP_USER: process.env.SMTP_USER,
+    SMTP_PASS: process.env.SMTP_PASS,
+    FROM_EMAIL: process.env.FROM_EMAIL,
+    FROM_NAME: process.env.FROM_NAME
 };
