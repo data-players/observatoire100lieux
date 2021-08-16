@@ -23,7 +23,6 @@ export class DetailLieuComponent implements OnInit {
     AuthService,private breadcrumbService: BreadcrumbService,
               private activatedRoute: ActivatedRoute, public dataprovider:DataProviderService,
               private uiService: UiService, private snackBar: MatSnackBar) { }
-
   async ngOnInit(): Promise<void> {
     this.uiService.showSpinner()
     this.breadcrumbService.set('/map/:id','Details');
@@ -53,6 +52,7 @@ export class DetailLieuComponent implements OnInit {
       }
     });
   }
+
   async deleteOrga() {
     if(this.authService.currentUserValue){
       const dialogRef= this.dialog.open(ConfirmDialogComponent, {

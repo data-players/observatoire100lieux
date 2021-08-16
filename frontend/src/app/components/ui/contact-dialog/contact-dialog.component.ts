@@ -7,6 +7,7 @@ interface ContactDialogData {
   name: string,
   email: string,
   content: string
+  subject: string,
 }
 @Component({
   selector: 'app-contact-dialog',
@@ -31,10 +32,12 @@ export class ContactDialogComponent implements OnInit {
       content: ['', [Validators.required, Validators.min(10)]]
     })
   }
+
   close(){
     this.dialogRef.close()
   }
-  sendEmail(){
+
+  sendEmail() {
     this.submitted = true
     if(this.contactForm.valid){
       this.dialogRef.close('send')

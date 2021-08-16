@@ -5,6 +5,7 @@ import {DataProviderService} from '../../../services/data-provider.service';
 import {UiService} from '../ui.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
+
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
