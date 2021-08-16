@@ -39620,3 +39620,1246 @@ Fri, 09 Jul 2021 05:02:11 GMT express-session deprecated undefined resave option
 Fri, 09 Jul 2021 05:02:11 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at node_modules/@semapps/auth/Connector.js:134:7
 (node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGINT listeners added to [process]. Use emitter.setMaxListeners() to increase limit
 (node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGTERM listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-02T06:37:35.216Z] WARN  af0fb97f5223-19/CACHER: The 'redlock' package is missing. If you want to enable cache lock, please install it with 'npm install redlock --save' command.
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:20) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:20) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:20) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:06.325Z] WARN  156c05435894-20/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:06.327Z] WARN  156c05435894-20/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:06.327Z] ERROR 156c05435894-20/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:31) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:31) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:31) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:07.864Z] WARN  156c05435894-31/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:07.865Z] WARN  156c05435894-31/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:07.866Z] ERROR 156c05435894-31/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:42) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:42) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:42) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:09.220Z] WARN  156c05435894-42/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:09.221Z] WARN  156c05435894-42/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:09.222Z] ERROR 156c05435894-42/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:53) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:53) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:53) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:10.632Z] WARN  156c05435894-53/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:10.633Z] WARN  156c05435894-53/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:10.634Z] ERROR 156c05435894-53/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:66) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:66) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:66) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:12.044Z] WARN  156c05435894-66/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:12.046Z] WARN  156c05435894-66/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:12.046Z] ERROR 156c05435894-66/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:77) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:77) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:77) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:13.414Z] WARN  156c05435894-77/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:13.415Z] WARN  156c05435894-77/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:13.416Z] ERROR 156c05435894-77/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:88) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:88) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:88) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:14.763Z] WARN  156c05435894-88/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:14.764Z] WARN  156c05435894-88/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:14.765Z] ERROR 156c05435894-88/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:99) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:99) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:99) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:16.159Z] WARN  156c05435894-99/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:16.160Z] WARN  156c05435894-99/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:16.160Z] ERROR 156c05435894-99/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:110) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:110) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:110) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:17.582Z] WARN  156c05435894-110/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:17.583Z] WARN  156c05435894-110/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:17.584Z] ERROR 156c05435894-110/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:121) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:121) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:121) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:19.055Z] WARN  156c05435894-121/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:19.057Z] WARN  156c05435894-121/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:19.057Z] ERROR 156c05435894-121/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:132) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:132) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:132) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:20.514Z] WARN  156c05435894-132/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:20.515Z] WARN  156c05435894-132/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:20.515Z] ERROR 156c05435894-132/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:143) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:143) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:143) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:22.087Z] WARN  156c05435894-143/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:22.088Z] WARN  156c05435894-143/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:22.088Z] ERROR 156c05435894-143/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:154) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:154) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:154) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:23.614Z] WARN  156c05435894-154/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:23.615Z] WARN  156c05435894-154/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:23.615Z] ERROR 156c05435894-154/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:165) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:165) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:165) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:25.267Z] WARN  156c05435894-165/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:25.268Z] WARN  156c05435894-165/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:25.268Z] ERROR 156c05435894-165/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:176) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:176) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:176) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:26.929Z] WARN  156c05435894-176/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:26.931Z] WARN  156c05435894-176/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:26.931Z] ERROR 156c05435894-176/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:187) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:187) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:187) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:28.544Z] WARN  156c05435894-187/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:28.545Z] WARN  156c05435894-187/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:28.546Z] ERROR 156c05435894-187/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:198) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:198) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:198) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:30.280Z] WARN  156c05435894-198/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:30.281Z] WARN  156c05435894-198/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:30.281Z] ERROR 156c05435894-198/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:209) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:209) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:209) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:32.034Z] WARN  156c05435894-209/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:32.036Z] WARN  156c05435894-209/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:32.036Z] ERROR 156c05435894-209/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:220) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:220) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:220) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:33.829Z] WARN  156c05435894-220/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:33.830Z] WARN  156c05435894-220/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:33.831Z] ERROR 156c05435894-220/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:231) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:231) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:231) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:35.803Z] WARN  156c05435894-231/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:35.804Z] WARN  156c05435894-231/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:35.804Z] ERROR 156c05435894-231/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:242) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:242) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:242) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:37.830Z] WARN  156c05435894-242/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:37.832Z] WARN  156c05435894-242/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:37.832Z] ERROR 156c05435894-242/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:253) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:253) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:253) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:39.757Z] WARN  156c05435894-253/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:39.759Z] WARN  156c05435894-253/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:39.760Z] ERROR 156c05435894-253/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:264) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:264) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:264) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:41.684Z] WARN  156c05435894-264/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:41.685Z] WARN  156c05435894-264/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:41.685Z] ERROR 156c05435894-264/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:275) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:275) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:275) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:43.711Z] WARN  156c05435894-275/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:43.712Z] WARN  156c05435894-275/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:43.713Z] ERROR 156c05435894-275/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:286) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:286) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:286) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:45.687Z] WARN  156c05435894-286/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:45.689Z] WARN  156c05435894-286/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:45.690Z] ERROR 156c05435894-286/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:297) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:297) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:297) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:48.116Z] WARN  156c05435894-297/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:48.118Z] WARN  156c05435894-297/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:48.119Z] ERROR 156c05435894-297/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:308) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:308) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:308) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:50.229Z] WARN  156c05435894-308/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:50.230Z] WARN  156c05435894-308/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:50.231Z] ERROR 156c05435894-308/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:319) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:319) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:319) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:52.392Z] WARN  156c05435894-319/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:52.396Z] WARN  156c05435894-319/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:52.396Z] ERROR 156c05435894-319/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:330) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:330) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:330) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:54.711Z] WARN  156c05435894-330/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:54.713Z] WARN  156c05435894-330/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:54.714Z] ERROR 156c05435894-330/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:341) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:341) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:341) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:57.039Z] WARN  156c05435894-341/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:57.042Z] WARN  156c05435894-341/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:57.042Z] ERROR 156c05435894-341/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:352) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:352) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:352) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:10:59.442Z] WARN  156c05435894-352/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:59.444Z] WARN  156c05435894-352/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:10:59.444Z] ERROR 156c05435894-352/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:363) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:363) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:363) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:11:02.295Z] WARN  156c05435894-363/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:11:02.297Z] WARN  156c05435894-363/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:11:02.297Z] ERROR 156c05435894-363/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:374) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:374) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:374) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:11:04.736Z] WARN  156c05435894-374/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:11:04.738Z] WARN  156c05435894-374/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:11:04.739Z] ERROR 156c05435894-374/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:385) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:385) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:385) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T21:11:07.122Z] WARN  156c05435894-385/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:11:07.124Z] WARN  156c05435894-385/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-08T21:11:07.125Z] ERROR 156c05435894-385/BROKER: Unable to start all services. FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030 FetchError: request to http://localhost:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 127.0.0.1:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:18) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:18) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:18) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+Sun, 08 Aug 2021 21:13:40 GMT express-session deprecated undefined resave option; provide resave option at node_modules/@semapps/auth/Connector.js:134:7
+Sun, 08 Aug 2021 21:13:40 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at node_modules/@semapps/auth/Connector.js:134:7
+(node:18) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGINT listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:18) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGTERM listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-08T22:02:39.334Z] WARN  3301ea7977c8-18/BROKER: Service 'sentry.sendError' is not registered.
+MoleculerError: Resource Not found
+    at Service.handler (/app/node_modules/@semapps/ldp/services/resource/actions/get.js:100:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Service.api (/app/node_modules/@semapps/ldp/services/resource/actions/get.js:13:14)
+    at async Service.callAction (/app/node_modules/moleculer-web/src/index.js:598:16)
+    at async /app/node_modules/moleculer-web/src/index.js:423:22 {
+  code: 404,
+  type: 'NOT_FOUND',
+  data: undefined,
+  retryable: false
+}
+ServiceNotFoundError: Service 'sentry.sendError' is not found.
+    at ServiceBroker.findNextActionEndpoint (/app/node_modules/moleculer/src/service-broker.js:1034:13)
+    at ServiceBroker.call (/app/node_modules/moleculer/src/service-broker.js:1083:26)
+    at Context.call (/app/node_modules/moleculer/src/context.js:289:23)
+    at ServiceBroker.errorHandler (/app/moleculer.config.js:24:17)
+    at ServiceBroker.errorHandler (/app/node_modules/moleculer/src/service-broker.js:598:37)
+    at /app/node_modules/moleculer/src/middlewares/error-handler.js:34:23
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Service.api (/app/node_modules/@semapps/ldp/services/resource/actions/get.js:13:14)
+    at async Service.callAction (/app/node_modules/moleculer-web/src/index.js:598:16)
+    at async /app/node_modules/moleculer-web/src/index.js:423:22 {
+  code: 404,
+  type: 'SERVICE_NOT_FOUND',
+  data: { action: 'sentry.sendError' },
+  retryable: true
+}
+(node:18) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:18) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:18) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-09T13:47:08.330Z] WARN  3301ea7977c8-18/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-09T13:47:08.331Z] WARN  3301ea7977c8-18/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-09T13:47:08.332Z] ERROR 3301ea7977c8-18/BROKER: Unable to start all services. FetchError: request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030 FetchError: request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:29) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:29) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:29) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-08-09T13:47:11.740Z] WARN  3301ea7977c8-29/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-09T13:47:11.742Z] WARN  3301ea7977c8-29/BROKER: Service 'sentry.sendError' is not registered.
+[2021-08-09T13:47:11.743Z] ERROR 3301ea7977c8-29/BROKER: Unable to start all services. FetchError: request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030 FetchError: request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:42) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:42) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:42) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+Mon, 09 Aug 2021 13:47:19 GMT express-session deprecated undefined resave option; provide resave option at node_modules/@semapps/auth/Connector.js:134:7
+Mon, 09 Aug 2021 13:47:19 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at node_modules/@semapps/auth/Connector.js:134:7
+(node:42) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGINT listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:42) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGTERM listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+Mon, 09 Aug 2021 14:27:03 GMT express-session deprecated undefined resave option; provide resave option at node_modules/@semapps/auth/Connector.js:134:7
+Mon, 09 Aug 2021 14:27:03 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at node_modules/@semapps/auth/Connector.js:134:7
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGINT listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGTERM listeners added to [process]. Use emitter.setMaxListeners() to increase limit
