@@ -48,7 +48,7 @@ const routes = [
         ],
         data: {breadcrumb: 'Outils'}
       },
-      {path: 'admin', component: CartographieComponent,
+      {path: 'admin', component: CartographieComponent, canActivate:[AuthGuard],
         children: [
           {path: '', redirectTo: '/admin/accueil', pathMatch: 'full'},
           {path: 'accueil', component: AccueilComponent, data: {breadcrumb: 'Accueil'}},
