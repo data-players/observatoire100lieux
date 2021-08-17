@@ -8,6 +8,7 @@ interface ContactDialogData {
   email: string,
   content: string
   subject: string,
+  sender: string
 }
 @Component({
   selector: 'app-contact-dialog',
@@ -27,9 +28,10 @@ export class ContactDialogComponent implements OnInit {
   ngOnInit(): void {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.min(3)]],
-      title: 'Informations',
+      title: 'Les 100 lieux nourriciers: Un message vous est envoyé.',
       email: ['', [Validators.email, Validators.required]],
-      content: ['', [Validators.required, Validators.min(10)]]
+      content: ['', [Validators.required, Validators.min(10)]],
+      sender: [this.data.sender]
     })
   }
 

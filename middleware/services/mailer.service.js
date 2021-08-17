@@ -35,10 +35,10 @@ module.exports = {
     },
     actions: {
         async contactUser(ctx) {
-            const { name, email, title, content } = ctx.params;
+            const { name, email, title, content, sender } = ctx.params;
 
             await ctx.call('mailer.send', {
-                to: CONFIG.FROM_EMAIL,
+                to: sender ? sender :  CONFIG.FROM_EMAIL,
                 replyTo: `${name} <${email}>`,
                 subject: title,
                 template: 'contact-user',

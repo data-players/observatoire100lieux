@@ -38,7 +38,8 @@ export class DetailLieuComponent implements OnInit {
   async openMailDialog() {
     const dialogRef= this.dialog.open(ContactDialogComponent,{
       data:{
-        name: this.organization.label
+        name: this.organization.label,
+        sender: this.organization.email
       }
     });
 
@@ -66,10 +67,16 @@ export class DetailLieuComponent implements OnInit {
         console.log('result', result)
          if(result === 'validate'){
            dialogRef.close();
-           this.dataprovider.delete('organizations', this.organization, this.dataprovider.extractUrlHash(this.organization.id), 'Organization').then( v =>
+           this.dataprovider.delete('organizations', this.organization, this.dataprovider.extractUrlHash(this.organization.id), 'Organization').then( v =>{
+             this.dataprovider.createReq('_mailer/contact-user', {
+               name: 'No Reply',
+               email:"noreply@100lieuxnourriciers.fr",
+               title: "100 lieux nourriciers: Un lieu attend une action de votre part",
+               content: "Un lieu attend une action de votre part: https://100lieuxnourriciers.fr/admin/pending",
+             }, 'mailer')
             this.router.navigateByUrl('/map')
+           }
            );
-
          }
       });
     }else{

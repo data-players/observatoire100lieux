@@ -1,7 +1,7 @@
 <mat-card *ngIf="form">
   <mat-card-title>{{editedOrga.id ? 'Editer' : 'Ajouter'}} un lieu</mat-card-title>
 
-<form class="example-form" [formGroup]="form" (ngSubmit)="confirmSuppr()" *ngIf="form" #formElem>
+<form class="example-form" [formGroup]="form" (ngSubmit)="submitForm()" *ngIf="form" #formElem>
   <h3>Informations générales:</h3>
   <div fxLayout="row" fxLayoutAlign="space-between">
     <mat-form-field appearance="outline">

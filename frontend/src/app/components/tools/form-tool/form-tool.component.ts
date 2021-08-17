@@ -66,7 +66,6 @@ export class FormToolComponent implements OnInit {
       this.editedTool = await this.dataService.findOne('tools', param)
       if (this?.editedTool['@id']) this.bcService.set('/tools/edit/:id', `Edition: ${this.editedTool['pair:label']}`)
       this.selectedOrganizations = this.editedTool['pair:offeredBy'] ? this.editedTool['pair:offeredBy'] : [];
-      console.log(this.editedTool)
     }
     const allOrganizations = await this.dataService.findAll('organizations')
     const allTags = await this.dataService.findAll('themes');
@@ -284,6 +283,12 @@ export class FormToolComponent implements OnInit {
           if(result === 'validate'){
             dialogRef.close();
             this.submit();
+            this.dataService.createReq('_mailer/contact-user', {
+              name: 'No Reply',
+              email:"noreply@100lieuxnourriciers.fr",
+              title: "100 lieux nourriciers: Un outil attend une action de votre part",
+              content: "Un outil attend une action de votre part: https://100lieuxnourriciers.fr/admin/pending",
+            }, 'mailer')
           }
         });
       }else{

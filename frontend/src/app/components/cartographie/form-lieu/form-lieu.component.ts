@@ -206,7 +206,7 @@ export class FormLieuComponent implements OnInit {
     return this.dataService.postFile('files', formData)
   }
 
-  async confirmSuppr() {
+  async submitForm() {
     if(this.form.valid) {
       const task = (this.editedOrga?.id) ? 'd\'éditer' : 'd\'ajouter'
       if(!this.authService.currentUserValue){
@@ -221,6 +221,12 @@ export class FormLieuComponent implements OnInit {
           if(result === 'validate'){
             dialogRef.close();
             this.submit();
+            this.dataService.createReq('_mailer/contact-user', {
+              name: 'No Reply',
+              email:"noreply@100lieuxnourriciers.fr",
+              title: "100 lieux nourriciers: Un lieu attend une action de votre part",
+              content: "Un lieu attend une action de votre part: https://100lieuxnourriciers.fr/admin/pending",
+            }, 'mailer')
           }
         });
       }else{

@@ -50,6 +50,12 @@ export class DetailToolComponent implements OnInit {
           dialogRef.close();
           this.dataprovider.delete('tools', this.tool, this.dataprovider.extractUrlHash(this.tool["@id"]), 'Resource').then( v => {
             this.uiService.stopSpinner();
+              this.dataprovider.createReq('_mailer/contact-user', {
+                name: 'No Reply',
+                email:"noreply@100lieuxnourriciers.fr",
+                title: "100 lieux nourriciers: Un outil attend une action de votre part",
+                content: "Un outil attend une action de votre part: https://100lieuxnourriciers.fr/admin/pending",
+              }, 'mailer')
             this.router.navigateByUrl('/tools');
           }
           );
