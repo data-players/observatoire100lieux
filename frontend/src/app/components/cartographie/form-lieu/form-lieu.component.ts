@@ -4,6 +4,7 @@ import {DataProviderService} from '../../../services/data-provider.service';
 import {Organization} from '../../../model/organization.model';
 import {Sector} from '../../../model/sector.model';
 import {Domain} from '../../../model/domain.model';
+import {data} from '../../../data';
 import {MatCheckboxChange} from '@angular/material/checkbox';
 import {OpenStreetMapProvider} from 'leaflet-geosearch';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -34,6 +35,11 @@ export class FormLieuComponent implements OnInit {
 
   branchesSelected: string[] = [];
   domainsSelected: string[] = [];
+  activitiesProvidedSelected: string[] = [];
+
+  activitiesProvided = data.activityProvided
+  dispositives = data.dispositives
+  worksWith = data.worksWith
 
   constructor(private fb: FormBuilder,
               private router: Router,
@@ -68,6 +74,18 @@ export class FormLieuComponent implements OnInit {
       'pair:hasBranch': this.fb.array(([] as FormControl[]).concat(...this.sectors.map(s =>(s.extendedBy.map(b => this.fb.control(this.hasBranchValueInOrga(b.id))))))),
       'pair:hasDomain': this.fb.array(([] as FormControl[]).concat(...this.domains.map(d => this.fb.control(this.hasDomainValueInOrga(d.id))))),
       '100lieux:socialLink': this.fb.array(([]as FormControl[]).concat(...this.editedOrga.socialLink.map( p => this.fb.control([p])))),
+
+      '100lieux:amountActvitiesPerYear':[this.editedOrga?.amountActivitiesPerYear],
+      '100lieux:activitiesProvided': this.fb.array(([] as FormControl[]).concat(...this.activitiesProvided.map(a => this.fb.control(this.hasActivitiesProvidedValueInOrga(a))))),
+      '100lieux:worksWith': this.fb.array(([] as FormControl[]).concat(...this.worksWith.map(a => this.fb.control(this.hasWorksWithValueInOrga(a))))),
+      '100lieux:dispositives': this.fb.array(([] as FormControl[]).concat(...this.dispositives.map(a => this.fb.control(this.hasDispositivesValueInOrga(a))))),
+      '100lieux:beneficiaryAmount':[this.editedOrga?.beneficiaryAmount],
+      '100lieux:permanentEmployees':[this.editedOrga?.permanentEmployees],
+      '100lieux:insertionEmployees':[this.editedOrga?.insertionEmployees],
+      '100lieux:activeBenevole':[this.editedOrga?.activeBenevole],
+
+
+
       'pair:hasLocation':
       this.fb.group({
         '@type':['pair:Place'],
@@ -83,6 +101,7 @@ export class FormLieuComponent implements OnInit {
           }),
         }),
     })
+    console.log('FORM', this.form)
     if(this.editedOrga.id) {
       this.populateForm(this.form, this.editedOrga);
     }
@@ -108,6 +127,7 @@ export class FormLieuComponent implements OnInit {
 
  async submit(){
     this.submitted = true;
+
     const provider = new OpenStreetMapProvider();
     const values = this.form.value;
     const response = await provider.search({query: this.getLongLat(values['pair:hasLocation']['pair:hasPostalAddress'])})
@@ -148,7 +168,7 @@ export class FormLieuComponent implements OnInit {
      }
       this.uiService.stopSpinner()
       await this.router.navigateByUrl('/map');
-    }else{
+    }else {
       this.uiService.stopSpinner()
       this.formElem.nativeElement.scrollIntoView({behavior: 'smooth'});
     }
@@ -162,6 +182,7 @@ export class FormLieuComponent implements OnInit {
     return (this.form.get(['pair:hasLocation','pair:hasPostalAddress']) as FormGroup) ;
   }
 
+
   setFormValue(value: MatCheckboxChange, id: string, what: string) {
     if(value.checked) {
       this[what === 'branch' ?'branchesSelected' : 'domainsSelected'].push(id);
@@ -174,8 +195,6 @@ export class FormLieuComponent implements OnInit {
     }
   }
 
-
-
   hasBranchValueInOrga(id: string) {
     return !!(this.editedOrga.hasBranch.find(br => {
       return br.id === id
@@ -184,6 +203,32 @@ export class FormLieuComponent implements OnInit {
   hasDomainValueInOrga(id: string) {
     return !!(this.editedOrga.hasDomain.find(br => {
       return br.id === id
+    }));
+  }
+  hasWorksWithValueInOrga(id: string) {
+    if(!this.editedOrga?.worksWith){
+      return false;
+    }
+    return !!(this.editedOrga.worksWith.find(br => {
+      return br === id
+    }));
+  }
+
+  hasActivitiesProvidedValueInOrga(id: string) {
+    console.log("ACT PROVIDED",this.editedOrga?.activitiesProvided )
+    if(!this.editedOrga?.activitiesProvided){
+      return false;
+    }
+    return !!(this.editedOrga.activitiesProvided.find(br => {
+      return br === id
+    }));
+  }
+  hasDispositivesValueInOrga(id: string) {
+    if(!this.editedOrga?.dispositives){
+      return false;
+    }
+    return !!(this.editedOrga.dispositives.find(br => {
+      return br === id
     }));
   }
 
@@ -207,6 +252,28 @@ export class FormLieuComponent implements OnInit {
   }
 
   async submitForm() {
+    this.form.value['100lieux:activitiesProvided'] = this.form.value['100lieux:activitiesProvided'].reduce((a: string[], val:boolean, i:number) => {
+      if(val){
+        a.push(this.activitiesProvided[i])
+      }
+      return a
+    }, [])
+
+    this.form.value['100lieux:dispositives'] = this.form.value['100lieux:dispositives'].reduce((a: string[], val:boolean, i:number) => {
+      if(val){
+        a.push(this.dispositives[i])
+      }
+      return a
+    }, [])
+
+    this.form.value['100lieux:worksWith'] = this.form.value['100lieux:worksWith'].reduce((a: string[], val:boolean, i:number) => {
+      if(val){
+        a.push(this.worksWith[i])
+      }
+      return a
+    }, [])
+
+
     if(this.form.valid) {
       const task = (this.editedOrga?.id) ? 'd\'éditer' : 'd\'ajouter'
       if(!this.authService.currentUserValue){

@@ -22,7 +22,7 @@ export class DataProviderService {
   }
 
   // Transform a single item as an array (to ba able to iterate)
-  private asAnArray: string[][] = [['hasDomain'], ['hasBranch'],['hasTopic'],['topicOf'],['socialLink']];
+  private asAnArray: string[][] = [['activitiesProvided'],['worksWith'],['dispositives'],['hasDomain'], ['hasBranch'],['hasTopic'],['topicOf'],['socialLink']];
 
   async findAll<T>(endpoint: string): Promise<T[]> {
     return this.http.get<any>(`${environment.serverUrl}${endpoint}`, {headers: this.headers, responseType: 'json'}).pipe(

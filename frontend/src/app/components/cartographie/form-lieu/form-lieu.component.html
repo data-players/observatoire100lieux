@@ -120,6 +120,80 @@
     <h3 class="mat-label">Modalités d'accueil</h3>
     <quill-editor [styles]="{height: '100px'}" formControlName="100lieux:accessrules"></quill-editor>
   </div>
+  <!-- ADDITIONNAL DATAS -->
+  <h2>Un peu plus sur vous...</h2>
+  <div>
+    <div fxLayout="row">
+      <div>
+        <mat-form-field class="" appearance="outline">
+          <mat-label>Nombre de bénéficiaires /  ans</mat-label>
+          <input matInput formControlName="100lieux:beneficiaryAmount">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="input-full-width" appearance="outline">
+          <mat-label>Nombre d’activités proposées en moyenne / an </mat-label>
+          <input matInput formControlName="100lieux:amountActvitiesPerYear">
+          <mat-error *ngIf="invalidAddress && submitted"></mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="space-between">
+      <mat-form-field class="" appearance="outline">
+        <mat-label>{{'Nombre de salariés permanents'}} </mat-label>
+        <input matInput formControlName="100lieux:permanentEmployees">
+      </mat-form-field>
+      <mat-form-field class="" appearance="outline">
+        <mat-label>{{'Nombre de salariés en insertion'}} </mat-label>
+        <input matInput formControlName="100lieux:insertionEmployees">
+      </mat-form-field>
+      <mat-form-field class="" appearance="outline">
+        <mat-label>{{'Nombre de bénéficiaires'}} </mat-label>
+        <input matInput formControlName="100lieux:activeBenevole">
+      </mat-form-field>
+    </div>
+    <ng-container formArrayName="100lieux:dispositives">
+    <mat-card>
+      <h3>
+        <mat-icon>assignment</mat-icon>Type d'activités proposés :
+      </h3>
+      <mat-card-content>
+        <div *ngFor="let s of dispositives; index as i" fxFlex>
+          <mat-checkbox [formControlName]="i" >{{s}}</mat-checkbox>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+  <div>
+  <ng-container formArrayName="100lieux:activitiesProvided">
+    <mat-card>
+      <h3>
+        <mat-icon>assignment</mat-icon>Dispositifs solidaires proposés:
+      </h3>
+      <mat-card-content>
+        <div *ngFor="let s of activitiesProvided; index as i" fxFlex>
+          <mat-checkbox [formControlName]="i" >{{s}}</mat-checkbox>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+  </div>
+
+    <div>
+      <ng-container formArrayName="100lieux:worksWith">
+        <mat-card>
+          <h3>
+            <mat-icon>assignment</mat-icon>Structures avec lesquelles vous travaillez:
+          </h3>
+          <mat-card-content>
+            <div *ngFor="let s of worksWith; index as i" fxFlex>
+              <mat-checkbox [formControlName]="i"  >{{s}}</mat-checkbox>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </ng-container>
+    </div>
+  </div>
   <br>
   <div>
     <button type="submit" mat-flat-button color="primary">{{editedOrga.id ? 'Editer' : 'Ajouter'}} un lieu</button>

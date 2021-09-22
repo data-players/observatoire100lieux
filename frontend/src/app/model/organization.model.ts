@@ -18,6 +18,18 @@ export class Organization {
      public accessrules: string = '',
      public timetable: string = '',
      public socialLink: [] = [],
-     public hasLocation: PhysicalPlace = new PhysicalPlace()
+     public hasLocation: PhysicalPlace = new PhysicalPlace(),
+
+
+     public worksWith: String[] = [],
+     public dispositives: String[] = [],
+     public activitiesProvided: String[] = [],
+     public amountActivitiesPerYear: string = '',
+     public beneficiaryAmount: string = '',
+     public permanentEmployees: string = '',
+     public insertionEmployees: string = '',
+     public activeBenevole: string = '',
+
+
     ){}
 }

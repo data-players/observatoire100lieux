@@ -61,5 +61,32 @@ export const data =  {
     'Site web',
     'Tutoriel',
     'Vidéo courte',
+  ],
+  activityProvided: [
+    'Visites',
+    'Ateliers enfants',
+    'Ateliers adultes',
+    'Vente',
+    'Formations',
+    'Chantiers participatifs',
+    'Evénements',
+    'Repas partagé',
+    'Autres'
+  ],
+  dispositives: [
+    'Paniers',
+    'Repas',
+    'Animations',
+    'Insertions',
+    'Autres',
+  ],
+  worksWith: [
+    'Collectivités',
+    'Associations',
+    'Acteurs du monde agricole',
+    'Entreprises',
+    'Bailleurs sociaux',
+    'Ecoles',
+    'Autres'
   ]
 };
