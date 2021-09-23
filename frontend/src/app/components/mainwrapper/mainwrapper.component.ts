@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-mainwrapper',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainwrapperComponent implements OnInit {
 
-  constructor() { }
+  public isIndex = false;
+
+  constructor(public route: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.url.subscribe(
+      m => console.log(m)
+    )
   }
 
 }

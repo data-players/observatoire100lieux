@@ -50,18 +50,21 @@ export class FormSideBarListToolsComponent implements OnInit {
           if(this.toolTypeFilters.indexOf(value as string) > -1){
             this.toolTypeFilters.splice(this.toolTypeFilters.indexOf(value as string), 1);
             this.toolType.push(value as string)
+            this.toolType.sort()
           }
           break;
         case this.FilterType.COST:
           if(this.costFilters.indexOf(value as string) > -1) {
             this.costFilters.splice(this.costFilters.indexOf(value as string), 1);
             this.cost.push(value as string)
+            this.cost.sort()
           }
           break;
         case this.FilterType.FORMAT:
           if(this.formatFilters.indexOf(value as string) > -1){
             this.formatFilters.splice(this.formatFilters.indexOf(value as string), 1);
             this.format.push(value as string)
+            this.format.sort()
           }
           break;
         case this.FilterType.THEME:
@@ -69,12 +72,14 @@ export class FormSideBarListToolsComponent implements OnInit {
           if(this.themeGroupFilters.indexOf(value as string) > -1) {
             this.themeGroupFilters.splice(this.themeGroupFilters.indexOf(value as string), 1);
             this.themeGroup.push(value as string)
+            this.themeGroup.sort()
           }
           break;
         case this.FilterType.POPULATION:
           if(this.populationTargetFilters.indexOf(value as string) > -1) {
             this.populationTargetFilters.splice(this.populationTargetFilters.indexOf(value as string), 1);
             this.populationTarget.push(value as string)
+            this.populationTarget.sort()
           }
           break;
         case this.FilterType.TEXT:

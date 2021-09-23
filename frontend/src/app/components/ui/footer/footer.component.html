@@ -1,6 +1,6 @@
 
 <footer>
-  <nav fxLayout="row" fxLayoutAlign="center" aria-label="Paternaires">
+  <nav *ngIf="route.url !== '/'" fxLayout="row" fxLayoutAlign="center" aria-label="Paternaires">
     <p>Partenaires</p>
     <a target="_blank"  href="https://www.afaup.org/">AFAUP</a>
     <a target="_blank"  href="https://www.lespetitsdebrouillards.org">Les petits débrouillards</a>

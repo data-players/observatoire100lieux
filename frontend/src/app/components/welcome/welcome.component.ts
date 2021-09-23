@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BreadcrumbService} from 'xng-breadcrumb';
 
 @Component({
   selector: 'app-welcome',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bd: BreadcrumbService) { }
 
   ngOnInit(): void {
+    this.bd.set('', {skip:false})
   }
 
 }

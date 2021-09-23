@@ -1,4 +1,8 @@
-<xng-breadcrumb [separator]="iconTemplate"></xng-breadcrumb>
+<xng-breadcrumb [separator]="iconTemplate">
+  <ng-container *xngBreadcrumbItem="let breadcrumb">
+    <ng-container *ngIf="route.url !== '/'">{{ breadcrumb | titlecase }}</ng-container>
+  </ng-container>
+</xng-breadcrumb>
 <ng-template #iconTemplate>
   <mat-icon>chevron_right</mat-icon>
 </ng-template>

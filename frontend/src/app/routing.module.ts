@@ -60,7 +60,7 @@ const routes = [
       },
       {path: '', component: WelcomeComponent },
     ],
-    data: {breadcrumb: 'Accueil'}},
+    data: {breadcrumb: 'Accueil' }},
     {path: '**', component: E404Component},
 ]
 

@@ -4,6 +4,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {DataProviderService} from '../../../services/data-provider.service';
 import {UiService} from '../ui.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class FooterComponent implements OnInit {
 
   constructor(public dialog: MatDialog, public dataprovider:DataProviderService,
-             private snackBar: MatSnackBar ) { }
+             private snackBar: MatSnackBar, public route: Router ) { }
 
   ngOnInit(): void {
   }
