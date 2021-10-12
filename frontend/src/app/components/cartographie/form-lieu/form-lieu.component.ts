@@ -255,7 +255,7 @@ export class FormLieuComponent implements OnInit {
       })
     }
 
-    return this.dataService.postFile('files', formData, httpUploadOptions)
+    return this.dataService.postFile('files', file, httpUploadOptions)
   }
 
   async submitForm() {
