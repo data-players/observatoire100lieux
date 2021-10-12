@@ -24,6 +24,6 @@ export class PosterDialogComponent implements OnInit {
   }
 
   download() {
-    window.open('https://drive.google.com/drive/folders/1nMULdX09OfKvl1TWK-lE7tbBdG-dS-US?usp=sharing');
+    window.open('https://drive.google.com/file/d/1r-Vnpf9BBMkWJt-vZBjiMEMRZfdIjrfl/view');
   }
 }
