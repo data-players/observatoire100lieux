@@ -153,8 +153,12 @@ export class DataProviderService {
     return w
   }
 
-  async postFile<T>(endpoint: string, obj: any): Promise<any> {
-    return this.http.post<any>(`${environment.serverUrl}${endpoint}`, obj, {observe: 'response'}).pipe(
+  async postFile<T>(endpoint: string, obj: any, header?: any): Promise<any> {
+    const heads = {};
+    Object.assign(heads, {observe: 'response'})
+    if(header) Object.assign(heads, header)
+    console.log('HEADS', heads)
+    return this.http.post<any>(`${environment.serverUrl}${endpoint}`, obj, heads).pipe(
       map( resp => {
         console.log('location', resp.headers.get('Location'));
         return resp.headers.get('Location');

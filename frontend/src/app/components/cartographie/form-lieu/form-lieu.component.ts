@@ -13,6 +13,7 @@ import {ConfirmDialogComponent} from '../../ui/confirm-dialog/confirm-dialog.com
 import {AuthService} from '../../../services/auth.service';
 import {MatDialog} from '@angular/material/dialog';
 import {UiService} from '../../ui/ui.service';
+import {HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-form-lieu',
@@ -245,10 +246,16 @@ export class FormLieuComponent implements OnInit {
     const formData = new FormData();
     const file:any =  this.fileInput.nativeElement.files[0];
     formData.append("file", file);
-    console.log(file);
 
 
-    return this.dataService.postFile('files', formData)
+    const httpUploadOptions = {
+      headers: new HttpHeaders({
+        'Accept': 'application/json',
+        'Content-Type': file.type
+      })
+    }
+
+    return this.dataService.postFile('files', formData, httpUploadOptions)
   }
 
   async submitForm() {
