@@ -48,37 +48,7 @@
       </div>
       <div fxLayout="row" fxLayoutAlign="space-between" >
       </div>
-      <div fxLayout="flex">
-        <mat-form-field class="example-chip-list full-width" appearance="outline" fxFlex="100%">
-          <mat-label>Môts clés</mat-label>
-          <mat-chip-list #keyList aria-label="Môt clés">
-            <mat-chip
-              *ngFor="let tag of selectedTags"
-              selectable="true"
-              removable="true"
-              (removed)="removeTag(tag)">
-              {{tag['pair:label']}}
-              <mat-icon matChipRemove >cancel</mat-icon>
-            </mat-chip>
-            <input
-              placeholder="Ajouter un tag..."
-              #tagsInput
-              [formControl]="tagCtrl"
-              [matAutocomplete]="autoTag"
-              [matChipInputFor]="keyList"
-              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-              (matChipInputTokenEnd)="addTag($event)">
-          </mat-chip-list>
-          <mat-autocomplete #autoTag="matAutocomplete" (optionSelected)="selectedTag($event)">
-            <mat-option  *ngFor="let tag of allTagsSelect" [value]="tag">
-              {{tag['pair:label']}}
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-      </div>
-
-        <!--
-              <div>
+    <div>
 <h3>Image de l'affiche</h3>
 <ng-container *ngIf="editedPoster && editedPoster['pair:documentedBy']">
   <img class="small" [src]="editedPoster['pair:documentedBy']" alt="logo">
@@ -96,28 +66,9 @@
   </div>
 </div>
   </div>
-  <div>
-    <h3>Archive au format zip ou rar (affiche + guide)</h3>
-    <ng-container *ngIf="editedPoster && editedPoster['100lieux:zipfile']">
-      {{u.extractUrlHash(editedPoster['100lieux:zipfile'])}}
-    </ng-container>
-    <div class="image-upload-container">
-      <input type="file" class="file-input"
-             (change)="onFileSelected($event, 'Zip')" #fileInputZipfile>
-      <input type="hidden" formControlName="100lieux:zipfile">
-      <div class="file-upload">
-        {{fileNameZipfile || "Aucun fichier selectionné."}}
-        <button mat-mini-fab color="primary" type="button" class="upload-btn"
-                (click)="fileInputZipfile.click()">
-          <mat-icon>attach_file</mat-icon>
-        </button>
-      </div>
-    </div>
-  </div>
-  -->
 <br>
 <div>
-  <button type="submit" mat-flat-button color="primary">Ajouter un outil</button>
+  <button type="submit" mat-flat-button color="primary">Ajouter un poster</button>
 </div>
 </div>
 </form>

@@ -24,7 +24,6 @@ export class PosterDialogComponent implements OnInit {
   }
 
   download() {
-    if(this.data.poster['100lieux:zipfile'])
-    window.open(this.data.poster['100lieux:zipfile']);
+    window.open('https://drive.google.com/drive/folders/1nMULdX09OfKvl1TWK-lE7tbBdG-dS-US?usp=sharing');
   }
 }
