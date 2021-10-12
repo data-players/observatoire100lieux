@@ -250,7 +250,7 @@ export class FormLieuComponent implements OnInit {
 
     const httpUploadOptions = {
       headers: new HttpHeaders({
-        'Accept': 'application/json',
+        //'Accept': 'application/json',
         'Content-Type': file.type
       })
     }
