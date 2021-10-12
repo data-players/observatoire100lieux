@@ -9,6 +9,7 @@ import {MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
 import {MatChipInputEvent} from '@angular/material/chips';
 import {Organization} from '../../../model/organization.model';
 import {Utils} from '../../../utils';
+import {HttpHeaders} from '@angular/common/http';
 
 export enum FileType{
   Zip,Image
@@ -161,7 +162,7 @@ export class FormPostersComponent implements OnInit {
       }else{
         await this.dataService.add<Organization>('posters', values, 'Resource');
       }
-      await this.router.navigateByUrl('/posters/add');
+      await this.router.navigateByUrl('/tools');
     }else{
       this.fileInputPoster.nativeElement.scrollIntoView({behavior: 'smooth'});
     }
@@ -181,15 +182,16 @@ export class FormPostersComponent implements OnInit {
   }
 
   private async postFile(type: FileType): Promise<{[key: string]: string}> {
-    const formData = new FormData();
-    let file:File
-    if(type === FileType.Image)
-     file =  this.fileInputPoster.nativeElement.files[0];
-    else{
-     file =  this.fileInputZipfile.nativeElement.files[0];
+
+    const file:any =  this.fileInputPoster.nativeElement.files[0];
+
+    const httpUploadOptions = {
+      headers: new HttpHeaders({
+        //'Accept': 'application/json',
+        'Content-Type': file.type
+      })
     }
-    formData.append("file", file);
-    return this.dataService.postFile('files', formData)
+    return this.dataService.postFile('files', file, httpUploadOptions)
   }
 
   retrieveData(poster: any) {
