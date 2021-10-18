@@ -7,7 +7,8 @@ export const environment = {
   production: false,
   adminmail: ['lhomme.thomas@pm.me', 'Pierre@bouvier-muller.fr', 'romain.guitet@afaup.org ', 'pierre@bouvier-muller.fr'],
   serverUrl: 'http://localhost:3000/',
-  frontUrl: 'http://localhost:4200/'
+  frontUrl: 'http://localhost:4200/',
+  adresseUrl: 'https://api-adresse.data.gouv.fr/search/'
 };
 
 /*

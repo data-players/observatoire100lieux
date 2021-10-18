@@ -19,6 +19,7 @@ export class PosterDialogComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   close(){
     this.dialogRef.close()
   }

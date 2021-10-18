@@ -14,6 +14,7 @@ import {AuthService} from '../../../services/auth.service';
 import {MatDialog} from '@angular/material/dialog';
 import {UiService} from '../../ui/ui.service';
 import {HttpHeaders} from '@angular/common/http';
+import {AddresseDataGouvService} from '../../../services/addresse.data.gouv.service';
 
 @Component({
   selector: 'app-form-lieu',
@@ -45,6 +46,7 @@ export class FormLieuComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private router: Router,
               private dataService: DataProviderService,
+              private addressDataGouv: AddresseDataGouvService,
               private activatedRoute: ActivatedRoute,
               private bcService: BreadcrumbService,
               private authService: AuthService,
@@ -129,26 +131,25 @@ export class FormLieuComponent implements OnInit {
  async submit(){
     this.submitted = true;
 
-    const provider = new OpenStreetMapProvider();
     const values = this.form.value;
-    const response = await provider.search({query: this.getLongLat(values['pair:hasLocation']['pair:hasPostalAddress'])})
-    if(!response || response.length === 0) {
+    const responseDataGouv  = await this.addressDataGouv.findAddresse(this.formatAdress(values['pair:hasLocation']['pair:hasPostalAddress']))
+
+    if(!responseDataGouv && responseDataGouv['features'] !== undefined && (responseDataGouv['features'] as []).length === 0){
       this.getPostalAdress().setErrors({'unknowaddress' : true});
       this.getPostalAdress().get('pair:addressZipcode')?.setErrors({'unknowaddress' : true});
       this.getPostalAdress().get('pair:addressStreet')?.setErrors({'unknowaddress' : true});
       this.getPostalAdress().get('pair:locality')?.setErrors({'unknowaddress' : true});
       this.invalidAddress = true;
     }else{
-      if(response[0].bounds !== null) {
-        values['pair:hasLocation']['pair:hasPostalAddress']['pair:latitude'] = response[0].bounds[0][0];
-        values['pair:hasLocation']['pair:hasPostalAddress']['pair:longitude'] = response[0].bounds[0][1];
+      const features = (responseDataGouv['features'] as Array<any>);
+        values['pair:hasLocation']['pair:hasPostalAddress']['pair:latitude'] = features[0]['geometry']['coordinates'][1]
+        values['pair:hasLocation']['pair:hasPostalAddress']['pair:longitude'] = features[0]['geometry']['coordinates'][0]
         this.getPostalAdress().setErrors(null)
         this.getPostalAdress().get('pair:addressZipcode')?.setErrors(null)
         this.getPostalAdress().get('pair:addressStreet')?.setErrors(null)
         this.getPostalAdress().get('pair:locality')?.setErrors(null)
         this.invalidAddress = false;
-      }
-     }
+    }
 
     values['pair:hasBranch'] = this.branchesSelected;
     values['pair:hasDomain'] = this.domainsSelected;
@@ -176,7 +177,7 @@ export class FormLieuComponent implements OnInit {
   }
 
 
-  private getLongLat(addresse: {[key: string]: string}): string{
+  private formatAdress(addresse: {[key: string]: string}): string{
     return `${addresse['pair:addressStreet']}, ${addresse['pair:addressZipcode']} ${addresse['pair:locality']}, France`;
   }
   getPostalAdress(): FormGroup{
