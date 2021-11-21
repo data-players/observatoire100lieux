@@ -40863,3 +40863,299 @@ Mon, 09 Aug 2021 14:27:03 GMT express-session deprecated undefined resave option
 Mon, 09 Aug 2021 14:27:03 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at node_modules/@semapps/auth/Connector.js:134:7
 (node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGINT listeners added to [process]. Use emitter.setMaxListeners() to increase limit
 (node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGTERM listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-09-22T20:25:58.318Z] WARN  3301ea7977c8-19/BROKER: Service 'sentry.sendError' is not registered.
+[2021-09-22T20:25:58.318Z] WARN  3301ea7977c8-19/BROKER: Service 'sentry.sendError' is not registered.
+[2021-09-22T20:25:58.318Z] ERROR 3301ea7977c8-19/BROKER: Unable to start all services. FetchError: request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030 FetchError: request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:30) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:30) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:30) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+Wed, 22 Sep 2021 20:26:04 GMT express-session deprecated undefined resave option; provide resave option at node_modules/@semapps/auth/Connector.js:134:7
+Wed, 22 Sep 2021 20:26:04 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at node_modules/@semapps/auth/Connector.js:134:7
+(node:30) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGINT listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:30) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGTERM listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+NotFoundError: Not found
+    at Service.send404 (/app/node_modules/moleculer-web/src/index.js:796:29)
+    at Service.httpHandler (/app/node_modules/moleculer-web/src/index.js:337:11) {
+  code: 404,
+  type: 'NOT_FOUND',
+  data: undefined,
+  retryable: false
+}
+[2021-09-22T20:49:42.348Z] WARN  3301ea7977c8-30/BROKER: Service 'sentry.sendError' is not registered.
+MoleculerError: Resource Not found
+    at Service.handler (/app/node_modules/@semapps/ldp/services/resource/actions/get.js:100:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Service.api (/app/node_modules/@semapps/ldp/services/resource/actions/get.js:13:14)
+    at async Service.callAction (/app/node_modules/moleculer-web/src/index.js:598:16)
+    at async /app/node_modules/moleculer-web/src/index.js:423:22 {
+  code: 404,
+  type: 'NOT_FOUND',
+  data: undefined,
+  retryable: false
+}
+ServiceNotFoundError: Service 'sentry.sendError' is not found.
+    at ServiceBroker.findNextActionEndpoint (/app/node_modules/moleculer/src/service-broker.js:1034:13)
+    at ServiceBroker.call (/app/node_modules/moleculer/src/service-broker.js:1083:26)
+    at Context.call (/app/node_modules/moleculer/src/context.js:289:23)
+    at ServiceBroker.errorHandler (/app/moleculer.config.js:24:17)
+    at ServiceBroker.errorHandler (/app/node_modules/moleculer/src/service-broker.js:598:37)
+    at /app/node_modules/moleculer/src/middlewares/error-handler.js:34:23
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Service.api (/app/node_modules/@semapps/ldp/services/resource/actions/get.js:13:14)
+    at async Service.callAction (/app/node_modules/moleculer-web/src/index.js:598:16)
+    at async /app/node_modules/moleculer-web/src/index.js:423:22 {
+  code: 404,
+  type: 'SERVICE_NOT_FOUND',
+  data: { action: 'sentry.sendError' },
+  retryable: true
+}
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:19) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-10-05T22:59:50.834Z] WARN  3301ea7977c8-19/BROKER: Service 'sentry.sendError' is not registered.
+[2021-10-05T22:59:50.835Z] WARN  3301ea7977c8-19/BROKER: Service 'sentry.sendError' is not registered.
+[2021-10-05T22:59:50.836Z] ERROR 3301ea7977c8-19/BROKER: Unable to start all services. FetchError: request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030 FetchError: request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:30) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:30) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:30) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-10-05T22:59:52.519Z] WARN  3301ea7977c8-30/BROKER: Service 'sentry.sendError' is not registered.
+[2021-10-05T22:59:52.520Z] WARN  3301ea7977c8-30/BROKER: Service 'sentry.sendError' is not registered.
+[2021-10-05T22:59:52.520Z] ERROR 3301ea7977c8-30/BROKER: Unable to start all services. FetchError: request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030 FetchError: request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:41) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:41) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:41) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+[2021-10-05T22:59:54.180Z] WARN  3301ea7977c8-41/BROKER: Service 'sentry.sendError' is not registered.
+[2021-10-05T22:59:54.181Z] WARN  3301ea7977c8-41/BROKER: Service 'sentry.sendError' is not registered.
+[2021-10-05T22:59:54.182Z] ERROR 3301ea7977c8-41/BROKER: Unable to start all services. FetchError: request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+[Runner] request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030 FetchError: request to http://fuseki:3030/$/datasets/localData failed, reason: connect ECONNREFUSED 172.18.0.3:3030
+    at ClientRequest.<anonymous> (/app/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:310:20)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at Socket.socketErrorListener (_http_client.js:426:9)
+    at Socket.emit (events.js:310:20)
+    at Socket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+(node:54) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:54) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:54) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+Tue, 05 Oct 2021 23:00:01 GMT express-session deprecated undefined resave option; provide resave option at node_modules/@semapps/auth/Connector.js:134:7
+Tue, 05 Oct 2021 23:00:01 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at node_modules/@semapps/auth/Connector.js:134:7
+(node:54) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGINT listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:54) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGTERM listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+NotFoundError: Not found
+    at Service.send404 (/app/node_modules/moleculer-web/src/index.js:796:29)
+    at Service.httpHandler (/app/node_modules/moleculer-web/src/index.js:337:11) {
+  code: 404,
+  type: 'NOT_FOUND',
+  data: undefined,
+  retryable: false
+}
+Error: stream.push() after EOF
+    at readableAddChunk (/app/node_modules/memory-streams/node_modules/readable-stream/lib/_stream_readable.js:168:15)
+    at ReadableStream.Readable.push (/app/node_modules/memory-streams/node_modules/readable-stream/lib/_stream_readable.js:149:10)
+    at FileStream.<anonymous> (/app/node_modules/@semapps/middlewares/index.js:109:26)
+    at FileStream.emit (events.js:310:20)
+    at FileStream.EventEmitter.emit (domain.js:482:12)
+    at addChunk (_stream_readable.js:286:12)
+    at readableAddChunk (_stream_readable.js:268:9)
+    at FileStream.Readable.push (_stream_readable.js:209:10)
+    at PartStream.onData (/app/node_modules/busboy/lib/types/multipart.js:224:28)
+    at PartStream.emit (events.js:310:20)
+    at PartStream.EventEmitter.emit (domain.js:482:12)
+    at addChunk (_stream_readable.js:286:12)
+    at readableAddChunk (_stream_readable.js:268:9)
+    at PartStream.Readable.push (_stream_readable.js:209:10)
+    at Dicer._oninfo (/app/node_modules/dicer/lib/Dicer.js:190:36)
+    at SBMH.<anonymous> (/app/node_modules/dicer/lib/Dicer.js:126:10)
+(node:65) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:65) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:65) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+Tue, 05 Oct 2021 23:06:32 GMT express-session deprecated undefined resave option; provide resave option at node_modules/@semapps/auth/Connector.js:134:7
+Tue, 05 Oct 2021 23:06:32 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at node_modules/@semapps/auth/Connector.js:134:7
+(node:65) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGINT listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:65) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGTERM listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+Error: stream.push() after EOF
+    at readableAddChunk (/app/node_modules/memory-streams/node_modules/readable-stream/lib/_stream_readable.js:168:15)
+    at ReadableStream.Readable.push (/app/node_modules/memory-streams/node_modules/readable-stream/lib/_stream_readable.js:149:10)
+    at FileStream.<anonymous> (/app/node_modules/@semapps/middlewares/index.js:109:26)
+    at FileStream.emit (events.js:310:20)
+    at FileStream.EventEmitter.emit (domain.js:482:12)
+    at addChunk (_stream_readable.js:286:12)
+    at readableAddChunk (_stream_readable.js:268:9)
+    at FileStream.Readable.push (_stream_readable.js:209:10)
+    at PartStream.onData (/app/node_modules/busboy/lib/types/multipart.js:224:28)
+    at PartStream.emit (events.js:310:20)
+    at PartStream.EventEmitter.emit (domain.js:482:12)
+    at addChunk (_stream_readable.js:286:12)
+    at readableAddChunk (_stream_readable.js:268:9)
+    at PartStream.Readable.push (_stream_readable.js:209:10)
+    at Dicer._oninfo (/app/node_modules/dicer/lib/Dicer.js:190:36)
+    at SBMH.<anonymous> (/app/node_modules/dicer/lib/Dicer.js:126:10)
+(node:76) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:76) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:76) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+Tue, 05 Oct 2021 23:08:48 GMT express-session deprecated undefined resave option; provide resave option at node_modules/@semapps/auth/Connector.js:134:7
+Tue, 05 Oct 2021 23:08:48 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at node_modules/@semapps/auth/Connector.js:134:7
+(node:76) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGINT listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:76) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGTERM listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+NotFoundError: Not found
+    at Service.send404 (/app/node_modules/moleculer-web/src/index.js:796:29)
+    at Service.httpHandler (/app/node_modules/moleculer-web/src/index.js:337:11) {
+  code: 404,
+  type: 'NOT_FOUND',
+  data: undefined,
+  retryable: false
+}
+Error: stream.push() after EOF
+    at readableAddChunk (/app/node_modules/memory-streams/node_modules/readable-stream/lib/_stream_readable.js:168:15)
+    at ReadableStream.Readable.push (/app/node_modules/memory-streams/node_modules/readable-stream/lib/_stream_readable.js:149:10)
+    at FileStream.<anonymous> (/app/node_modules/@semapps/middlewares/index.js:109:26)
+    at FileStream.emit (events.js:310:20)
+    at FileStream.EventEmitter.emit (domain.js:482:12)
+    at addChunk (_stream_readable.js:286:12)
+    at readableAddChunk (_stream_readable.js:268:9)
+    at FileStream.Readable.push (_stream_readable.js:209:10)
+    at PartStream.onData (/app/node_modules/busboy/lib/types/multipart.js:224:28)
+    at PartStream.emit (events.js:310:20)
+    at PartStream.EventEmitter.emit (domain.js:482:12)
+    at addChunk (_stream_readable.js:286:12)
+    at readableAddChunk (_stream_readable.js:268:9)
+    at PartStream.Readable.push (_stream_readable.js:209:10)
+    at Dicer._oninfo (/app/node_modules/dicer/lib/Dicer.js:190:36)
+    at SBMH.<anonymous> (/app/node_modules/dicer/lib/Dicer.js:126:10)
+(node:87) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:87) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:87) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+Tue, 12 Oct 2021 13:37:24 GMT express-session deprecated undefined resave option; provide resave option at node_modules/@semapps/auth/Connector.js:134:7
+Tue, 12 Oct 2021 13:37:24 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at node_modules/@semapps/auth/Connector.js:134:7
+(node:87) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGINT listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:87) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGTERM listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+Error: stream.push() after EOF
+    at readableAddChunk (/app/node_modules/memory-streams/node_modules/readable-stream/lib/_stream_readable.js:168:15)
+    at ReadableStream.Readable.push (/app/node_modules/memory-streams/node_modules/readable-stream/lib/_stream_readable.js:149:10)
+    at FileStream.<anonymous> (/app/node_modules/@semapps/middlewares/index.js:109:26)
+    at FileStream.emit (events.js:310:20)
+    at FileStream.EventEmitter.emit (domain.js:482:12)
+    at addChunk (_stream_readable.js:286:12)
+    at readableAddChunk (_stream_readable.js:268:9)
+    at FileStream.Readable.push (_stream_readable.js:209:10)
+    at PartStream.onData (/app/node_modules/busboy/lib/types/multipart.js:224:28)
+    at PartStream.emit (events.js:310:20)
+    at PartStream.EventEmitter.emit (domain.js:482:12)
+    at addChunk (_stream_readable.js:286:12)
+    at readableAddChunk (_stream_readable.js:268:9)
+    at PartStream.Readable.push (_stream_readable.js:209:10)
+    at Dicer._oninfo (/app/node_modules/dicer/lib/Dicer.js:190:36)
+    at SBMH.<anonymous> (/app/node_modules/dicer/lib/Dicer.js:126:10)
+(node:98) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 exit listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:98) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 newListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:98) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 3 removeListener listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+Tue, 12 Oct 2021 14:10:51 GMT express-session deprecated undefined resave option; provide resave option at node_modules/@semapps/auth/Connector.js:134:7
+Tue, 12 Oct 2021 14:10:51 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at node_modules/@semapps/auth/Connector.js:134:7
+(node:98) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGINT listeners added to [process]. Use emitter.setMaxListeners() to increase limit
+(node:98) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 2 SIGTERM listeners added to [process]. Use emitter.setMaxListeners() to increase limit
