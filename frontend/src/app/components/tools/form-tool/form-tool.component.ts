@@ -12,6 +12,7 @@ import {UiService} from '../../ui/ui.service';
 import {ConfirmDialogComponent} from '../../ui/confirm-dialog/confirm-dialog.component';
 import {AuthService} from '../../../services/auth.service';
 import {MatDialog} from '@angular/material/dialog';
+import {HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-form-tool',
@@ -261,11 +262,25 @@ export class FormToolComponent implements OnInit {
   }
 
   private async postPicture(): Promise<{[key: string]: string}> {
+
+
     const formData = new FormData();
-    const file:File =  this.fileInput.nativeElement.files[0];
-    formData.append("file", file);
-    console.log(file);
-    return this.dataService.postFile('files', formData)
+    const file:any =  this.fileInput.nativeElement.files[0];
+
+    const httpUploadOptions = {
+      headers: new HttpHeaders({
+        //'Accept': 'application/json',
+        'Content-Type': file.type
+      })
+    }
+
+    return this.dataService.postFile('files', file, httpUploadOptions)
+
+
+
+
+
+
   }
 
   async confirmSuppr() {

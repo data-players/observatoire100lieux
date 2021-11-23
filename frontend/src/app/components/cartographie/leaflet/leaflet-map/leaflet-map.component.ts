@@ -75,21 +75,21 @@ export class LeafletMapComponent implements OnInit{
 
     this.markers.clearLayers()
       orgafiltered.forEach(o => {
-      const component = this.resolver.resolveComponentFactory(LeafletPopupComponent).create(this.injector);
-      component.instance.organization = o;
-      component.changeDetectorRef.detectChanges();
-      const coords = this.getLatLong(o);
-      const myIcon = L.icon({
-        iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/images/marker-icon.png',
-        iconSize: [24, 36],
-        iconAnchor: [12, 36]
-      });
-      if (coords.length === 2) {
-        this.markers.addLayer(L.marker(
-          L.latLng(coords[0], coords[1]),
-          {icon: myIcon}
-        ).bindPopup(this.createCustomPopup(o)));
-      }
+        const component = this.resolver.resolveComponentFactory(LeafletPopupComponent).create(this.injector);
+        component.instance.organization = o;
+        component.changeDetectorRef.detectChanges();
+        const coords = this.getLatLong(o);
+        const myIcon = L.icon({
+          iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/images/marker-icon.png',
+          iconSize: [24, 36],
+          iconAnchor: [12, 36]
+        });
+        if (coords.length === 2) {
+          this.markers.addLayer(L.marker(
+            L.latLng(coords[0], coords[1]),
+            {icon: myIcon}
+          ).bindPopup(this.createCustomPopup(o)));
+        }
     })
     this.centlieuxmap.addLayer(this.markers)
   }
