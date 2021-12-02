@@ -41,12 +41,12 @@ export class FormSideBarTiersLieuxComponent implements OnInit {
       for(let s of this.sectors) {
         const form = new FormGroup({})
         for (let b of s.extendedBy){
-          form.addControl(b.id+'', this.fb.control(true));
+          form.addControl(b.id+'', this.fb.control(false));
         }
         this.formBranches.addControl(s.id, form)
       }
       for(let s of this.domains) {
-        this.formDomains.addControl(s.id+'', this.fb.control(true));
+        this.formDomains.addControl(s.id+'', this.fb.control(false));
       }
       res.apply(true);
     })
