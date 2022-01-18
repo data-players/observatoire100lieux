@@ -5,7 +5,7 @@
 #EXPOSE 42010
 #CMD ["npm", "run-script", "start-docker"]
 
-FROM node:latest as build
+FROM node:16 as build
 
 # Set the working directory
 WORKDIR /usr/local/app
