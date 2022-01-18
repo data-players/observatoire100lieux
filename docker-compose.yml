@@ -24,7 +24,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
   fuseki:
-    image: semapps/jena-fuseki-webacl:latest
+    image: stain/jena-fuseki:3.10.0
     container_name: fuseki_100Lieux
     volumes:
       - ./data/fuseki:/fuseki

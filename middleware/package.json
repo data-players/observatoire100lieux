@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "dev": "moleculer-runner --repl --hot services",
-    "start": "moleculer-runner --instances=max services"
+    "start": "moleculer-runner services"
   },
   "dependencies": {
     "@semapps/auth": "0.3.22",
