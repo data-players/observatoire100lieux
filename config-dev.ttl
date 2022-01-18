@@ -1,0 +1,176 @@
+<http://localhost:3000/domains>
+        a       <http://www.w3.org/ns/ldp#BasicContainer> , <http://www.w3.org/ns/ldp#Container> ;
+        <http://www.w3.org/ns/ldp#contains>
+                <http://localhost:3000/domains/60e7e79fc6606d07e80a8bc2> , <http://localhost:3000/domains/60e7e7a6c6606d07e80a8bc3> , <http://localhost:3000/domains/60e7e7b7c6606d07e80a8bc4> , <http://localhost:3000/domains/60e7e7c2c6606d07e80a8bc5> , <http://localhost:3000/domains/60e7e7cfc6606d07e80a8bc6> , <http://localhost:3000/domains/60e7e7dec6606d07e80a8bc7> , <http://localhost:3000/domains/60e7e7e4c6606d07e80a8bc8> .
+
+<http://localhost:3000/sectors>
+        a       <http://www.w3.org/ns/ldp#BasicContainer> , <http://www.w3.org/ns/ldp#Container> ;
+        <http://www.w3.org/ns/ldp#contains>
+                <http://localhost:3000/sectors/60e7e664c6606d07e80a8bb0> , <http://localhost:3000/sectors/60e7e66cc6606d07e80a8bb1> , <http://localhost:3000/sectors/60e7e679c6606d07e80a8bb2> , <http://localhost:3000/sectors/60e7e684c6606d07e80a8bb3> .
+
+<http://localhost:3000/branchs>
+        a       <http://www.w3.org/ns/ldp#BasicContainer> , <http://www.w3.org/ns/ldp#Container> ;
+        <http://www.w3.org/ns/ldp#contains>
+                <http://localhost:3000/branchs/60e7e6cac6606d07e80a8bb4> , <http://localhost:3000/branchs/60e7e6d0c6606d07e80a8bb5> , <http://localhost:3000/branchs/60e7e6dfc6606d07e80a8bb6> , <http://localhost:3000/branchs/60e7e6e7c6606d07e80a8bb7> , <http://localhost:3000/branchs/60e7e6efc6606d07e80a8bb8> , <http://localhost:3000/branchs/60e7e6f6c6606d07e80a8bb9> , <http://localhost:3000/branchs/60e7e6fbc6606d07e80a8bba> , <http://localhost:3000/branchs/60e7e71dc6606d07e80a8bbb> , <http://localhost:3000/branchs/60e7e729c6606d07e80a8bbc> , <http://localhost:3000/branchs/60e7e735c6606d07e80a8bbd> , <http://localhost:3000/branchs/60e7e751c6606d07e80a8bbe> , <http://localhost:3000/branchs/60e7e756c6606d07e80a8bbf> , <http://localhost:3000/branchs/60e7e778c6606d07e80a8bc0> , <http://localhost:3000/branchs/60e7e77ec6606d07e80a8bc1> .
+
+
+<http://localhost:3000/sectors/60e7e664c6606d07e80a8bb0>
+        a       <http://virtual-assembly.org/ontologies/pair#Sector> ;
+        <http://virtual-assembly.org/ontologies/pair#extendedBy>
+                <http://localhost:3000/branchs/60e7e6cac6606d07e80a8bb4> , <http://localhost:3000/branchs/60e7e6d0c6606d07e80a8bb5> , <http://localhost:3000/branchs/60e7e6dfc6606d07e80a8bb6> , <http://localhost:3000/branchs/60e7e6e7c6606d07e80a8bb7> , <http://localhost:3000/branchs/60e7e6efc6606d07e80a8bb8> , <http://localhost:3000/branchs/60e7e6f6c6606d07e80a8bb9> , <http://localhost:3000/branchs/60e7e6fbc6606d07e80a8bba> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Production" .
+
+<http://localhost:3000/sectors/60e7e66cc6606d07e80a8bb1>
+        a       <http://virtual-assembly.org/ontologies/pair#Sector> ;
+        <http://virtual-assembly.org/ontologies/pair#extendedBy>
+                <http://localhost:3000/branchs/60e7e71dc6606d07e80a8bbb> , <http://localhost:3000/branchs/60e7e729c6606d07e80a8bbc> , <http://localhost:3000/branchs/60e7e735c6606d07e80a8bbd> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Transformation" .
+
+<http://localhost:3000/sectors/60e7e679c6606d07e80a8bb2>
+        a       <http://virtual-assembly.org/ontologies/pair#Sector> ;
+        <http://virtual-assembly.org/ontologies/pair#extendedBy>
+                <http://localhost:3000/branchs/60e7e751c6606d07e80a8bbe> , <http://localhost:3000/branchs/60e7e756c6606d07e80a8bbf> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Distribution" .
+
+<http://localhost:3000/sectors/60e7e684c6606d07e80a8bb3>
+        a       <http://virtual-assembly.org/ontologies/pair#Sector> ;
+        <http://virtual-assembly.org/ontologies/pair#extendedBy>
+                <http://localhost:3000/branchs/60e7e778c6606d07e80a8bc0> , <http://localhost:3000/branchs/60e7e77ec6606d07e80a8bc1> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Animation" .
+
+<http://localhost:3000/branchs/60e7e6cac6606d07e80a8bb4>
+        a       <http://virtual-assembly.org/ontologies/pair#Branch> ;
+        <http://virtual-assembly.org/ontologies/pair#extends>
+                <http://localhost:3000/sectors/60e7e664c6606d07e80a8bb0> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "MaraÃ®chage" .
+
+<http://localhost:3000/branchs/60e7e6d0c6606d07e80a8bb5>
+        a       <http://virtual-assembly.org/ontologies/pair#Branch> ;
+        <http://virtual-assembly.org/ontologies/pair#extends>
+                <http://localhost:3000/sectors/60e7e664c6606d07e80a8bb0> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Apiculture" .
+
+<http://localhost:3000/branchs/60e7e6dfc6606d07e80a8bb6>
+        a       <http://virtual-assembly.org/ontologies/pair#Branch> ;
+        <http://virtual-assembly.org/ontologies/pair#extends>
+                <http://localhost:3000/sectors/60e7e664c6606d07e80a8bb0> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Agroforesterie" .
+
+<http://localhost:3000/branchs/60e7e6e7c6606d07e80a8bb7>
+        a       <http://virtual-assembly.org/ontologies/pair#Branch> ;
+        <http://virtual-assembly.org/ontologies/pair#extends>
+                <http://localhost:3000/sectors/60e7e664c6606d07e80a8bb0> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "PÃ©piniÃ¨re" .
+
+<http://localhost:3000/branchs/60e7e6efc6606d07e80a8bb8>
+        a       <http://virtual-assembly.org/ontologies/pair#Branch> ;
+        <http://virtual-assembly.org/ontologies/pair#extends>
+                <http://localhost:3000/sectors/60e7e664c6606d07e80a8bb0> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Hydroponie" .
+
+<http://localhost:3000/branchs/60e7e6f6c6606d07e80a8bb9>
+        a       <http://virtual-assembly.org/ontologies/pair#Branch> ;
+        <http://virtual-assembly.org/ontologies/pair#extends>
+                <http://localhost:3000/sectors/60e7e664c6606d07e80a8bb0> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Aquaponie" .
+
+<http://localhost:3000/branchs/60e7e6fbc6606d07e80a8bba>
+        a       <http://virtual-assembly.org/ontologies/pair#Branch> ;
+        <http://virtual-assembly.org/ontologies/pair#extends>
+                <http://localhost:3000/sectors/60e7e664c6606d07e80a8bb0> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Elevage" .
+
+<http://localhost:3000/branchs/60e7e71dc6606d07e80a8bbb>
+        a       <http://virtual-assembly.org/ontologies/pair#Branch> ;
+        <http://virtual-assembly.org/ontologies/pair#extends>
+                <http://localhost:3000/sectors/60e7e66cc6606d07e80a8bb1> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Compostage" .
+
+<http://localhost:3000/branchs/60e7e729c6606d07e80a8bbc>
+        a       <http://virtual-assembly.org/ontologies/pair#Branch> ;
+        <http://virtual-assembly.org/ontologies/pair#extends>
+                <http://localhost:3000/sectors/60e7e66cc6606d07e80a8bb1> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Transformation alimentaire" .
+
+<http://localhost:3000/branchs/60e7e735c6606d07e80a8bbd>
+        a       <http://virtual-assembly.org/ontologies/pair#Branch> ;
+        <http://virtual-assembly.org/ontologies/pair#extends>
+                <http://localhost:3000/sectors/60e7e66cc6606d07e80a8bb1> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Ecoconstruction" .
+
+<http://localhost:3000/branchs/60e7e751c6606d07e80a8bbe>
+        a       <http://virtual-assembly.org/ontologies/pair#Branch> ;
+        <http://virtual-assembly.org/ontologies/pair#extends>
+                <http://localhost:3000/sectors/60e7e679c6606d07e80a8bb2> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Restauration" .
+
+<http://localhost:3000/branchs/60e7e756c6606d07e80a8bbf>
+        a       <http://virtual-assembly.org/ontologies/pair#Branch> ;
+        <http://virtual-assembly.org/ontologies/pair#extends>
+                <http://localhost:3000/sectors/60e7e679c6606d07e80a8bb2> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Vente" .
+
+<http://localhost:3000/branchs/60e7e778c6606d07e80a8bc0>
+        a       <http://virtual-assembly.org/ontologies/pair#Branch> ;
+        <http://virtual-assembly.org/ontologies/pair#extends>
+                <http://localhost:3000/sectors/60e7e684c6606d07e80a8bb3> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "ActivitÃ© pÃ©dagogique" .
+
+<http://localhost:3000/branchs/60e7e77ec6606d07e80a8bc1>
+        a       <http://virtual-assembly.org/ontologies/pair#Branch> ;
+        <http://virtual-assembly.org/ontologies/pair#extends>
+                <http://localhost:3000/sectors/60e7e684c6606d07e80a8bb3> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "ActivitÃ© culturelle" .
+
+<http://localhost:3000/domains/60e7e79fc6606d07e80a8bc2>
+        a       <http://virtual-assembly.org/ontologies/pair#Domain> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Micro-ferme" .
+
+<http://localhost:3000/domains/60e7e7a6c6606d07e80a8bc3>
+        a       <http://virtual-assembly.org/ontologies/pair#Domain> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Ferme urbaine" .
+
+<http://localhost:3000/domains/60e7e7b7c6606d07e80a8bc4>
+        a       <http://virtual-assembly.org/ontologies/pair#Domain> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Epicerie solidaire" .
+
+<http://localhost:3000/domains/60e7e7c2c6606d07e80a8bc5>
+        a       <http://virtual-assembly.org/ontologies/pair#Domain> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Restaurant solidaire" .
+
+<http://localhost:3000/domains/60e7e7cfc6606d07e80a8bc6>
+        a       <http://virtual-assembly.org/ontologies/pair#Domain> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Jardin partagÃ© ou collectif" .
+
+<http://localhost:3000/domains/60e7e7dec6606d07e80a8bc7>
+        a       <http://virtual-assembly.org/ontologies/pair#Domain> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "SupermarchÃ© coopÃ©ratif" .
+
+<http://localhost:3000/domains/60e7e7e4c6606d07e80a8bc8>
+        a       <http://virtual-assembly.org/ontologies/pair#Domain> ;
+        <http://virtual-assembly.org/ontologies/pair#label>
+                "Atelier" .

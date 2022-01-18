@@ -1,6 +1,8 @@
 const FusekiAdminService = require('@semapps/fuseki-admin');
 const CONFIG = require('../config');
 
+console.log('CONFIG',CONFIG);
+
 module.exports = {
   mixins: [FusekiAdminService],
   settings: {
@@ -11,7 +13,7 @@ module.exports = {
   async started() {
     await this.actions.createDataset({
       dataset: CONFIG.SEMAPPS_MAIN_DATASET,
-      secure: true
+      secure: false
     });
   }
 };

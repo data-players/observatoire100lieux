@@ -5,7 +5,7 @@
 export const environment = {
   serverport: 4200,
   production: false,
-  adminmail: ['lhomme.thomas@pm.me', 'guillaume.rouyer@assemblee-virtuelle.org', 'Pierre@bouvier-muller.fr', 'romain.guitet@afaup.org ', 'pierre@bouvier-muller.fr'],
+  adminmail: ['lhomme.thomas@pm.me', 'guillaume.rouyer@assemblee-virtuelle.org', 'Pierre@bouvier-muller.fr', 'romain.guitet@afaup.org ', 'pierre@bouvier-muller.fr','simon.louvet.zen@gmail.com'],
   serverUrl: 'http://localhost:3000/',
   frontUrl: 'http://localhost:4200/',
   adresseUrl: 'https://api-adresse.data.gouv.fr/search/'
