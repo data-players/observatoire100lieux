@@ -1,9 +1,3 @@
-#FROM node:lts-alpine3.13 as build-step
-#WORKDIR /usr/src/app/frontend
-#COPY package*.json ./
-#RUN npm install -g @angular/cli @angular-devkit/build-angular && npm install
-#EXPOSE 42010
-#CMD ["npm", "run-script", "start-docker"]
 
 FROM node:15 as build
 
@@ -14,23 +8,9 @@ WORKDIR /usr/local/app
 COPY ./ /usr/local/app/
 
 # Install all the dependencies
-RUN npm install
+RUN yarn install
 
 # Generate the build of the application
-RUN npm run build
+RUN yarn run build-prod
 
-
-# Stage 2: Serve app with nginx server
-
-# Use official nginx image as the base image
-FROM nginx:latest
-
-# Copy the build output to replace the default nginx contents.
-COPY --from=build /usr/local/app/dist/transistionangular /usr/share/nginx/html
-
-# Copy conf
-COPY docker/nginx-conf /etc/nginx/conf.d/
-
-
-# Expose port 80
-EXPOSE 80
+CMD [ "yarn", "run","start" ]
