@@ -13,4 +13,4 @@ RUN yarn install
 # Generate the build of the application
 RUN yarn run build-prod
 
-CMD [ "yarn", "run","start" ]
+CMD [ "yarn", "run","start-docker" ]
