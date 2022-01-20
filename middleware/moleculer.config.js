@@ -2,6 +2,7 @@ const {ServiceBroker} = require("moleculer");
 const { WebAclMiddleware } = require('@semapps/webacl');
 const CONFIG = require('./config');
 
+console.log('CONFIG.SEMAPPS_REDIS_CACHE_URL',CONFIG.SEMAPPS_REDIS_CACHE_URL);
 
 // Use the cacher only if Redis is configured
 const cacher = CONFIG.SEMAPPS_REDIS_CACHE_URL
