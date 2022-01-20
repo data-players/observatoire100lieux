@@ -5,7 +5,7 @@ RUN npm -v
 
 RUN npm install pm2 -g
 
-RUN apk add --update --no-cache autoconf bash libtool automake python alpine-sdk openssh-keygen rsync sshpass openssh yarn nano
+RUN apk add --update --no-cache autoconf bash libtool automake python3 alpine-sdk openssh-keygen rsync sshpass openssh nano
 
 WORKDIR /app
 
