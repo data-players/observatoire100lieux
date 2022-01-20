@@ -1,7 +1,6 @@
 const FusekiAdminService = require('@semapps/fuseki-admin');
 const CONFIG = require('../config');
 
-console.log('CONFIG',CONFIG);
 
 module.exports = {
   mixins: [FusekiAdminService],

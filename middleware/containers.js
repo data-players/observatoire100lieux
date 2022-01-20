@@ -23,10 +23,18 @@ module.exports = [
     acceptedTypes: ['pair:Organization'],
     dereference: [
       'pair:hasLocation/pair:hasPostalAddress',
-      'pair:hasBranch',
-      'pair:hasDomain',
-      'pair:hasTopic'
     ],
+    ldpDereferencePlan:[
+      {
+        p:'pair:hasBranch'
+      },
+      {
+        p:'pair:hasDomain'
+      },
+      {
+        p:'pair:hasTopic'
+      }
+    ]
   },
   {
     path: '/tools',
