@@ -37,6 +37,7 @@
     "moleculer-mail": "^1.2.5",
     "moleculer-repl": "^0.6.6",
     "moleculer-web": "^0.10.3",
+    "ssh2-sftp-client": "^9.0.2",
     "url-join": "^4.0.1"
   }
 }
