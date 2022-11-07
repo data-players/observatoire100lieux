@@ -13,7 +13,7 @@ RUN mkdir ~/.ssh && touch ~/.ssh/known_hosts && ssh-keyscan gateways.storage.gra
 
 COPY . /app
 
-RUN yarn install
+RUN npm install
 
 EXPOSE 3000
 
